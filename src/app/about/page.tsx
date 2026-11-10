@@ -46,6 +46,48 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
+
+        {/* Leadership & Certifications Section */}
+        <div id="leadership" className="scroll-mt-24 mt-24 pt-16 border-t border-black/[0.08]">
+          <SectionHeading
+            badge="Leadership & Certifications"
+            title="Strategic Leadership & Enterprise Credentials"
+            subtitle="Backed by senior EAM architects, certified cloud practitioners, and trusted industry partnerships."
+            align="left"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div className="rounded-xl border border-card-border bg-white p-6 shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-2 font-heading">
+                Enterprise Partnership
+              </span>
+              <h4 className="text-lg font-bold text-foreground mb-2">IBM Silver Partner</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Specialized in IBM Maximo Application Suite (MAS), TRIRIGA IWMS, and enterprise integration scripting.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-card-border bg-white p-6 shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-2 font-heading">
+                Cloud Architecture
+              </span>
+              <h4 className="text-lg font-bold text-foreground mb-2">AWS & Azure Advanced Tier</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Certified cloud engineers delivering high-availability clusters, OpenShift deployments, and automated failover.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-card-border bg-white p-6 shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-2 font-heading">
+                Global Delivery
+              </span>
+              <h4 className="text-lg font-bold text-foreground mb-2">70+ Certified Engineers</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Multi-disciplinary technical directors, functional consultants, and round-the-clock AMS support specialists.
+              </p>
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   );

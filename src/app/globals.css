@@ -25,9 +25,6 @@
   
   --border: rgba(0, 0, 0, 0.08);
   --radius: 0.75rem;
-
-  --font-inter: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-heading: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {

@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-white text-[#1B1A19]">
+    <footer className="border-t border-black/10 bg-white text-foreground">
       <Container className="py-14 sm:py-16">
         {/* Top Logo & Enterprise Tagline */}
         <div className="mb-12 pb-8 border-b border-black/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -20,7 +20,7 @@ export function Footer() {
               className="h-9 w-auto object-contain"
             />
           </Link>
-          <p className="text-xs sm:text-sm text-[#605E5C] max-w-md">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-md">
             Trusted enterprise technology, IBM Maximo asset management, and cloud architecture for asset-driven industries worldwide.
           </p>
         </div>
@@ -28,7 +28,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Enterprise Services */}
           <div>
-            <h4 className="text-sm font-semibold text-[#1B1A19] tracking-tight mb-4">
+            <h4 className="text-sm font-semibold text-foreground tracking-tight mb-4">
               Enterprise Services
             </h4>
             <ul className="space-y-2.5">
@@ -36,7 +36,7 @@ export function Footer() {
                 <li key={item.title}>
                   <Link
                     href={item.href}
-                    className="text-xs sm:text-sm text-[#605E5C] hover:text-[#1B1A19] transition-colors"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -47,7 +47,7 @@ export function Footer() {
 
           {/* Column 2: Cloud & Integration */}
           <div>
-            <h4 className="text-sm font-semibold text-[#1B1A19] tracking-tight mb-4">
+            <h4 className="text-sm font-semibold text-foreground tracking-tight mb-4">
               Cloud & Integration
             </h4>
             <ul className="space-y-2.5">
@@ -55,7 +55,7 @@ export function Footer() {
                 <li key={item.title}>
                   <Link
                     href={item.href}
-                    className="text-xs sm:text-sm text-[#605E5C] hover:text-[#1B1A19] transition-colors"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -66,7 +66,7 @@ export function Footer() {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="text-sm font-semibold text-[#1B1A19] tracking-tight mb-4">
+            <h4 className="text-sm font-semibold text-foreground tracking-tight mb-4">
               Company
             </h4>
             <ul className="space-y-2.5">
@@ -74,7 +74,7 @@ export function Footer() {
                 <li key={item.title}>
                   <Link
                     href={item.href}
-                    className="text-xs sm:text-sm text-[#605E5C] hover:text-[#1B1A19] transition-colors"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -85,25 +85,25 @@ export function Footer() {
 
           {/* Column 4: Contact Headquarters */}
           <div>
-            <h4 className="text-sm font-semibold text-[#1B1A19] tracking-tight mb-4">
+            <h4 className="text-sm font-semibold text-foreground tracking-tight mb-4">
               Contact Headquarters
             </h4>
-            <div className="space-y-2 text-xs sm:text-sm text-[#605E5C] leading-relaxed">
+            <div className="space-y-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <p>{siteConfig.contact.address}</p>
               <p>
-                <strong className="text-[#1B1A19]">Email:</strong>{" "}
+                <strong className="text-foreground">Email:</strong>{" "}
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="hover:underline text-[#605E5C] hover:text-[#1B1A19]"
+                  className="hover:underline text-muted-foreground hover:text-foreground"
                 >
                   {siteConfig.contact.email}
                 </a>
               </p>
               <p>
-                <strong className="text-[#1B1A19]">Phone:</strong>{" "}
+                <strong className="text-foreground">Phone:</strong>{" "}
                 <a
                   href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`}
-                  className="hover:underline text-[#605E5C] hover:text-[#1B1A19]"
+                  className="hover:underline text-muted-foreground hover:text-foreground"
                 >
                   {siteConfig.contact.phone}
                 </a>
@@ -113,14 +113,14 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright & legal bar */}
-        <div className="mt-12 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#605E5C]">
+        <div className="mt-12 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>Copyright © {new Date().getFullYear()} Go2Ways. All Rights Reserved.</p>
           <div className="flex flex-wrap gap-6">
             {footerNavItems.legal.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
-                className="text-[#605E5C] hover:text-[#1B1A19] transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.title}
               </Link>

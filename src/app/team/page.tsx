@@ -1,29 +1,12 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { leaders } from "@/data/team";
 
 export const metadata = {
   title: "Our Team",
   description: "Meet the leadership team driving gO2WAYS forward.",
 };
-
-const leaders = [
-  {
-    name: "Executive Leadership",
-    role: "Strategic Direction",
-    bio: "Decades of combined corporate operations, logistics engineering, and organizational transformation expertise.",
-  },
-  {
-    name: "Operations Directorate",
-    role: "Global Logistics & Execution",
-    bio: "Pioneering high-throughput international supply chain execution and client governance.",
-  },
-  {
-    name: "Technology & Infrastructure",
-    role: "Enterprise Systems",
-    bio: "Deploying secure, modern, data-backed operational platforms for multi-region teams.",
-  },
-];
 
 export default function TeamPage() {
   return (

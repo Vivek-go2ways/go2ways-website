@@ -2,29 +2,12 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { openRoles } from "@/data/careers";
 
 export const metadata = {
   title: "Careers",
   description: "Join our expanding global team at gO2WAYS.",
 };
-
-const openRoles = [
-  {
-    title: "Senior Supply Chain Strategist",
-    department: "Operations",
-    location: "Global / Hybrid",
-  },
-  {
-    title: "Enterprise Solutions Architect",
-    department: "Technology",
-    location: "Global / Remote",
-  },
-  {
-    title: "Client Engagement Director",
-    department: "Business Development",
-    location: "New York, NY / Hybrid",
-  },
-];
 
 export default function CareersPage() {
   return (

@@ -20,13 +20,13 @@ export default function ContactPage() {
           {/* Left Column: Contact Details */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#7141B1] inline-block mb-2 font-heading">
+              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-primary inline-block mb-2 font-heading">
                 contact details
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#1B1D21] font-heading">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground font-heading">
                 Contact us
               </h1>
-              <p className="mt-4 text-base sm:text-lg text-[#6D6D6D] leading-relaxed">
+              <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
                 Give us a call or drop by anytime, we endeavour to answer all
                 enquiries within 24 hours on business days. We will be happy to
                 answer your questions.
@@ -36,14 +36,14 @@ export default function ContactPage() {
             <div className="space-y-6 pt-2">
               {/* Address */}
               <div className="flex items-start gap-4 group">
-                <div className="h-12 w-12 rounded-xl bg-[#7141B1]/10 border border-[#7141B1]/20 flex items-center justify-center text-[#7141B1] shrink-0 group-hover:scale-105 transition-transform">
+                <div className="h-12 w-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-[#1B1D21] font-heading">
+                  <h3 className="text-base font-extrabold text-foreground font-heading">
                     Our Address:
                   </h3>
-                  <p className="mt-1 text-sm sm:text-base text-[#6D6D6D] leading-snug">
+                  <p className="mt-1 text-sm sm:text-base text-muted-foreground leading-snug">
                     {siteConfig.contact.address}
                   </p>
                 </div>
@@ -51,16 +51,16 @@ export default function ContactPage() {
 
               {/* Mailbox */}
               <div className="flex items-start gap-4 group">
-                <div className="h-12 w-12 rounded-xl bg-[#1E83C1]/10 border border-[#1E83C1]/20 flex items-center justify-center text-[#1E83C1] shrink-0 group-hover:scale-105 transition-transform">
+                <div className="h-12 w-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 group-hover:scale-105 transition-transform">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-[#1B1D21] font-heading">
+                  <h3 className="text-base font-extrabold text-foreground font-heading">
                     Our Mailbox:
                   </h3>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="mt-1 inline-block text-sm sm:text-base text-[#6D6D6D] hover:text-[#1B1D21] hover:underline transition-colors leading-snug"
+                    className="mt-1 inline-block text-sm sm:text-base text-muted-foreground hover:text-foreground hover:underline transition-colors leading-snug"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -73,12 +73,12 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-[#1B1D21] font-heading">
+                  <h3 className="text-base font-extrabold text-foreground font-heading">
                     Our Phone:
                   </h3>
                   <a
                     href={`tel:${siteConfig.contact.phone.replace(/\s+/g, "")}`}
-                    className="mt-1 inline-block text-sm sm:text-base text-[#6D6D6D] hover:text-[#1B1D21] hover:underline transition-colors leading-snug"
+                    className="mt-1 inline-block text-sm sm:text-base text-muted-foreground hover:text-foreground hover:underline transition-colors leading-snug"
                   >
                     {siteConfig.contact.phone}
                   </a>
