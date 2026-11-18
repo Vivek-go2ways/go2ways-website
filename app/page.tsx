@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaSection from "@/components/CtaSection";
 import SplitWords from "@/components/SplitWords";
+import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "go2ways — Intelligent AI Bot Assistant",
@@ -31,7 +32,7 @@ export default function HomePage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/workflow-automation.jpg" alt="Operations control room with engineers monitoring live dashboards" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/workflow-automation.jpg")} alt="Operations control room with engineers monitoring live dashboards" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -42,7 +43,7 @@ export default function HomePage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/ibm-maximo.jpg" alt="Technician in a hard hat checking asset details on a tablet in a warehouse" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/ibm-maximo.jpg")} alt="Technician in a hard hat checking asset details on a tablet in a warehouse" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -53,7 +54,7 @@ export default function HomePage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/analytics-reporting.jpg" alt="Analytics dashboard with performance charts on a tablet" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/analytics-reporting.jpg")} alt="Analytics dashboard with performance charts on a tablet" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -91,9 +92,9 @@ export default function HomePage() {
         <div className="split">
           <div className="photo-frame reveal-scale" role="img" aria-label="Team at work">
             <div className="photo-fallback">
-              <img src="/assets/img/logo.png" alt="" />
+              <img src={asset("/assets/img/logo.png")} alt="" />
             </div>
-            <img className="photo" src="/assets/img/team.jpg" alt="" />
+            <img className="photo" src={asset("/assets/img/team.jpg")} alt="" />
           </div>
           <div className="split-copy">
             <span className="pill-tag reveal">Why go2ways</span>
@@ -123,7 +124,7 @@ export default function HomePage() {
       </section>
       <section className="section container" id="pricing">
         <div className="section-header" style={{ marginBottom: "0" }}>
-          <a className="pill-tag reveal" href="/contact">Contact Us</a>
+          <a className="pill-tag reveal" href={link("/contact")}>Contact Us</a>
           <h2 className="heading-l reveal" style={{ "--stagger": 1 }}>Simple, transparent pricing</h2>
           <p className="body-l reveal" style={{ "--stagger": 2 }}>Start free for 14 days. Scale as your conversations grow.</p>
         </div>

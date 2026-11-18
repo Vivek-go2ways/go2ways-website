@@ -1,4 +1,5 @@
 import { WAVES } from "./waves";
+import { BASE_PATH } from "./paths";
 
 type On = {
   <K extends keyof WindowEventMap>(t: Window, type: K, fn: (e: WindowEventMap[K]) => void, o?: AddEventListenerOptions): void;
@@ -85,7 +86,8 @@ export function initSite({ navigate, prefetch }: Options): () => void {
     if (!url) return;
     if (url.pathname === location.pathname && url.hash) return;
     e.preventDefault();
-    const go = () => (url.pathname === location.pathname ? location.assign(url.href) : navigate(url.pathname + url.search + url.hash));
+    const targetPath = BASE_PATH && url.pathname.startsWith(BASE_PATH) ? url.pathname.slice(BASE_PATH.length) || "/" : url.pathname;
+    const go = () => (url.pathname === location.pathname ? location.assign(url.href) : navigate(targetPath + url.search + url.hash));
     if (reduceMotion) return go();
     root.classList.add("is-leaving");
     window.setTimeout(go, 260);
@@ -94,9 +96,11 @@ export function initSite({ navigate, prefetch }: Options): () => void {
   const prefetched = new Set<string>();
   const warm = (e: Event) => {
     const url = internalUrl(asEl(e.target)?.closest<HTMLAnchorElement>("a[href]") ?? null);
-    if (!url || url.pathname === location.pathname || prefetched.has(url.pathname)) return;
-    prefetched.add(url.pathname);
-    prefetch(url.pathname);
+    if (!url || url.pathname === location.pathname) return;
+    const targetPath = BASE_PATH && url.pathname.startsWith(BASE_PATH) ? url.pathname.slice(BASE_PATH.length) || "/" : url.pathname;
+    if (prefetched.has(targetPath)) return;
+    prefetched.add(targetPath);
+    prefetch(targetPath);
   };
   on(document, "mouseover", warm, { passive: true });
   on(document, "focusin", warm);

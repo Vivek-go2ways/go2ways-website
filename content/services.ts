@@ -1,4 +1,5 @@
 import type { IconName } from "./icons";
+import { link } from "@/lib/paths";
 
 export type Service = {
   slug: string;
@@ -871,4 +872,4 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const serviceBySlug = (slug: string) => SERVICES.find((s) => s.slug === slug);
-export const servicePath = (slug: string) => `/service-${slug}`;
+export const servicePath = (slug: string) => link(`/service-${slug}`);

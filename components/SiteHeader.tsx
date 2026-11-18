@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Icon from "./Icon";
 import { PRODUCTS, SERVICES, serviceBySlug, servicePath } from "@/content/services";
+import { asset, link } from "@/lib/paths";
 
 const Chevron = () => (
   <svg className="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -21,13 +22,13 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="bar">
-        <a className="brand" href="/" aria-label="go2ways home"><img src="/assets/img/logo.png" alt="go2ways" width="125" height="35" /></a>
+        <a className="brand" href={link("/")} aria-label="go2ways home"><img src={asset("/assets/img/logo.png")} alt="go2ways" width="125" height="35" /></a>
         <nav className="main-nav" aria-label="Main">
           <ul className="nav-list">
-            <li><a href="/" aria-current={cur("home")}>Software</a></li>
-            <li><a href="/services#how-we-work">Consulting</a></li>
-            <li><a href="/contact#faq">Support</a></li>
-            <li><a href="/industries" aria-current={cur("company")}>Company</a></li>
+            <li><a href={link("/")} aria-current={cur("home")}>Software</a></li>
+            <li><a href={link("/services#how-we-work")}>Consulting</a></li>
+            <li><a href={link("/contact#faq")}>Support</a></li>
+            <li><a href={link("/industries")} aria-current={cur("company")}>Company</a></li>
             <li className="has-menu">
               <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-services" data-current={active === "services" ? "" : undefined}>Services<Chevron /></button>
               <div className="menu-panel menu-wide" id="menu-services">
@@ -42,7 +43,7 @@ export default function SiteHeader() {
                       </li>
                     ))}
                   </ul>
-                  <a className="menu-foot" href="/services">See how we work <span aria-hidden="true">→</span></a>
+                  <a className="menu-foot" href={link("/services")}>See how we work <span aria-hidden="true">→</span></a>
                 </div>
               </div>
             </li>
@@ -75,10 +76,10 @@ export default function SiteHeader() {
                 </div>
               </div>
             </li>
-            <li className="mobile-cta"><a href="/contact">Get In Touch</a></li>
+            <li className="mobile-cta"><a href={link("/contact")}>Get In Touch</a></li>
           </ul>
         </nav>
-        <a className="btn btn-primary header-cta" href="/contact" aria-current={path === "/contact" ? "page" : undefined}>Get In Touch</a>
+        <a className="btn btn-primary header-cta" href={link("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Get In Touch</a>
         <button className="nav-toggle" aria-label="Menu" aria-expanded="false"><span /><span /><span /></button>
       </div>
     </header>

@@ -1,3 +1,5 @@
+import { link as toLink } from "./paths";
+
 type Intent = { id: string; keys: [RegExp, number][]; reply: () => string; chips: string[] };
 type Msg = { from: "user" | "bot"; text?: string; html?: string; chips?: string[] };
 type Answer = { html: string; text?: string; chips: string[]; painted?: boolean };
@@ -40,7 +42,7 @@ const SERVICES: Svc[] = [
     keys: [[/consult/, 3], [/advis/, 3], [/architect/, 3], [/roadmap|strategy/, 3], [/health ?check|audit/, 3], [/licen[cs]/, 2], [/dedicated team|remote team|staff aug/, 3]] },
 ];
 
-const link = (href: string, label: string) => '<a href="' + href + '">' + label + "</a>";
+const link = (href: string, label: string) => '<a href="' + toLink(href) + '">' + label + "</a>";
 const svcLink = (s: Svc) => link("/service-" + s.slug, s.name);
 const bySlug = (slug: string | undefined) => SERVICES.find((s) => s.slug === slug);
 

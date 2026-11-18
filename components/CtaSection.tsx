@@ -1,3 +1,5 @@
+import { link } from "@/lib/paths";
+
 export default function CtaSection({ formAnchor = false }: { formAnchor?: boolean }) {
   const hash = formAnchor ? "#contact-form" : "";
   return (
@@ -7,9 +9,9 @@ export default function CtaSection({ formAnchor = false }: { formAnchor?: boolea
         <h2 className="heading-l">Ready to put your support<br />on autopilot?</h2>
         <p className="body-l">Join 2,000+ businesses using go2ways to answer faster and scale smarter.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href={`/contact?topic=trial${hash}`}>Start free trial</a>
+          <a className="btn btn-primary" href={link(`/contact?topic=trial${hash}`)}>Start free trial</a>
           {" "}
-          <a className="btn btn-secondary" href={`/contact?topic=demo${hash}`}>Book a demo</a>
+          <a className="btn btn-secondary" href={link(`/contact?topic=demo${hash}`)}>Book a demo</a>
         </div>
       </div>
     </section>

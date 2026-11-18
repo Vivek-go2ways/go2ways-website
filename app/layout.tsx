@@ -4,11 +4,12 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SiteEffects from "@/components/SiteEffects";
 import ChatWidget from "@/components/ChatWidget";
+import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "go2ways",
   description: "go2ways connects data, assets, people and workflows into one intelligent operational view.",
-  icons: { icon: "/assets/img/logo.png" },
+  icons: { icon: asset("/assets/img/logo.png") },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

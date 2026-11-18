@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Icon from "./Icon";
 import SplitWords from "./SplitWords";
 import { serviceBySlug, servicePath, type Service } from "@/content/services";
+import { asset, link } from "@/lib/paths";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 
@@ -15,17 +16,17 @@ function Lines({ lines }: { lines: string[] }) {
 }
 
 function Photo({ slug, slot, alt, w, h, lazy = true }: { slug: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
-  return <img src={`/assets/img/services/${slug}/${slot}.jpg`} alt={alt} width={w} height={h} loading={lazy ? "lazy" : undefined} />;
+  return <img src={asset(`/assets/img/services/${slug}/${slot}.jpg`)} alt={alt} width={w} height={h} loading={lazy ? "lazy" : undefined} />;
 }
 
 export default function ServicePage({ s }: { s: Service }) {
-  const topic = `/contact?topic=${s.slug}#contact-form`;
+  const topic = link(`/contact?topic=${s.slug}#contact-form`);
   return (
     <main>
       <section className="hero svc-hero">
         <div className="silk-wave" data-wave="hero" aria-hidden="true" />
         <div className="hero-copy">
-          <a className="pill-tag hero-sub crumb" href="/services"><Icon name={s.icon} />{s.name}</a>
+          <a className="pill-tag hero-sub crumb" href={link("/services")}><Icon name={s.icon} />{s.name}</a>
           <SplitWords as="h1" className="display-xl split-words" lines={s.h1} />
           <p className="body-l hero-sub">{s.sub}</p>
           <div className="hero-actions hero-sub">

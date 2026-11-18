@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaSection from "@/components/CtaSection";
 import SplitWords from "@/components/SplitWords";
+import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Services — go2ways",
@@ -26,7 +27,7 @@ export default function ServicesPage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="" style={{ padding: "8px 12px" }}>
               <div className="media-inner" style={{ borderRadius: "16px" }}>
-                <img className="crop-ops" src="/assets/img/svc-operations.png" alt="Isometric city map with buses, depots and a field engineer, showing how assets and people connect" loading="lazy" />
+                <img className="crop-ops" src={asset("/assets/img/svc-operations.png")} alt="Isometric city map with buses, depots and a field engineer, showing how assets and people connect" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -37,8 +38,8 @@ export default function ServicesPage() {
           </article>
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
-              <div className="media-inner" style={{ background: "url(assets/img/svc-workflow-bg.png) center/cover" }}>
-                <img className="crop-together" src="/assets/img/svc-info-together.png" alt="go2ways hub linking fleet, field teams, cloud data, facilities and documents" loading="lazy" />
+              <div className="media-inner" style={{ background: `url(${asset("/assets/img/svc-workflow-bg.png")}) center/cover` }}>
+                <img className="crop-together" src={asset("/assets/img/svc-info-together.png")} alt="go2ways hub linking fleet, field teams, cloud data, facilities and documents" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -50,7 +51,7 @@ export default function ServicesPage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
               <div className="media-inner" style={{ background: "var(--surface-media)" }}>
-                <img className="crop-action" src="/assets/img/svc-data-action.png" alt="Dashboard that identifies patterns, prioritises work and improves performance" loading="lazy" />
+                <img className="crop-action" src={asset("/assets/img/svc-data-action.png")} alt="Dashboard that identifies patterns, prioritises work and improves performance" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -62,7 +63,7 @@ export default function ServicesPage() {
         </div>
       </section>
       <section className="section container" id="why">
-        <h2 className="why-logo reveal">Why <img src="/assets/img/footer-logo.png" alt="go2ways" width="144" height="30" /><span className="qmark" aria-hidden="true">?</span></h2>
+        <h2 className="why-logo reveal">Why <img src={asset("/assets/img/footer-logo.png")} alt="go2ways" width="144" height="30" /><span className="qmark" aria-hidden="true">?</span></h2>
         <p className="eyebrow-red reveal" style={{ "--stagger": 1 }}>The Problem</p>
         <div className="problem-row">
           <div className="problem-copy">
@@ -160,7 +161,7 @@ export default function ServicesPage() {
       </section>
       <section className="section container" id="solution">
         <div className="section-header">
-          <h2 className="why-logo small reveal">The <img src="/assets/img/footer-logo.png" alt="go2ways" width="144" height="30" /> solution</h2>
+          <h2 className="why-logo small reveal">The <img src={asset("/assets/img/footer-logo.png")} alt="go2ways" width="144" height="30" /> solution</h2>
           <p className="heading-l reveal" style={{ "--stagger": 1 }}>One connected view<br />for every operation</p>
           <p className="body-l reveal" style={{ "--stagger": 2 }}>Teams, fleet, data and records come together in one live view, so everyone knows what to do next.</p>
         </div>
@@ -190,7 +191,7 @@ export default function ServicesPage() {
                   <i />
                 </span>
                 {" "}
-                <img src="/assets/img/logo.png" alt="" width="90" height="25" />
+                <img src={asset("/assets/img/logo.png")} alt="" width="90" height="25" />
                 {" "}
                 <span className="live"><span className="pulse" />Live overview</span>
               </div>

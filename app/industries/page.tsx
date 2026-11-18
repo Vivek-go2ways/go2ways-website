@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaSection from "@/components/CtaSection";
 import SplitWords from "@/components/SplitWords";
+import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Industries — go2ways",
@@ -42,30 +43,30 @@ export default function IndustriesPage() {
         <h2 className="display-xl reveal" style={{ fontSize: "clamp(34px,3.9vw,56px)" }}>Services Provided To</h2>
         <ul className="logo-grid" data-stagger-children="">
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/lti.png" alt="LTI, a Larsen & Toubro Group company" style={{ "--logo-h": "62px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/lti.png")} alt="LTI, a Larsen & Toubro Group company" style={{ "--logo-h": "62px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/briwo.png" alt="BRIWO" style={{ "--logo-h": "52px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/briwo.png")} alt="BRIWO" style={{ "--logo-h": "52px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/ibm-maximo.png" alt="IBM Maximo" style={{ "--logo-h": "60px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/ibm-maximo.png")} alt="IBM Maximo" style={{ "--logo-h": "60px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/asahi-kasei.png" alt="Asahi Kasei" style={{ "--logo-h": "42px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/asahi-kasei.png")} alt="Asahi Kasei" style={{ "--logo-h": "42px" }} loading="lazy" />
           </li>
         </ul>
         <ul className="logo-grid logo-row-2" data-stagger-children="">
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/saudi-electricity.png" alt="Saudi Electricity Company" style={{ "--logo-h": "46px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/saudi-electricity.png")} alt="Saudi Electricity Company" style={{ "--logo-h": "46px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/connixt.png" alt="CONNIXT" style={{ "--logo-h": "30px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/connixt.png")} alt="CONNIXT" style={{ "--logo-h": "30px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/mitsubishi-heavy-industries.png" alt="Mitsubishi Heavy Industries" style={{ "--logo-h": "34px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/mitsubishi-heavy-industries.png")} alt="Mitsubishi Heavy Industries" style={{ "--logo-h": "34px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src="/assets/img/logos/quantum-strides.png" alt="Quantum Strides LLC" style={{ "--logo-h": "48px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/quantum-strides.png")} alt="Quantum Strides LLC" style={{ "--logo-h": "48px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
             <span className="wm more">&amp; more....</span>
@@ -78,7 +79,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/manufacturing.jpg" alt="CNC machines on a modern factory floor" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/manufacturing.jpg")} alt="CNC machines on a modern factory floor" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -89,7 +90,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/utilities.jpg" alt="Electrical substation with transformers and power lines" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/utilities.jpg")} alt="Electrical substation with transformers and power lines" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -100,7 +101,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/oil-gas.jpg" alt="Oil refinery with storage tanks at sunset" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/oil-gas.jpg")} alt="Oil refinery with storage tanks at sunset" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -111,7 +112,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/government.jpg" alt="Aerial view of a city highway interchange" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/government.jpg")} alt="Aerial view of a city highway interchange" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -122,7 +123,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/healthcare.jpg" alt="Hospital operating room with medical equipment" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/healthcare.jpg")} alt="Hospital operating room with medical equipment" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -133,7 +134,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/infrastructure.jpg" alt="Crane lifting a bridge section into place" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/infrastructure.jpg")} alt="Crane lifting a bridge section into place" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -144,7 +145,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/transportation.jpg" alt="City buses parked at a depot" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/transportation.jpg")} alt="City buses parked at a depot" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
@@ -155,7 +156,7 @@ export default function IndustriesPage() {
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
               <div className="media-inner">
-                <img className="photo-fill" src="/assets/img/photos/real-estate.jpg" alt="Modern glass office building" width="880" height="1010" loading="lazy" />
+                <img className="photo-fill" src={asset("/assets/img/photos/real-estate.jpg")} alt="Modern glass office building" width="880" height="1010" loading="lazy" />
               </div>
             </div>
             <div className="text">
