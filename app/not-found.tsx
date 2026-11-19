@@ -3,8 +3,8 @@ import SplitWords from "@/components/SplitWords";
 import { link } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Page not found — go2ways",
-  description: "This page doesn’t exist. Find go2ways services, products and contact details.",
+  title: "Page not found — Go2Ways",
+  description: "This page doesn’t exist. Find Go2Ways services, products and contact details.",
 };
 
 export default function NotFound() {

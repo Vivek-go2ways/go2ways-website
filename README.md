@@ -1,6 +1,6 @@
-# go2ways website — Next.js
+# Go2Ways website — Next.js
 
-The go2ways website rebuilt as a **Next.js 16 (App Router) + React 19 + TypeScript** app.
+The Go2Ways website rebuilt as a **Next.js 16 (App Router) + React 19 + TypeScript** app.
 It looks and behaves the same as the original static site in `../go2ways-previous`, which is not changed.
 
 ## Run it
@@ -38,7 +38,7 @@ Old links ending in `.html` (for example `/services.html`) redirect to the new U
 - `content/icons.tsx`: the menu and service icons.
 - `content/knowledge.md`: what the AI chat assistant knows. Edit it, then restart the server.
 - `lib/site-effects.ts`: animations and interactions (page transitions, header, menus, sliders, reveals, count-ups, silk waves, ribbons, FAQ, contact form), ported from `main.js`. It runs again after every page change.
-- `lib/chat-widget.ts`: the "Ask go2ways" widget, ported from `chatbot.js`.
+- `lib/chat-widget.ts`: the "Ask Go2Ways" widget, ported from `chatbot.js`.
 - `lib/waves.ts`: the Figma wave artwork.
 - `public/assets/img/`: all images, at the same paths as before.
 

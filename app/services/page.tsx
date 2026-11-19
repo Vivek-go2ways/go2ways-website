@@ -4,7 +4,7 @@ import SplitWords from "@/components/SplitWords";
 import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Services — go2ways",
+  title: "Services — Go2Ways",
   description: "We make operations easier to run by connecting data, assets, people and workflows into one intelligent operational view.",
 };
 
@@ -39,13 +39,13 @@ export default function ServicesPage() {
           <article className="feature-card reveal">
             <div className="media" data-tilt="">
               <div className="media-inner" style={{ background: `url(${asset("/assets/img/svc-workflow-bg.png")}) center/cover` }}>
-                <img className="crop-together" src={asset("/assets/img/svc-info-together.png")} alt="go2ways hub linking fleet, field teams, cloud data, facilities and documents" loading="lazy" />
+                <img className="crop-together" src={asset("/assets/img/svc-info-together.png")} alt="Go2Ways hub linking fleet, field teams, cloud data, facilities and documents" loading="lazy" />
               </div>
             </div>
             <div className="text">
               <h3 className="heading-s">Bring Information Together</h3>
               <p className="body-m text-slate">We create a shared operational view so teams are not working from different versions of the truth.</p>
-              <p className="body-m text-slate">By connecting data across systems, departments and external sources, go2ways brings critical information into one up-to-date view. Everyone gets the context they need to coordinate faster, reduce manual handoffs and stay aligned.</p>
+              <p className="body-m text-slate">By connecting data across systems, departments and external sources, Go2Ways brings critical information into one up-to-date view. Everyone gets the context they need to coordinate faster, reduce manual handoffs and stay aligned.</p>
             </div>
           </article>
           <article className="feature-card reveal">
@@ -63,7 +63,7 @@ export default function ServicesPage() {
         </div>
       </section>
       <section className="section container" id="why">
-        <h2 className="why-logo reveal">Why <img src={asset("/assets/img/footer-logo.png")} alt="go2ways" width="144" height="30" /><span className="qmark" aria-hidden="true">?</span></h2>
+        <h2 className="why-logo reveal">Why <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" /><span className="qmark" aria-hidden="true">?</span></h2>
         <p className="eyebrow-red reveal" style={{ "--stagger": 1 }}>The Problem</p>
         <div className="problem-row">
           <div className="problem-copy">
@@ -161,7 +161,7 @@ export default function ServicesPage() {
       </section>
       <section className="section container" id="solution">
         <div className="section-header">
-          <h2 className="why-logo small reveal">The <img src={asset("/assets/img/footer-logo.png")} alt="go2ways" width="144" height="30" /> solution</h2>
+          <h2 className="why-logo small reveal">The <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" /> solution</h2>
           <p className="heading-l reveal" style={{ "--stagger": 1 }}>One connected view<br />for every operation</p>
           <p className="body-l reveal" style={{ "--stagger": 2 }}>Teams, fleet, data and records come together in one live view, so everyone knows what to do next.</p>
         </div>
@@ -182,8 +182,8 @@ export default function ServicesPage() {
             <path d="M0 86 C55 86, 45 50, 100 50" />
           </svg>
           <div className="org-dash">
-            <p className="card-label">All organised in go2ways</p>
-            <div className="dash reveal-scale" data-inview="" role="img" aria-label="Example go2ways operations overview showing active assets, on-time status, items needing attention, network activity and live alerts">
+            <p className="card-label">All organised in Go2Ways</p>
+            <div className="dash reveal-scale" data-inview="" role="img" aria-label="Example Go2Ways operations overview showing active assets, on-time status, items needing attention, network activity and live alerts">
               <div className="dash-top" aria-hidden="true">
                 <span className="dots">
                   <i />

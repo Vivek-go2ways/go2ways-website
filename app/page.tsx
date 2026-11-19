@@ -4,8 +4,8 @@ import SplitWords from "@/components/SplitWords";
 import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "go2ways — Intelligent AI Bot Assistant",
-  description: "go2ways connects data, assets, people and workflows into one intelligent operational view.",
+  title: "Go2Ways — Intelligent AI Bot Assistant",
+  description: "Go2Ways connects data, assets, people and workflows into one intelligent operational view.",
 };
 
 export default function HomePage() {
@@ -74,7 +74,7 @@ export default function HomePage() {
           <article className="step-card reveal">
             <span className="step-num">01</span>
             <h3 className="heading-s">Connect your channels</h3>
-            <p className="body-m">Plug go2ways into your website, WhatsApp, Slack or help desk in minutes with no-code integrations.</p>
+            <p className="body-m">Plug Go2Ways into your website, WhatsApp, Slack or help desk in minutes with no-code integrations.</p>
           </article>
           <article className="step-card reveal">
             <span className="step-num">02</span>
@@ -97,7 +97,7 @@ export default function HomePage() {
             <img className="photo" src={asset("/assets/img/team.jpg")} alt="" />
           </div>
           <div className="split-copy">
-            <span className="pill-tag reveal">Why go2ways</span>
+            <span className="pill-tag reveal">Why Go2Ways</span>
             <h2 className="heading-l reveal" style={{ "--stagger": 1 }}>Built for teams<br />that move fast</h2>
             <p className="body-l reveal" style={{ "--stagger": 2 }}>Give every customer an instant, accurate answer while your team focuses on the conversations that need a human touch.</p>
             <ul className="checklist reveal" style={{ "--stagger": 3 }}>

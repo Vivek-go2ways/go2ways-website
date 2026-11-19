@@ -76,7 +76,7 @@ export function adminGate(req: Request): Response | null {
   if (!authorised(req)) {
     return new Response("Sign in with any username and the inbox password.", {
       status: 401,
-      headers: { "WWW-Authenticate": 'Basic realm="go2ways inbox", charset="UTF-8"', "Content-Type": "text/plain" },
+      headers: { "WWW-Authenticate": 'Basic realm="Go2Ways inbox", charset="UTF-8"', "Content-Type": "text/plain" },
     });
   }
   return null;
@@ -104,7 +104,7 @@ export function inboxHtml(items: Entry[]) {
       <p>${esc(m.message).replace(/\n/g, "<br>")}</p>
     </article>`).join("");
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex"><title>Inbox — go2ways</title>
+<meta name="robots" content="noindex"><title>Inbox — Go2Ways</title>
 <style>
   body{margin:0;font:15px/1.5 Inter,system-ui,sans-serif;color:#111;background:#f6f6f5}
   main{max-width:820px;margin:0 auto;padding:32px 16px 64px}

@@ -4,8 +4,8 @@ import SplitWords from "@/components/SplitWords";
 import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Industries — go2ways",
-  description: "go2ways transforms physical assets across 8 mission-critical sectors.",
+  title: "Industries — Go2Ways",
+  description: "Go2Ways transforms physical assets across 8 mission-critical sectors.",
 };
 
 export default function IndustriesPage() {
@@ -29,7 +29,7 @@ export default function IndustriesPage() {
             <span className="label">Projects Done</span>
           </div>
           <div className="stat reveal">
-            <b><span data-count="10">10</span>+</b>
+            <b><span data-count="25">25</span>+</b>
             <span className="label">Team Advisors</span>
           </div>
           <div className="stat reveal">

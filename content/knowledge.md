@@ -1,7 +1,7 @@
-# go2ways — company briefing for the website assistant
+# Go2Ways — company briefing for the website assistant
 
 ## About
-go2ways is an enterprise technology partner for asset-driven businesses, based in Gurugram, Haryana, India. It helps organisations run their operations better through enterprise asset management (IBM Maximo), Maximo Application Suite migration, enterprise integration, cloud and infrastructure, managed support, IBM TRIRIGA, mobile apps and consulting. go2ways also builds its own products.
+Go2Ways is an enterprise technology partner for asset-driven businesses, based in Gurugram, Haryana, India. It helps organisations run their operations better through enterprise asset management (IBM Maximo), Maximo Application Suite migration, enterprise integration, cloud and infrastructure, managed support, IBM TRIRIGA, mobile apps and consulting. Go2Ways also builds its own products.
 
 ## Services (each has its own page on this website)
 - **IBM Maximo Services** — /service-ibm-maximo
@@ -21,7 +21,7 @@ go2ways is an enterprise technology partner for asset-driven businesses, based i
 - **Consulting & Architectural Advisory** — /service-consulting-advisory
   EAM strategy and roadmaps, solution and integration architecture, Maximo health checks and audits, process design (work management, inventory, reliability), licensing and AppPoints advice, dedicated remote teams.
 
-Every engagement follows clear stages with regular demos and a named lead. Overview of how go2ways works: /services
+Every engagement follows clear stages with regular demos and a named lead. Overview of how Go2Ways works: /services
 
 ## Products
 - **Ordova** — https://ordova.go2ways.com/
@@ -32,7 +32,7 @@ Every engagement follows clear stages with regular demos and a named lead. Overv
 Manufacturing, utilities, oil & gas, government, healthcare, infrastructure, transportation and real estate. Page: /industries#sectors
 
 ## Clients (shown on the website)
-go2ways has provided services to organisations including LTI (a Larsen & Toubro Group company), BRIWO, AsahiKASEI, Saudi Electricity Company, CONNIXT, Mitsubishi Heavy Industries and Quantum Strides. Page: /industries#clients
+Go2Ways has provided services to organisations including LTI (a Larsen & Toubro Group company), BRIWO, AsahiKASEI, Saudi Electricity Company, CONNIXT, Mitsubishi Heavy Industries and Quantum Strides. Page: /industries#clients
 
 ## Contact
 - Email: support@go2ways.com

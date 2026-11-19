@@ -2,7 +2,7 @@
   "name": "go2ways-nextjs",
   "private": true,
   "version": "1.0.0",
-  "description": "go2ways website as a Next.js app (App Router). Same UI as the original static site.",
+  "description": "Go2Ways website as a Next.js app (App Router). Same UI as the original static site.",
   "scripts": {
     "dev": "next dev --port 3000",
     "build": "next build",

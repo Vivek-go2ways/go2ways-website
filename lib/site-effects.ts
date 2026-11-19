@@ -515,9 +515,9 @@ function initContactForm(form: HTMLFormElement, on: On) {
   const msg = form.querySelector<HTMLTextAreaElement>("#f-message");
   if (topic && msg && !msg.value) {
     const presets: Record<string, string> = {
-      demo: "Hi go2ways team, I'd like to book a demo for my team.",
-      trial: "Hi go2ways team, I'd like to start a free trial.",
-      partner: "Hi go2ways team, I'm interested in partnering with you.",
+      demo: "Hi Go2Ways team, I'd like to book a demo for my team.",
+      trial: "Hi Go2Ways team, I'd like to start a free trial.",
+      partner: "Hi Go2Ways team, I'm interested in partnering with you.",
     };
     const services: Record<string, string> = {
       "ibm-maximo": "IBM Maximo Services",
@@ -529,7 +529,7 @@ function initContactForm(form: HTMLFormElement, on: On) {
       "mobile-development": "Mobile Development & Enablement",
       "consulting-advisory": "Consulting & Architectural Advisory",
     };
-    if (services[topic]) presets[topic] = "Hi go2ways team, I'd like to talk about " + services[topic] + ".";
+    if (services[topic]) presets[topic] = "Hi Go2Ways team, I'd like to talk about " + services[topic] + ".";
     if (presets[topic]) msg.value = presets[topic];
   }
 

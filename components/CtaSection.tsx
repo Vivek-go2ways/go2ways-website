@@ -7,7 +7,7 @@ export default function CtaSection({ formAnchor = false }: { formAnchor?: boolea
       <div className="cta-card reveal-scale">
         <div className="silk-wave" data-wave="cta" data-speed="0.8" aria-hidden="true" />
         <h2 className="heading-l">Ready to put your support<br />on autopilot?</h2>
-        <p className="body-l">Join 2,000+ businesses using go2ways to answer faster and scale smarter.</p>
+        <p className="body-l">Join 2,000+ businesses using Go2Ways to answer faster and scale smarter.</p>
         <div className="cta-actions">
           <a className="btn btn-primary" href={link(`/contact?topic=trial${hash}`)}>Start free trial</a>
           {" "}

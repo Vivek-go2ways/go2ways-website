@@ -7,14 +7,14 @@ import ChatWidget from "@/components/ChatWidget";
 import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "go2ways",
-  description: "go2ways connects data, assets, people and workflows into one intelligent operational view.",
+  title: "Go2Ways",
+  description: "Go2Ways connects data, assets, people and workflows into one intelligent operational view.",
   icons: { icon: asset("/assets/img/logo.png") },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

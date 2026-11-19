@@ -48,10 +48,10 @@ const bySlug = (slug: string | undefined) => SERVICES.find((s) => s.slug === slu
 
 const INTENTS: Intent[] = [
   { id: "greet", keys: [[/^(hi|hello|hey|hiya|namaste|good (morning|afternoon|evening))\b/, 3]],
-    reply: () => "Hello! I can tell you about go2ways’ services, our products, the industries we work in, or how to reach the team. What would you like to know?",
+    reply: () => "Hello! I can tell you about Go2Ways’ services, our products, the industries we work in, or how to reach the team. What would you like to know?",
     chips: ["What services do you offer?", "Tell me about Ordova", "How do I contact you?"] },
   { id: "about", keys: [[/about (go2ways|g2ways|the company|your company|you)/, 4], [/who (are|is) (you|go2ways)\b/, 4], [/what (is|does) go2ways/, 4], [/\bcompany\b/, 1], [/go2ways|g2ways/, 1]],
-    reply: () => "go2ways is an enterprise technology partner for asset-driven businesses, based in Gurugram, Haryana. We help organisations run their operations better with IBM Maximo, MAS migration, enterprise integration, cloud, managed support, TRIRIGA, mobile apps and consulting. We also build our own products, such as " + link("https://ordova.go2ways.com/", "Ordova") + ".",
+    reply: () => "Go2Ways is an enterprise technology partner for asset-driven businesses, based in Gurugram, Haryana. We help organisations run their operations better with IBM Maximo, MAS migration, enterprise integration, cloud, managed support, TRIRIGA, mobile apps and consulting. We also build our own products, such as " + link("https://ordova.go2ways.com/", "Ordova") + ".",
     chips: ["What services do you offer?", "Which industries do you work with?", "Who have you worked with?"] },
   { id: "services", keys: [[/\bservices?\b/, 1], [/what (do|can) you (do|offer|help)/, 3], [/\boffer(ings?)?\b/, 2], [/help (me|us) with/, 1]],
     reply: () => "We offer eight services:<ul>" + SERVICES.map((s) => "<li>" + svcLink(s) + "</li>").join("") + "</ul>Which one would you like to know more about?",
@@ -60,7 +60,7 @@ const INTENTS: Intent[] = [
     reply: () => "We have two products:<ul><li>" + link("https://ordova.go2ways.com/", "Ordova") + ": an intelligent transport management system for bus operators and transport authorities.</li><li><b>Emp AI</b>: in development and not available yet.</li></ul>",
     chips: ["Tell me about Ordova", "When is Emp AI launching?"] },
   { id: "ordova", keys: [[/ordova/, 5], [/transport/, 2], [/\bbus(es)?\b/, 3], [/fleet/, 2], [/dispatch/, 3], [/transit|depot/, 2]],
-    reply: () => "Ordova is go2ways’ intelligent transport management system for bus operators and transport authorities. It covers network and trip planning, live dispatch, fleet and depot maintenance, analytics, and AI recommendations for dispatchers, and it connects to systems like IBM Maximo, GPS and ticketing. " + link("https://ordova.go2ways.com/", "Visit the Ordova site") + ".",
+    reply: () => "Ordova is Go2Ways’ intelligent transport management system for bus operators and transport authorities. It covers network and trip planning, live dispatch, fleet and depot maintenance, analytics, and AI recommendations for dispatchers, and it connects to systems like IBM Maximo, GPS and ticketing. " + link("https://ordova.go2ways.com/", "Visit the Ordova site") + ".",
     chips: ["Book a demo", "What services do you offer?"] },
   { id: "empai", keys: [[/emp ?ai/, 5]],
     reply: () => "Emp AI is still in development, so there’s nothing to share publicly yet. If you’d like to hear when it launches, " + link("/contact#contact-form", "leave us a message") + ".",
@@ -72,7 +72,7 @@ const INTENTS: Intent[] = [
     reply: () => "We’ve provided services to organisations including LTI (a Larsen &amp; Toubro Group company), BRIWO, AsahiKASEI, Saudi Electricity Company, CONNIXT, Mitsubishi Heavy Industries and Quantum Strides. " + link("/industries#clients", "See our clients") + ".",
     chips: ["Which industries do you work with?", "Book a demo"] },
   { id: "contact", keys: [[/contact/, 3], [/e-?mail/, 3], [/phone|call|number|whatsapp/, 3], [/reach|get in touch|talk to (someone|a person|sales|the team)/, 3], [/human|real person|agent/, 3]],
-    reply: () => "You can reach the go2ways team by:<ul><li>Email: " + link("mailto:" + CONTACT.email, CONTACT.email) + "</li><li>Phone: " + link("tel:" + CONTACT.tel, CONTACT.phone) + "</li><li>The " + link("/contact#contact-form", "contact form") + "</li></ul>We reply within 24 hours on business days.",
+    reply: () => "You can reach the Go2Ways team by:<ul><li>Email: " + link("mailto:" + CONTACT.email, CONTACT.email) + "</li><li>Phone: " + link("tel:" + CONTACT.tel, CONTACT.phone) + "</li><li>The " + link("/contact#contact-form", "contact form") + "</li></ul>We reply within 24 hours on business days.",
     chips: ["Where is your office?", "What are your hours?", "Book a demo"] },
   { id: "location", keys: [[/where/, 1], [/locat|address|office|based|gurugram|gurgaon|haryana|delhi|ncr|india|visit/, 3]],
     reply: () => "Our office is at " + CONTACT.address + ". " + link("https://www.google.com/maps/search/?api=1&query=314a+Sector+102+Gurugram+Haryana", "Open in Google Maps") + ". We work with clients across India and internationally, on-site and remotely.",
@@ -193,11 +193,11 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
   const root = document.createElement("div");
   root.className = "g2w-chat";
   root.innerHTML =
-    '<div class="chat-teaser" hidden><p>Questions about go2ways? Ask me.</p><button type="button" class="chat-teaser-x" aria-label="Dismiss">' + ICON_CLOSE + "</button></div>" +
-    '<section class="chat-panel" id="g2w-chat-panel" role="dialog" aria-label="go2ways assistant" hidden>' +
+    '<div class="chat-teaser" hidden><p>Questions about Go2Ways? Ask me.</p><button type="button" class="chat-teaser-x" aria-label="Dismiss">' + ICON_CLOSE + "</button></div>" +
+    '<section class="chat-panel" id="g2w-chat-panel" role="dialog" aria-label="Go2Ways assistant" hidden>' +
       '<header class="chat-head">' +
         '<span class="chat-avatar">' + ICON_SPARK + "</span>" +
-        '<div class="chat-title"><p class="chat-name">go2ways assistant</p><p class="chat-status"><span class="dot" aria-hidden="true"></span>Answers instantly</p></div>' +
+        '<div class="chat-title"><p class="chat-name">Go2Ways assistant</p><p class="chat-status"><span class="dot" aria-hidden="true"></span>Answers instantly</p></div>' +
         '<button type="button" class="chat-icon-btn chat-reset" aria-label="Start a new conversation" title="New conversation">' + ICON_RESET + "</button>" +
         '<button type="button" class="chat-icon-btn chat-close" aria-label="Close chat">' + ICON_CLOSE + "</button>" +
       "</header>" +
@@ -210,9 +210,9 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
       "</form>" +
       '<p class="chat-note">AI assistant. It can make mistakes, so for anything important <a href="/contact">contact our team</a>.</p>' +
     "</section>" +
-    '<button type="button" class="chat-launcher" aria-label="Open chat with the go2ways assistant" aria-expanded="false" aria-controls="g2w-chat-panel">' +
+    '<button type="button" class="chat-launcher" aria-label="Open chat with the Go2Ways assistant" aria-expanded="false" aria-controls="g2w-chat-panel">' +
       '<span class="chat-launcher-avatar"><span class="ic ic-open">' + ICON_SPARK + '</span><span class="ic ic-close">' + ICON_CLOSE + "</span></span>" +
-      '<span class="chat-launcher-label" aria-hidden="true">Ask go2ways</span>' +
+      '<span class="chat-launcher-label" aria-hidden="true">Ask Go2Ways</span>' +
     "</button>";
   document.body.appendChild(root);
 
@@ -371,7 +371,7 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
   }
 
   function greet() {
-    let html = "Hi, I’m the go2ways assistant. I can help you find the right service, learn about our products, or get in touch with the team.";
+    let html = "Hi, I’m the Go2Ways assistant. I can help you find the right service, learn about our products, or get in touch with the team.";
     let chips = ["What services do you offer?", "Tell me about Ordova", "How do I contact you?"];
     const svc = bySlug(pageSlug());
     if (svc) {
@@ -397,7 +397,7 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
     save();
     clearTimeout(closeTimer);
     launcher.setAttribute("aria-expanded", String(open));
-    launcher.setAttribute("aria-label", open ? "Close chat" : "Open chat with the go2ways assistant");
+    launcher.setAttribute("aria-label", open ? "Close chat" : "Open chat with the Go2Ways assistant");
     root.classList.toggle("is-open", open);
     if (open) {
       hideTeaser();

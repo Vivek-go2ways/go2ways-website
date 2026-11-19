@@ -8,7 +8,7 @@ export default function SiteFooter() {
     <footer className="site-footer container">
       <div className="footer-top">
         <div className="footer-brand">
-          <a href={link("/")} aria-label="go2ways home"><img src={asset("/assets/img/footer-logo.png")} alt="go2ways" width="144" height="30" /></a>
+          <a href={link("/")} aria-label="Go2Ways home"><img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" /></a>
           <p>Intelligent AI assistants for modern businesses.</p>
         </div>
         <div className="footer-cols">
@@ -50,7 +50,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 go2ways. All rights reserved.</p>
+        <p>© 2026 Go2Ways IT Services Private Limited. All rights reserved.</p>
         <ul>
           <li><a href="#" data-soon="">Privacy</a></li>
           <li><a href="#" data-soon="">Terms</a></li>

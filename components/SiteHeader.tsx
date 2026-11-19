@@ -22,7 +22,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="bar">
-        <a className="brand" href={link("/")} aria-label="go2ways home"><img src={asset("/assets/img/logo.png")} alt="go2ways" width="125" height="35" /></a>
+        <a className="brand" href={link("/")} aria-label="Go2Ways home"><img src={asset("/assets/img/logo.png")} alt="Go2Ways" width="125" height="35" /></a>
         <nav className="main-nav" aria-label="Main">
           <ul className="nav-list">
             <li><a href={link("/")} aria-current={cur("home")}>Software</a></li>
