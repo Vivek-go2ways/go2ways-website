@@ -16,8 +16,7 @@ export default function SiteHeader() {
   const slug = path.match(/^\/service-([a-z-]+)$/)?.[1];
   const currentService = slug && serviceBySlug(slug) ? slug : undefined;
   const active =
-    path === "/" ? "home" : path === "/industries" ? "company" : path === "/services" || currentService ? "services" : null;
-  const cur = (key: string) => (active === key ? "page" : undefined);
+    path === "/industries" ? "company" : path === "/services" || currentService ? "services" : null;
 
   return (
     <header className="site-header">
@@ -25,10 +24,7 @@ export default function SiteHeader() {
         <a className="brand" href={link("/")} aria-label="Go2Ways home"><img src={asset("/assets/img/logo.png")} alt="Go2Ways" width="125" height="35" /></a>
         <nav className="main-nav" aria-label="Main">
           <ul className="nav-list">
-            <li><a href={link("/")} aria-current={cur("home")}>Software</a></li>
-            <li><a href={link("/services#how-we-work")}>Consulting</a></li>
-            <li><a href={link("/contact#faq")}>Support</a></li>
-            <li><a href={link("/industries")} aria-current={cur("company")}>Company</a></li>
+            {/* 1. Services */}
             <li className="has-menu">
               <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-services" data-current={active === "services" ? "" : undefined}>Services<Chevron /></button>
               <div className="menu-panel menu-wide" id="menu-services">
@@ -47,6 +43,11 @@ export default function SiteHeader() {
                 </div>
               </div>
             </li>
+
+            {/* 2. Solutions */}
+            <li><a href={link("/#features")}>Solutions</a></li>
+
+            {/* 3. Products */}
             <li className="has-menu">
               <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-products">Products<Chevron /></button>
               <div className="menu-panel" id="menu-products">
@@ -76,9 +77,33 @@ export default function SiteHeader() {
                 </div>
               </div>
             </li>
+
+            {/* 4. Company */}
+            <li className="has-menu">
+              <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-company" data-current={active === "company" ? "" : undefined}>Company<Chevron /></button>
+              <div className="menu-panel" id="menu-company">
+                <div className="menu-inner">
+                  <ul className="menu-grid">
+                    <li style={{ "--i": 0 }}>
+                      <a className="menu-item" href={link("/industries")} aria-current={path === "/industries" ? "page" : undefined}>
+                        <span className="mi-icon"><Icon name="building" /></span>
+                        <span className="mi-text"><span className="mi-title">Industries</span><span className="mi-desc">Sectors we serve and operational expertise</span></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            {/* 5. Support */}
+            <li><a href={link("/contact#faq")}>Support</a></li>
+
+            {/* 6. Get In Touch (mobile CTA) */}
             <li className="mobile-cta"><a href={link("/contact")}>Get In Touch</a></li>
           </ul>
         </nav>
+
+        {/* 6. Get In Touch (primary header CTA) */}
         <a className="btn btn-primary header-cta" href={link("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Get In Touch</a>
         <button className="nav-toggle" aria-label="Menu" aria-expanded="false"><span /><span /><span /></button>
       </div>

@@ -520,14 +520,15 @@ function initContactForm(form: HTMLFormElement, on: On) {
       partner: "Hi Go2Ways team, I'm interested in partnering with you.",
     };
     const services: Record<string, string> = {
-      "ibm-maximo": "IBM Maximo Services",
-      "mas-migration": "MAS Migration",
+      "ibm-maximo-mas": "IBM Maximo & MAS Services",
+      "ibm-maximo": "IBM Maximo & MAS Services",
+      "mas-migration": "IBM Maximo & MAS Services",
       "enterprise-integration": "Enterprise Integration",
       "cloud-infrastructure": "Cloud & Infrastructure",
       "managed-support": "Managed Support",
       tririga: "TRIRIGA Services",
-      "mobile-development": "Mobile Development & Enablement",
-      "consulting-advisory": "Consulting & Architectural Advisory",
+      "mobile-development": "Enterprise Mobile Solutions",
+      "consulting-advisory": "Enterprise Technology Consulting & Architecture",
     };
     if (services[topic]) presets[topic] = "Hi Go2Ways team, I'd like to talk about " + services[topic] + ".";
     if (presets[topic]) msg.value = presets[topic];

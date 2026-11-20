@@ -5,23 +5,70 @@ import { asset, link } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Services — Go2Ways",
-  description: "We make operations easier to run by connecting data, assets, people and workflows into one intelligent operational view.",
+  description: "Go2Ways brings your fleet, teams, data and records into one live operational view.",
 };
 
 export default function ServicesPage() {
   return (
     <main>
+      {/* ── Hero ── */}
       <section className="hero">
         <div className="silk-wave" data-wave="hero" data-parallax="" aria-hidden="true" />
         <div className="hero-copy">
           <SplitWords as="h1" className="display-xl split-words" lines={["We make Operations", "easier to run"]} />
-          <p className="body-l hero-sub">Connecting data, assets, people and workflows into one intelligent operational view.</p>
+          <p className="body-l hero-sub">Go2Ways brings your fleet, teams, data and records into one live view, so you always know what is happening and what to do next.</p>
         </div>
       </section>
+
+      {/* ── What We Do ── */}
+      <section className="section container" id="what-we-do">
+        <div className="section-header">
+          <h2 className="heading-l reveal">What We Do</h2>
+        </div>
+        <div className="point-row" data-stagger-children="">
+          <article className="point-card good reveal">
+            <span className="good-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+              </svg>
+            </span>
+            <div>
+              <h3>Connect</h3>
+              <p>Link your systems, spreadsheets and data sources into one place.</p>
+            </div>
+          </article>
+          <article className="point-card good reveal">
+            <span className="good-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m8 12.5 2.8 2.8L16.5 9.5" />
+              </svg>
+            </span>
+            <div>
+              <h3>See</h3>
+              <p>One live view of your assets, people and status.</p>
+            </div>
+          </article>
+          <article className="point-card good reveal">
+            <span className="good-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </span>
+            <div>
+              <h3>Act</h3>
+              <p>Clear priorities and next steps for your teams.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* ── How We Work ── */}
       <section className="panel" id="how-we-work">
         <div className="panel-intro">
           <h2 className="heading-l reveal">How We Work</h2>
-          <p className="body-l reveal" style={{ "--stagger": 1 }}>We combine operational context with technology<br />so teams can move faster without losing visibility or control.</p>
+          <p className="body-l reveal" style={{ "--stagger": 1 }}>We pair operational understanding with technology<br />so your teams move faster without losing visibility.</p>
         </div>
         <div className="card-grid" data-stagger-children="">
           <article className="feature-card reveal">
@@ -31,9 +78,8 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="text">
-              <h3 className="heading-s">Start with the operations</h3>
-              <p className="body-m text-slate">We map the assets, people, workflows and decisions that keep the operation moving.</p>
-              <p className="body-m text-slate">From vehicles and infrastructure to teams, schedules and real-world constraints, we build a complete picture of how your operation works. By understanding how everything connects, we can identify bottlenecks, dependencies and opportunities for improvement.</p>
+              <h3 className="heading-s">Map your operation</h3>
+              <p className="body-m text-slate">We identify every asset, team, workflow and decision that keeps things running. This shows where the bottlenecks and opportunities are.</p>
             </div>
           </article>
           <article className="feature-card reveal">
@@ -43,9 +89,8 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="text">
-              <h3 className="heading-s">Bring Information Together</h3>
-              <p className="body-m text-slate">We create a shared operational view so teams are not working from different versions of the truth.</p>
-              <p className="body-m text-slate">By connecting data across systems, departments and external sources, Go2Ways brings critical information into one up-to-date view. Everyone gets the context they need to coordinate faster, reduce manual handoffs and stay aligned.</p>
+              <h3 className="heading-s">Bring information together</h3>
+              <p className="body-m text-slate">We pull data from every system and source into one live view. Everyone works from the same picture.</p>
             </div>
           </article>
           <article className="feature-card reveal">
@@ -55,20 +100,21 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="text">
-              <h3 className="heading-s">Turn Data into Action</h3>
-              <p className="body-m text-slate">Use history and current information to identify patterns, prioritize work and improve performance.</p>
-              <p className="body-m text-slate">We turn operational data into clear insights and actionable recommendations. Teams can identify recurring issues, prioritize what matters most and make faster, better decisions that continuously improve performance across the network.</p>
+              <h3 className="heading-s">Turn data into action</h3>
+              <p className="body-m text-slate">We surface patterns, flag issues and show what to do next. Teams make faster, better decisions every day.</p>
             </div>
           </article>
         </div>
       </section>
+
+      {/* ── Why Go2Ways? — The Problem ── */}
       <section className="section container" id="why">
         <h2 className="why-logo reveal">Why <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" /><span className="qmark" aria-hidden="true">?</span></h2>
         <p className="eyebrow-red reveal" style={{ "--stagger": 1 }}>The Problem</p>
         <div className="problem-row">
           <div className="problem-copy">
             <h3 className="heading-l reveal">Critical information<br />is scattered</h3>
-            <p className="body-l reveal" style={{ "--stagger": 1 }}>When an asset breaks down or a vehicle needs attention, teams spend valuable time searching across multiple sources.</p>
+            <p className="body-l reveal" style={{ "--stagger": 1 }}>When something breaks, teams waste time searching across different sources.</p>
             <span className="grad-rule reveal" data-inview="" style={{ "--stagger": 2 }} aria-hidden="true" />
           </div>
           <figure className="sources-card reveal-scale" data-inview="" aria-label="Information is spread across a system, team messages, spreadsheets and phone calls, with no single shared view">
@@ -134,21 +180,21 @@ export default function ServicesPage() {
           <article className="point-card reveal">
             <span className="bang" style={{ "--d": 0 }} aria-hidden="true">!</span>
             <div>
-              <h3>Teams spend time searching for context</h3>
-              <p>Information is spread across sources.</p>
+              <h3>Teams waste time searching</h3>
+              <p>Information sits in different places.</p>
             </div>
           </article>
           <article className="point-card reveal">
             <span className="bang" style={{ "--d": 1 }} aria-hidden="true">!</span>
             <div>
-              <h3>Conflicting information has to be reconciled</h3>
-              <p>Teams must piece together what is true.</p>
+              <h3>Data conflicts slow decisions</h3>
+              <p>Nobody knows which version is right.</p>
             </div>
           </article>
           <article className="point-card reveal">
             <span className="bang" style={{ "--d": 2 }} aria-hidden="true">!</span>
             <div>
-              <h3>Coordinating the next step creates delays</h3>
+              <h3>Coordination creates delays</h3>
               <p>Action waits on calls and handovers.</p>
             </div>
           </article>
@@ -159,11 +205,13 @@ export default function ServicesPage() {
           <path d="M1000 0 C1000 60, 600 40, 600 100" />
         </svg>
       </section>
+
+      {/* ── Why Go2Ways? — The Solution ── */}
       <section className="section container" id="solution">
         <div className="section-header">
           <h2 className="why-logo small reveal">The <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" /> solution</h2>
           <p className="heading-l reveal" style={{ "--stagger": 1 }}>One connected view<br />for every operation</p>
-          <p className="body-l reveal" style={{ "--stagger": 2 }}>Teams, fleet, data and records come together in one live view, so everyone knows what to do next.</p>
+          <p className="body-l reveal" style={{ "--stagger": 2 }}>Teams, fleet, data and records in one live view. Everyone knows what to do next.</p>
         </div>
         <div className="org-row">
           <div className="org-inputs">
@@ -266,7 +314,7 @@ export default function ServicesPage() {
             </span>
             <div>
               <h3>Confident action</h3>
-              <p>Clear next steps, without chasing calls.</p>
+              <p>Clear next steps, no more chasing calls.</p>
             </div>
           </article>
         </div>
