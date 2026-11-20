@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaSection from "@/components/CtaSection";
 import SplitWords from "@/components/SplitWords";
+import { link } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Get in Touch — Go2Ways",
@@ -175,7 +176,7 @@ export default function ContactPage() {
               <button className="faq-q" aria-expanded="false" aria-controls="faq-6">How can I partner with Go2Ways?<span className="plus" aria-hidden="true" /></button>
               <div className="faq-a" id="faq-6">
                 <div>
-                  <p>We partner with system integrators, consultancies and technology vendors. <a href="/contact?topic=partner#contact-form" style={{ color: "#2e6ad6", textDecoration: "underline" }}>Tell us about your company</a> and we’ll be in touch.</p>
+                  <p>We partner with system integrators, consultancies and technology vendors. <a href={link("/contact?topic=partner#contact-form")} style={{ color: "#2e6ad6", textDecoration: "underline" }}>Tell us about your company</a> and we’ll be in touch.</p>
                 </div>
               </div>
             </div>

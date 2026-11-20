@@ -1,7 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import Icon from "./Icon";
 import SplitWords from "./SplitWords";
-import { serviceBySlug, servicePath, type Service } from "@/content/services";
+import { isGroup, serviceBySlug, servicePath, type Service, type ServiceEntry } from "@/content/services";
 import { asset, link } from "@/lib/paths";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
@@ -19,25 +19,24 @@ function Photo({ folder, slot, alt, w, h, lazy = true }: { folder: string; slot:
   return <img src={asset(`/assets/img/services/${folder}/${slot}.jpg`)} alt={alt} width={w} height={h} loading={lazy ? "lazy" : undefined} />;
 }
 
-export default function ServicePage({ s }: { s: Service }) {
-  const topic = link(`/contact?topic=${s.slug}#contact-form`);
+function Hero({ s, children }: { s: ServiceEntry; children?: ReactNode }) {
   return (
-    <main>
-      <section className="hero svc-hero">
-        <div className="silk-wave" data-wave="hero" aria-hidden="true" />
-        <div className="hero-copy">
-          <a className="pill-tag hero-sub crumb" href={link("/services")}><Icon name={s.icon} />{s.name}</a>
-          <SplitWords as="h1" className="display-xl split-words" lines={s.h1} />
-          <p className="body-l hero-sub">{s.sub}</p>
-          <div className="hero-actions hero-sub">
-            <a className="btn btn-primary" href={topic}>Talk to an expert</a>
-            {" "}
-            <a className="btn btn-secondary" href="#included">What’s included</a>
-          </div>
-        </div>
-      </section>
+    <section className="hero svc-hero">
+      <div className="silk-wave" data-wave="hero" aria-hidden="true" />
+      <div className="hero-copy">
+        <span className="pill-tag hero-sub crumb"><Icon name={s.icon} />{s.name}</span>
+        <SplitWords as="h1" className="display-xl split-words" lines={s.h1} />
+        <p className="body-l hero-sub">{s.sub}</p>
+        {children}
+      </div>
+    </section>
+  );
+}
 
-      <section className="section container" id="overview">
+function Body({ s, prefix = "" }: { s: Service; prefix?: string }) {
+  return (
+    <>
+      <section className="section container" id={`${prefix}overview`}>
         <div className="split">
           <div className="split-copy">
             <span className="pill-tag reveal">Overview</span>
@@ -70,7 +69,7 @@ export default function ServicePage({ s }: { s: Service }) {
         </div>
       </section>
 
-      <section className="section container" id="included">
+      <section className="section container" id={`${prefix}included`}>
         <div className="section-header">
           <span className="pill-tag reveal">What we deliver</span>
           <h2 className="heading-l reveal" style={{ "--stagger": 1 }}>Everything you need,<br />from one team</h2>
@@ -88,7 +87,7 @@ export default function ServicePage({ s }: { s: Service }) {
         </div>
       </section>
 
-      <section className="section container" id="process">
+      <section className="section container" id={`${prefix}process`}>
         <div className="section-header">
           <span className="pill-tag reveal">How we deliver</span>
           <h2 className="heading-l reveal" style={{ "--stagger": 1 }}>Four steps, no surprises</h2>
@@ -105,7 +104,7 @@ export default function ServicePage({ s }: { s: Service }) {
         </div>
       </section>
 
-      <section className="section container" id="related">
+      <section className="section container" id={`${prefix}related`}>
         <div className="section-header" style={{ marginBottom: "32px" }}>
           <span className="pill-tag reveal">Related services</span>
         </div>
@@ -127,19 +126,76 @@ export default function ServicePage({ s }: { s: Service }) {
           })}
         </div>
       </section>
+    </>
+  );
+}
 
-      <section className="cta container">
-        <div className="cta-card reveal-scale">
-          <div className="silk-wave" data-wave="cta" data-speed="0.8" aria-hidden="true" />
-          <h2 className="heading-l">Let’s talk about<br />{s.short}</h2>
-          <p className="body-l">Tell us where you are today and we’ll suggest a practical next step.</p>
-          <div className="cta-actions">
-            <a className="btn btn-primary" href={topic}>Talk to an expert</a>
-            {" "}
-            <a className="btn btn-secondary" href="tel:+918826949739">Call +91 88269 49739</a>
-          </div>
+function Cta({ short, topic }: { short: string; topic: string }) {
+  return (
+    <section className="cta container">
+      <div className="cta-card reveal-scale">
+        <div className="silk-wave" data-wave="cta" data-speed="0.8" aria-hidden="true" />
+        <h2 className="heading-l">Let’s talk about<br />{short}</h2>
+        <p className="body-l">Tell us where you are today and we’ll suggest a practical next step.</p>
+        <div className="cta-actions">
+          <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+          {" "}
+          <a className="btn btn-secondary" href="tel:+918826949739">Call +91 88269 49739</a>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
+
+export default function ServicePage({ s }: { s: ServiceEntry }) {
+  const topic = link(`/contact?topic=${s.slug}#contact-form`);
+
+  if (isGroup(s)) {
+    return (
+      <main>
+        <Hero s={s}>
+          <div className="svc-switch hero-sub" role="tablist" aria-label="Choose a service" data-tabs="">
+            {s.tabs.map((t, i) => (
+              <button
+                key={t.id}
+                type="button"
+                role="tab"
+                id={`tab-${t.id}`}
+                aria-controls={`panel-${t.id}`}
+                aria-selected={i === 0}
+                tabIndex={i === 0 ? 0 : -1}
+                data-tab={t.id}
+              >
+                <Icon name={t.service.icon} />
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="hero-actions hero-sub">
+            <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+          </div>
+        </Hero>
+        {s.tabs.map((t, i) => (
+          <div key={t.id} role="tabpanel" id={`panel-${t.id}`} aria-labelledby={`tab-${t.id}`} hidden={i !== 0}>
+            <Body s={t.service} prefix={`${t.id}-`} />
+          </div>
+        ))}
+        <Cta short={s.short} topic={topic} />
+      </main>
+    );
+  }
+
+  return (
+    <main>
+      <Hero s={s}>
+        <div className="hero-actions hero-sub">
+          <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+          {" "}
+          <a className="btn btn-secondary" href="#included">What’s included</a>
+        </div>
+      </Hero>
+      <Body s={s} />
+      <Cta short={s.short} topic={topic} />
     </main>
   );
 }

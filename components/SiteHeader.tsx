@@ -16,7 +16,7 @@ export default function SiteHeader() {
   const slug = path.match(/^\/service-([a-z-]+)$/)?.[1];
   const currentService = slug && serviceBySlug(slug) ? slug : undefined;
   const active =
-    path === "/industries" ? "company" : path === "/services" || currentService ? "services" : null;
+    path === "/industries" ? "company" : currentService ? "services" : null;
 
   return (
     <header className="site-header">
@@ -39,15 +39,11 @@ export default function SiteHeader() {
                       </li>
                     ))}
                   </ul>
-                  <a className="menu-foot" href={link("/services")}>See how we work <span aria-hidden="true">→</span></a>
                 </div>
               </div>
             </li>
 
-            {/* 2. Solutions */}
-            <li><a href={link("/#features")}>Solutions</a></li>
-
-            {/* 3. Products */}
+            {/* 2. Products */}
             <li className="has-menu">
               <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-products">Products<Chevron /></button>
               <div className="menu-panel" id="menu-products">
@@ -78,7 +74,7 @@ export default function SiteHeader() {
               </div>
             </li>
 
-            {/* 4. Company */}
+            {/* 3. Company */}
             <li className="has-menu">
               <button className="menu-btn" type="button" aria-expanded="false" aria-controls="menu-company" data-current={active === "company" ? "" : undefined}>Company<Chevron /></button>
               <div className="menu-panel" id="menu-company">
@@ -95,8 +91,11 @@ export default function SiteHeader() {
               </div>
             </li>
 
-            {/* 5. Support */}
-            <li><a href={link("/contact#faq")}>Support</a></li>
+            <li><a href={link("/blogs")} aria-current={path.startsWith("/blogs") ? "page" : undefined}>Blogs</a></li>
+            <li><a href={link("/about")} aria-current={path === "/about" ? "page" : undefined}>About Us</a></li>
+
+            {/* 4. FAQ */}
+            <li><a href={link("/contact#faq")}>FAQ</a></li>
 
             {/* 6. Get In Touch (mobile CTA) */}
             <li className="mobile-cta"><a href={link("/contact")}>Get In Touch</a></li>

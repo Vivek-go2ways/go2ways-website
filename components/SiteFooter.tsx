@@ -9,9 +9,7 @@ export default function SiteFooter() {
         <a href={link("/")} aria-label="Go2Ways home" className="footer-logo">
           <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" />
         </a>
-        <p className="footer-brand-desc">
-          Go2Ways delivers enterprise technology services, AI solutions and innovative software products that help organisations modernise operations and move business forward.
-        </p>
+        <p className="footer-brand-motto">Our Mission · Our Vision · Our Philosophy · Our Strategy.</p>
       </div>
 
       {/* 3. Multi-Column Information Architecture */}
@@ -50,13 +48,13 @@ export default function SiteFooter() {
           <h4>Solutions</h4>
           <ul>
             <li>
-              <a href={link("/services")}>Enterprise Technology Solutions</a>
+              <a href={link("/#features")}>Enterprise Technology Solutions</a>
             </li>
             <li>
-              <a href={link("/#features")}>AI &amp; Intelligent Solutions</a>
+              <a href={servicePath("ai-solutions")}>AI &amp; Web Solutions</a>
             </li>
             <li>
-              <a href={link("/services#how-we-work")}>Digital Modernisation</a>
+              <a href={servicePath("consulting-advisory")}>Digital Modernisation</a>
             </li>
           </ul>
         </div>
@@ -66,13 +64,13 @@ export default function SiteFooter() {
           <h4>Company</h4>
           <ul>
             <li>
-              <a href={link("/industries")}>About Go2Ways</a>
+              <a href={link("/about")}>About Go2Ways</a>
             </li>
             <li>
               <a href={link("/industries#sectors")}>Industries</a>
             </li>
             <li>
-              <a href="#" data-soon="">Insights</a>
+              <a href={link("/blogs")}>Blogs</a>
             </li>
             <li>
               <a href="#" data-soon="">Careers</a>

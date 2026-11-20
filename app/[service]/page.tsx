@@ -8,9 +8,17 @@ type Params = { service: string };
 
 const slugOf = (segment: string) => segment.match(/^service-([a-z-]+)$/)?.[1] ?? "";
 
-const LEGACY_ALIASES: Record<string, string> = {
-  "ibm-maximo": "ibm-maximo-mas",
-  "mas-migration": "ibm-maximo-mas",
+const LEGACY_ALIASES: Record<string, { slug: string; hash?: string }> = {
+  "ibm-maximo": { slug: "ibm-maximo-mas" },
+  "mas-migration": { slug: "ibm-maximo-mas" },
+  "enterprise-integration": { slug: "erp-enterprise-applications", hash: "integration" },
+  tririga: { slug: "erp-enterprise-applications", hash: "tririga" },
+};
+
+const legacyTarget = (slug: string) => {
+  const alias = LEGACY_ALIASES[slug];
+  const target = serviceBySlug(alias.slug)!;
+  return { name: target.name, url: link(`/service-${alias.slug}`) + (alias.hash ? `#${alias.hash}` : "") };
 };
 
 export const dynamicParams = false;
@@ -26,13 +34,12 @@ export function generateStaticParams(): Params[] {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const slug = slugOf((await params).service);
   if (LEGACY_ALIASES[slug]) {
-    const targetSlug = LEGACY_ALIASES[slug];
-    const targetUrl = link(`/service-${targetSlug}`);
+    const target = legacyTarget(slug);
     return {
-      title: "IBM Maximo & MAS Services — Go2Ways",
-      description: "Redirecting to IBM Maximo & MAS Services.",
+      title: `${target.name} — Go2Ways`,
+      description: `Redirecting to ${target.name}.`,
       robots: { index: false, follow: true },
-      alternates: { canonical: targetUrl },
+      alternates: { canonical: target.url },
     };
   }
   const s = serviceBySlug(slug);
@@ -43,21 +50,20 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 export default async function Page({ params }: { params: Promise<Params> }) {
   const slug = slugOf((await params).service);
   if (LEGACY_ALIASES[slug]) {
-    const targetSlug = LEGACY_ALIASES[slug];
-    const targetUrl = link(`/service-${targetSlug}`);
+    const target = legacyTarget(slug);
     return (
       <main className="container" style={{ padding: "120px 24px", textAlign: "center" }}>
-        <meta httpEquiv="refresh" content={`0;url=${targetUrl}`} />
+        <meta httpEquiv="refresh" content={`0;url=${target.url}`} />
         <h1 className="heading-l" style={{ marginBottom: "16px" }}>Page Moved</h1>
         <p className="body-l">
-          This service has been updated to <strong>IBM Maximo &amp; MAS Services</strong>.
+          This service is now part of <strong>{target.name}</strong>.
         </p>
         <p className="body-m" style={{ marginTop: "24px" }}>
-          <a className="btn btn-primary" href={targetUrl}>Continue to IBM Maximo &amp; MAS Services</a>
+          <a className="btn btn-primary" href={target.url}>Continue to {target.name}</a>
         </p>
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.location.replace(${JSON.stringify(targetUrl)});`,
+            __html: `window.location.replace(${JSON.stringify(target.url)});`,
           }}
         />
       </main>

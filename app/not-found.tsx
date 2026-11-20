@@ -19,7 +19,7 @@ export default function NotFound() {
           <div className="hero-actions hero-sub">
             <a className="btn btn-primary" href={link("/")}>Go to the homepage</a>
             {" "}
-            <a className="btn btn-secondary" href={link("/services")}>See our services</a>
+            <a className="btn btn-secondary" href={link("/#features")}>See our services</a>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import IntroSplash from "@/components/IntroSplash";
 import SplitWords from "@/components/SplitWords";
 import { asset, link } from "@/lib/paths";
 
@@ -10,13 +11,14 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
+      <IntroSplash />
       <section className="hero">
         <div className="silk-wave" data-wave="hero" data-parallax="" aria-hidden="true" />
         <div className="hero-copy">
           <SplitWords as="h1" className="display-xl split-words" lines={["Technology That Moves", "Businesses Forward."]} />
           <p className="body-l hero-sub">Go2Ways helps organisations modernise operations through enterprise technology services, AI solutions and innovative software products.</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={link("/services")}>Explore Our Solutions</a>
+            <a className="btn btn-primary" href={link("/#features")}>Explore Our Solutions</a>
             <a className="btn btn-secondary" href={link("/contact")}>Contact Us</a>
           </div>
         </div>
@@ -81,17 +83,17 @@ export default function HomePage() {
           <article className="step-card reveal">
             <span className="step-num">01</span>
             <h3 className="heading-s">Intelligent Planning</h3>
-            <p className="body-m">Streamline route scheduling, vehicle allocations and service planning across transport networks.</p>
+            <p className="body-m">Plan networks, routes, trips and capacity in one place, using the same live data your daily operations run on.</p>
           </article>
           <article className="step-card reveal">
             <span className="step-num">02</span>
             <h3 className="heading-s">Fleet Operations</h3>
-            <p className="body-m">Coordinate drivers, track vehicle movements live and maintain real-time operational control.</p>
+            <p className="body-m">Manage live dispatch, crew and vehicle assignment, depots and maintenance. Breakdowns and no-shows arrive with a recommended fix your dispatcher approves.</p>
           </article>
           <article className="step-card reveal">
             <span className="step-num">03</span>
             <h3 className="heading-s">Connected Performance</h3>
-            <p className="body-m">Analyze service punctuality, fleet efficiency and key transit metrics for continuous improvement.</p>
+            <p className="body-m">Track on-time performance, fleet availability, safety and compliance, connected to the IBM Maximo, GPS, ticketing and ERP systems you already run.</p>
           </article>
         </div>
       </section>

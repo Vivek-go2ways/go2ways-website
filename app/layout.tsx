@@ -17,7 +17,13 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Go2Ways",
   description: "Go2Ways connects data, assets, people and workflows into one intelligent operational view.",
-  icons: { icon: asset("/assets/img/logo.png") },
+  icons: {
+    icon: [
+      { url: asset("/assets/img/favicon.ico"), sizes: "16x16 32x32 48x48" },
+      { url: asset("/assets/img/icon.png"), type: "image/png", sizes: "512x512" },
+    ],
+    apple: { url: asset("/assets/img/apple-touch-icon.png"), sizes: "180x180" },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

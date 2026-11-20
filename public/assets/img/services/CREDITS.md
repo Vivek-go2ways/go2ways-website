@@ -8,12 +8,12 @@ Each service folder has g1–g3 (overview gallery) and c1–c6 ("What we deliver
 | ibm-maximo/g1.jpg | Engineer in a hard hat reviewing plans on site | https://images.unsplash.com/photo-1621905251918-48416bd8575a |
 | ibm-maximo/g2.jpg | Technician working on industrial equipment | https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0 |
 | ibm-maximo/g3.jpg | Warehouse with stocked shelves | https://images.unsplash.com/photo-1553413077-190dd305871c |
-| ibm-maximo/c1.jpg | Operator running industrial machinery | https://images.unsplash.com/photo-1598299803204-b73796f43289 |
-| ibm-maximo/c2.jpg | Person working on a laptop | https://images.unsplash.com/photo-1593642634315-48f5414c3ad9 |
-| ibm-maximo/c3.jpg | Code on a monitor | https://images.unsplash.com/photo-1461749280684-dccba630e2f6 |
+| ibm-maximo/c1.jpg | Reports and charts on a laptop | https://images.unsplash.com/photo-1460925895917-afdab827c52f |
+| ibm-maximo/c2.jpg | Industrial plant with stainless steel pipes and pumps | https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0 |
+| ibm-maximo/c3.jpg | Network cabling in a data center | https://images.unsplash.com/photo-1558494949-ef010cbdcc31 |
 | ibm-maximo/c4.jpg | Two people mapping a workflow on a whiteboard | https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6 |
-| ibm-maximo/c5.jpg | Reports and charts on a laptop | https://images.unsplash.com/photo-1460925895917-afdab827c52f |
-| ibm-maximo/c6.jpg | Network cabling in a data center | https://images.unsplash.com/photo-1558494949-ef010cbdcc31 |
+| ibm-maximo/c5.jpg | Code on a monitor | https://images.unsplash.com/photo-1461749280684-dccba630e2f6 |
+| ibm-maximo/c6.jpg | Fibre optic cables in a network switch | https://images.unsplash.com/photo-1594915440248-1e419eba6611 |
 | mas-migration/g1.jpg | Modern data center with rows of server cabinets | https://images.unsplash.com/photo-1784652852605-6945598f2af3 |
 | mas-migration/g2.jpg | Cloud computing concept | https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d |
 | mas-migration/g3.jpg | Team planning around laptops | https://images.unsplash.com/photo-1522071820081-009f0129c71c |
@@ -77,3 +77,19 @@ Each service folder has g1–g3 (overview gallery) and c1–c6 ("What we deliver
 | consulting-advisory/c4.jpg | Mapping a process flowchart on a whiteboard | https://images.unsplash.com/photo-1769738360873-3ba6cac0b308 |
 | consulting-advisory/c5.jpg | Reviewing licence paperwork | https://images.unsplash.com/photo-1564846824194-346b7871b855 |
 | consulting-advisory/c6.jpg | Remote team member on a video call | https://images.unsplash.com/photo-1612831455359-970e23a1e4e9 |
+| ai-services/g1.jpg | Circuit board shaped like a human brain | https://images.unsplash.com/photo-1677442135703-1787eea5ce01 |
+| ai-services/g2.jpg | Team collaborating around a computer | https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5 |
+| ai-services/g3.jpg | Robot and human hands reaching toward glowing AI letters | https://images.unsplash.com/photo-1694903089438-bf28d4697d9a |
+| ai-services/c1.jpg | Chat message bubbles on a translucent screen | https://images.unsplash.com/photo-1662974770404-468fd9660389 |
+| ai-services/c2.jpg | Row of AI robots working on laptops | https://images.unsplash.com/photo-1684369175809-f9642140a1bd |
+| ai-services/c3.jpg | Paper invoice held next to a laptop showing a digital form | https://images.unsplash.com/photo-1735825764485-93a381fd5779 |
+| ai-services/c4.jpg | Glowing neural network of connected points | https://images.unsplash.com/photo-1644088379091-d574269d422f |
+| ai-services/c5.jpg | AI processor chip on a circuit board | https://images.unsplash.com/photo-1739036868260-c26b292cd85d |
+| web-development/g1.jpg | Website shown on a laptop, tablet and smartphone | https://images.unsplash.com/photo-1791197738072-36c4b1c38e6b |
+| web-development/g2.jpg | Watercolour wireframe sketches of website layouts | https://images.unsplash.com/photo-1522542550221-31fd19575a2d |
+| web-development/g3.jpg | Two developers writing code at their monitors | https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5 |
+| web-development/c1.jpg | Laptop, tablet and smartphone side by side on a wooden desk | https://images.unsplash.com/photo-1426024084828-5da21e13f5dc |
+| web-development/c2.jpg | Performance analytics dashboard on a laptop screen | https://images.unsplash.com/photo-1551288049-bebda4e38f71 |
+| web-development/c3.jpg | Code editor on a laptop screen | https://images.unsplash.com/photo-1607799279861-4dd421887fb3 |
+| web-development/c4.jpg | Person holding a credit card at a laptop checkout page | https://images.unsplash.com/photo-1733503747506-773e56e4078f |
+| web-development/c5.jpg | Laptop on a white desk | https://images.unsplash.com/photo-1588872657578-7efd1f1555ed |

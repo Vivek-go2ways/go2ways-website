@@ -21,21 +21,444 @@ export type Service = {
   related: string[];
 };
 
+export type ServiceGroup = Pick<Service, "slug" | "name" | "short" | "icon" | "nav" | "h1" | "sub"> & {
+  tabs: { id: string; label: string; service: Service }[];
+};
+
+export type ServiceEntry = Service | ServiceGroup;
+
+export const isGroup = (s: ServiceEntry): s is ServiceGroup => "tabs" in s;
+
 export type Product = { name: string; href: string | null; icon: IconName; desc: string };
 
-export const SERVICES: Service[] = [
+const ENTERPRISE_INTEGRATION: Service = {
+  slug: "enterprise-integration",
+  name: "Enterprise Integration",
+  short: "Integration",
+  icon: "link",
+  nav: "Connect Maximo with SAP, Oracle and more",
+  h1: [
+    "Connect Maximo with",
+    "the rest of your business"
+  ],
+  sub: "Robust integrations between IBM Maximo, ERP, identity, GIS and IoT systems, built with standard APIs and monitored around the clock.",
+  overviewTitle: [
+    "No more double entry.",
+    "No more blind spots."
+  ],
+  overviewBody: "When maintenance, finance and operations run in silos, teams waste time re-entering data and chasing updates. We connect IBM Maximo to SAP, Oracle, GIS, identity providers and field devices so information flows automatically.",
+  highlights: [
+    "Two-way sync for purchasing, inventory and GL",
+    "Single sign-on via Azure AD / Entra ID, LDAP or SAML",
+    "Real-time sensor and IoT data into Maximo",
+    "Built on standard APIs, not fragile point-to-point code"
+  ],
+  worksWith: [
+    "SAP",
+    "Oracle EBS & Cloud",
+    "Azure AD / Entra ID",
+    "Esri ArcGIS",
+    "IBM App Connect",
+    "Apache Kafka",
+    "REST APIs",
+    "Maximo Integration Framework"
+  ],
+  engagements: [
+    "New ERP integration",
+    "SSO rollout",
+    "Integration modernisation"
+  ],
+  capabilities: [
+    {
+      icon: "link",
+      title: "ERP integration",
+      text: "Two-way sync of purchase orders, receipts, inventory and costs between Maximo and SAP or Oracle.",
+      photoAlt: "Network cabling in a server rack"
+    },
+    {
+      icon: "lock",
+      title: "Single sign-on & identity",
+      text: "SAML and OpenID Connect with Azure AD, Entra ID or Okta for secure, audited access.",
+      photoAlt: "Server rack in a data center"
+    },
+    {
+      icon: "pin",
+      title: "GIS & spatial",
+      text: "Bi-directional sync with Esri ArcGIS: assets and work orders plotted on maps.",
+      photoAlt: "Digital map on a tablet"
+    },
+    {
+      icon: "pulse",
+      title: "IoT & sensor feeds",
+      text: "Condition monitoring, meter readings and alarms fed straight from assets into Maximo.",
+      photoAlt: "Circuit board with sensors"
+    },
+    {
+      icon: "layers",
+      title: "Middleware & APIs",
+      text: "REST APIs, Kafka topics and MIF messaging designed to scale without breaking.",
+      photoAlt: "Abstract data flow"
+    },
+    {
+      icon: "shield",
+      title: "Monitoring & runbooks",
+      text: "Every integration delivered with alerts, retry queues, health dashboards and runbooks.",
+      photoAlt: "Control room with monitoring screens"
+    }
+  ],
+  gallery: [
+    "Server room with blue lighting",
+    "Network engineer at work",
+    "Data cables connected to switches"
+  ],
+  steps: [
+    {
+      title: "Discover",
+      text: "We map source and target fields, error scenarios and transaction volumes."
+    },
+    {
+      title: "Design",
+      text: "We design message flows, authentication, retry logic and monitoring."
+    },
+    {
+      title: "Build & test",
+      text: "We build integrations and test with mock and real data through edge cases."
+    },
+    {
+      title: "Deploy",
+      text: "We hand over with monitoring, alerts and clear runbooks."
+    }
+  ],
+  related: [
+    "ibm-maximo-mas",
+    "cloud-infrastructure",
+    "mobile-development"
+  ]
+};
+
+const TRIRIGA: Service = {
+  slug: "tririga",
+  name: "TRIRIGA Services",
+  short: "TRIRIGA",
+  icon: "building",
+  nav: "Space, lease and facility management",
+  h1: [
+    "Run your real estate",
+    "and facilities with TRIRIGA"
+  ],
+  sub: "Implementation, lease accounting (IFRS 16 / ASC 842), space management and facilities maintenance for IBM TRIRIGA and IBM Maximo Real Estate and Facilities.",
+  overviewTitle: [
+    "Every building, lease",
+    "and workspace in one view"
+  ],
+  overviewBody: "IBM TRIRIGA is an integrated workplace management system (IWMS) for real estate and facilities. We set it up so you can see how space is used, stay compliant on leases and keep buildings maintained.",
+  highlights: [
+    "Lease accounting compliant with IFRS 16 and ASC 842",
+    "Space management from CAD and BIM floor plans",
+    "Work orders and preventive maintenance for facilities",
+    "Integrations with ERP, HR and building systems"
+  ],
+  worksWith: [
+    "IBM TRIRIGA",
+    "TRIRIGA Application Platform",
+    "AutoCAD & Revit",
+    "SAP",
+    "Oracle",
+    "Db2 & Oracle DB",
+    "REST APIs"
+  ],
+  engagements: [
+    "New TRIRIGA rollout",
+    "Lease accounting upgrade",
+    "Space management overhaul"
+  ],
+  capabilities: [
+    {
+      icon: "floor",
+      title: "Space & occupancy",
+      text: "CAD and BIM floor plans loaded so you can track departments, desks and utilisation.",
+      photoAlt: "Architect reviewing plans"
+    },
+    {
+      icon: "doc",
+      title: "Lease administration & accounting",
+      text: "Leases abstracted, payments scheduled, and accounting handled for IFRS 16 and ASC 842.",
+      photoAlt: "Reviewing lease contracts"
+    },
+    {
+      icon: "wrench",
+      title: "Facility maintenance",
+      text: "Work orders, preventive maintenance and service requests for every building.",
+      photoAlt: "Technician inspecting HVAC unit"
+    },
+    {
+      icon: "chart",
+      title: "Capital projects",
+      text: "Budgets, schedules and costs tracked for building and refurbishment projects.",
+      photoAlt: "Construction worker on a building frame"
+    },
+    {
+      icon: "refresh",
+      title: "Upgrades & platform migrations",
+      text: "Upgrades to the latest TRIRIGA platform and migration to containerised MAS environments.",
+      photoAlt: "Spiral staircase in a glass building"
+    },
+    {
+      icon: "link",
+      title: "Integrations",
+      text: "Two-way links with SAP, Oracle, identity systems and IoT environmental sensors.",
+      photoAlt: "Networking hardware"
+    }
+  ],
+  gallery: [
+    "Modern office building",
+    "Open-plan office with desks",
+    "Architectural blueprint on a desk"
+  ],
+  steps: [
+    {
+      title: "Discover",
+      text: "We review your portfolio, leases, CAD drawings and reporting requirements."
+    },
+    {
+      title: "Configure",
+      text: "We set up portfolios, workflows, accounting rules and security roles."
+    },
+    {
+      title: "Migrate",
+      text: "We abstract leases and load buildings, floors and people."
+    },
+    {
+      title: "Launch",
+      text: "We train users, go live and support adoption."
+    }
+  ],
+  related: [
+    "ibm-maximo-mas",
+    "cloud-infrastructure",
+    "managed-support"
+  ]
+};
+
+const AI_SERVICES: Service = {
+  slug: "ai-services",
+  name: "AI Solutions",
+  short: "AI Solutions",
+  icon: "sparkle",
+  nav: "Generative AI, AI agents, document intelligence and ML",
+  h1: [
+    "AI that works",
+    "on your real data"
+  ],
+  sub: "Generative AI, AI agents, document intelligence and custom machine learning, designed around your goals and deployed securely.",
+  overviewTitle: [
+    "From AI idea",
+    "to production value"
+  ],
+  overviewBody: "Go2Ways builds practical AI that pays for itself. We create Generative AI assistants and RAG knowledge systems grounded in your own documents, AI agents that take on multi-step work, intelligent document processing, and custom machine learning models for forecasting, anomaly detection, vision and language. We start with a focused use case, prove the value quickly, then deploy, monitor and improve it securely in production.",
+  highlights: [
+    "Generative AI assistants and RAG knowledge systems grounded in your own data",
+    "AI agents and automation built into the workflows your teams already use",
+    "Document intelligence that reads, checks and routes paperwork automatically",
+    "Custom ML models for forecasting, anomaly detection, computer vision and NLP",
+    "Security, privacy and human review built in from day one"
+  ],
+  worksWith: [
+    "Generative AI & LLMs",
+    "RAG & Vector Databases",
+    "AI Agents & Orchestration",
+    "Machine Learning & MLOps",
+    "Computer Vision & NLP",
+    "Python & AI Frameworks",
+    "AWS, Azure & Google Cloud AI",
+    "IBM Maximo & ERP Data",
+    "Your Existing Stack"
+  ],
+  engagements: [
+    "AI readiness workshop and use-case discovery",
+    "Proof of concept or pilot in a few weeks",
+    "Generative AI assistant or AI agent build",
+    "Model monitoring, MLOps and continuous improvement"
+  ],
+  capabilities: [
+    {
+      icon: "sparkle",
+      title: "Generative AI & RAG solutions",
+      text: "Custom Generative AI applications, RAG-based knowledge systems, AI chatbots and virtual assistants, plus LLM integration and fine-tuning.",
+      photoAlt: "Chat message bubbles on a translucent screen"
+    },
+    {
+      icon: "flow",
+      title: "AI agents & workflow automation",
+      text: "Custom AI agents and multi-agent systems, intelligent business process automation and AI-powered decision support, integrated into enterprise workflows.",
+      photoAlt: "Row of AI robots working on laptops"
+    },
+    {
+      icon: "doc",
+      title: "AI document intelligence",
+      text: "Intelligent document processing (IDP), document analysis and verification, and AI-powered report generation.",
+      photoAlt: "Paper invoice held next to a laptop showing a digital form"
+    },
+    {
+      icon: "chart",
+      title: "Custom machine learning models",
+      text: "Business-specific ML models for predictive analytics and forecasting, classification, regression, anomaly detection, computer vision and NLP, trained, optimised and deployed.",
+      photoAlt: "Glowing neural network of connected points"
+    },
+    {
+      icon: "server",
+      title: "AI strategy & MLOps",
+      text: "AI strategy, use-case prioritisation and solution architecture, plus model deployment, monitoring, retraining and governance so results stay accurate over time.",
+      photoAlt: "AI processor chip on a circuit board"
+    }
+  ],
+  gallery: [
+    "Circuit board shaped like a human brain",
+    "Team collaborating around a computer",
+    "Robot and human hands reaching toward glowing AI letters"
+  ],
+  steps: [
+    {
+      title: "Discover & Assess",
+      text: "We understand your goals, review your data and systems, and pick the AI use cases with the clearest business value."
+    },
+    {
+      title: "Prove the Value",
+      text: "We build a focused proof of concept on your real data, so you see results and accuracy before you commit further."
+    },
+    {
+      title: "Build & Integrate",
+      text: "We harden the solution, train and evaluate models, and integrate AI into your applications, workflows and security model."
+    },
+    {
+      title: "Deploy & Improve",
+      text: "We launch to production, monitor accuracy, cost and usage, and keep retraining and improving the solution."
+    }
+  ],
+  related: [
+    "erp-enterprise-applications",
+    "cloud-infrastructure",
+    "consulting-advisory"
+  ]
+};
+
+const WEB_DEVELOPMENT: Service = {
+  slug: "web-development",
+  name: "Web Development",
+  short: "Web Development",
+  icon: "globe",
+  nav: "Websites, web apps, SaaS platforms and e-commerce",
+  h1: [
+    "Websites and web apps",
+    "built to perform"
+  ],
+  sub: "Responsive websites, custom web applications, SaaS platforms and online stores on the technology that fits you best.",
+  overviewTitle: [
+    "Websites and web apps",
+    "built to perform"
+  ],
+  overviewBody: "From corporate websites to complex SaaS platforms, Go2Ways designs and builds fast, secure and responsive web experiences. Our full-stack team works with the technology you already use or recommends the right one, integrates with your existing systems and APIs, and keeps everything running smoothly long after launch.",
+  highlights: [
+    "Responsive websites and landing pages that reflect your brand on every device",
+    "Custom web applications, SaaS platforms, dashboards and portals",
+    "Full-stack engineering on React, Angular, Node.js, Python, Java, .NET and more",
+    "E-commerce stores with secure payments and order management",
+    "Maintenance, performance tuning and security updates after go-live"
+  ],
+  worksWith: [
+    "React & Next.js",
+    "Angular & Vue",
+    "Node.js & Python",
+    "Java & .NET",
+    "REST & GraphQL APIs",
+    "SQL & NoSQL Databases",
+    "SaaS & E-commerce Platforms",
+    "Payment Gateways",
+    "AWS, Azure & Google Cloud",
+    "Docker, Kubernetes & CI/CD",
+    "Your Existing Stack"
+  ],
+  engagements: [
+    "New business website or website redesign",
+    "Custom web application, portal or SaaS platform",
+    "E-commerce store build or replatforming",
+    "Ongoing maintenance and technical support"
+  ],
+  capabilities: [
+    {
+      icon: "globe",
+      title: "Website development",
+      text: "Professional, responsive business and corporate websites, landing pages and website redesigns that represent your brand and work seamlessly on every device.",
+      photoAlt: "Laptop, tablet and smartphone side by side on a wooden desk"
+    },
+    {
+      icon: "layers",
+      title: "Web & SaaS applications",
+      text: "Custom web applications, SaaS platforms, admin panels and dashboards, customer and employee portals and business management apps, with AI built in where it adds value.",
+      photoAlt: "Performance analytics dashboard on a laptop screen"
+    },
+    {
+      icon: "code",
+      title: "Full-stack & API engineering",
+      text: "Interactive front ends, secure back ends, database design and API development and integration, using React, Angular, Python, Node.js, Java, .NET or the stack you already run.",
+      photoAlt: "Code editor on a laptop screen"
+    },
+    {
+      icon: "cart",
+      title: "E-commerce development",
+      text: "Online stores with product and inventory management, shopping cart and payment gateway integration, and order management that scales with your business.",
+      photoAlt: "Person holding a credit card at a laptop checkout page"
+    },
+    {
+      icon: "wrench",
+      title: "Maintenance & support",
+      text: "Website and application maintenance, performance optimisation, security updates, hosting support and a technical help desk, so everything stays fast and secure.",
+      photoAlt: "Laptop on a white desk"
+    }
+  ],
+  gallery: [
+    "Website shown on a laptop, tablet and smartphone",
+    "Watercolour wireframe sketches of website layouts",
+    "Two developers writing code at their monitors"
+  ],
+  steps: [
+    {
+      title: "Discover & Plan",
+      text: "We understand your goals, audience and current systems, then agree the scope, stack, timeline and success measures."
+    },
+    {
+      title: "Design & Prototype",
+      text: "We design the user experience and interface, and share a clickable prototype so you can see it before we build."
+    },
+    {
+      title: "Build & Test",
+      text: "We develop in short sprints with regular demos, integrate your systems and APIs, and test speed, security and every device."
+    },
+    {
+      title: "Launch & Support",
+      text: "We go live with zero fuss, then keep the site or app fast, secure and up to date with ongoing support."
+    }
+  ],
+  related: [
+    "mobile-development",
+    "cloud-infrastructure",
+    "managed-support"
+  ]
+};
+
+export const SERVICES: ServiceEntry[] = [
   {
     slug: "ibm-maximo-mas",
-    name: "IBM Maximo & MAS Services",
+    name: "IBM Maximo Application Suite (MAS)",
     short: "IBM Maximo & MAS",
     icon: "wrench",
     imageFolder: "ibm-maximo",
     nav: "Implementation, MAS migration, scripting and support",
     h1: [
-      "IBM Maximo & MAS,",
-      "Built to Run Your Enterprise Assets"
+      "Manage, Maintain & Optimise",
+      "Your Enterprise Assets"
     ],
-    sub: "End-to-end implementation, version upgrades, automation scripting, and planned migrations to IBM Maximo Application Suite (MAS).",
+    sub: "End-to-end IBM Maximo implementation, configuration, upgrades, automation scripting, system integration, and migration to IBM Maximo Application Suite (MAS).",
     overviewTitle: [
       "Modernise, migrate and manage",
       "every critical asset"
@@ -68,40 +491,40 @@ export const SERVICES: Service[] = [
     ],
     capabilities: [
       {
+        icon: "chart",
+        title: "AppPoints & Licensing Advisory",
+        text: "User role assessment, application entitlement mapping and AppPoints licensing guidance to help organisations plan their Maximo deployment.",
+        photoAlt: "Reports and charts on a laptop"
+      },
+      {
         icon: "wrench",
-        title: "Implementation & configuration",
-        text: "Asset hierarchies, work management, inventory, purchasing, and Application Designer screens tailored to your operations.",
-        photoAlt: "Operator running industrial machinery"
+        title: "Implementation & Configuration",
+        text: "Asset hierarchies, work management, inventory, purchasing and Application Designer configurations tailored to your operational requirements.",
+        photoAlt: "Industrial plant with stainless steel pipes and pumps"
       },
       {
         icon: "migrate",
-        title: "MAS migration & upgrades",
-        text: "Structured, rehearsed migration from Maximo 7.6 to MAS on Red Hat OpenShift, with version upgrades planned to protect customisations.",
-        photoAlt: "Person working on a laptop"
+        title: "MAS Migration & Upgrades",
+        text: "Structured and rehearsed migration from Maximo 7.6 to MAS on Red Hat OpenShift, with compatibility assessments and upgrade planning to protect existing customisations.",
+        photoAlt: "Network cabling in a data center"
+      },
+      {
+        icon: "database",
+        title: "Data Migration & Validation",
+        text: "Data extraction, cleansing, mapping, validation and controlled cutover execution, supported by rehearsed rollback procedures and post-migration hypercare.",
+        photoAlt: "Two people mapping a workflow on a whiteboard"
       },
       {
         icon: "code",
-        title: "Automation scripting",
-        text: "Business rules and logic written as Maximo automation scripts, retiring outdated Java modifications for easier maintenance.",
+        title: "Automation Scripting",
+        text: "Developing Maximo automation scripts for business rules, validations and operational logic, reducing reliance on certain Java customisations and simplifying maintenance.",
         photoAlt: "Code on a monitor"
       },
       {
         icon: "link",
-        title: "Integration modernisation",
-        text: "Modernise interfaces using REST APIs, Maximo Integration Framework (MIF), Kafka, and secure API keys/OAuth.",
-        photoAlt: "Network cabling in a data center"
-      },
-      {
-        icon: "chart",
-        title: "AppPoints & licence advisory",
-        text: "User and module mapping to the AppPoints model, alongside BIRT reporting, KPIs and dashboards.",
-        photoAlt: "Reports and charts on a laptop"
-      },
-      {
-        icon: "database",
-        title: "Data migration & validation",
-        text: "Clean data extraction, validation, and timed cutover execution backed by rehearsed rollback procedures and hypercare.",
-        photoAlt: "Server room aisle"
+        title: "Integration Modernisation",
+        text: "Modernising enterprise interfaces using REST APIs, Maximo Integration Framework (MIF), Apache Kafka and secure authentication mechanisms such as API keys and OAuth.",
+        photoAlt: "Fibre optic cables in a network switch"
       }
     ],
     gallery: [
@@ -128,113 +551,41 @@ export const SERVICES: Service[] = [
       }
     ],
     related: [
-      "enterprise-integration",
+      "erp-enterprise-applications",
       "cloud-infrastructure",
       "managed-support"
     ]
   },
   {
-    slug: "enterprise-integration",
-    name: "Enterprise Integration",
-    short: "Integration",
-    icon: "link",
-    nav: "Connect Maximo with SAP, Oracle and more",
+    slug: "ai-solutions",
+    name: "AI & Web Solutions",
+    short: "AI & Web Solutions",
+    icon: "sparkle",
+    nav: "AI, machine learning, web apps and e-commerce on any stack",
     h1: [
-      "Connect Maximo with",
-      "the rest of your business"
+      "Intelligent Web & AI Solutions,",
+      "Built on Any Stack"
     ],
-    sub: "Robust integrations between IBM Maximo, ERP, identity, GIS and IoT systems, built with standard APIs and monitored around the clock.",
-    overviewTitle: [
-      "No more double entry.",
-      "No more blind spots."
+    sub: "We design, build and run AI solutions, websites and web applications around your business goals: from Generative AI, AI agents and custom ML models to SaaS platforms, portals and e-commerce, on the technology that fits you best.",
+    tabs: [
+      { id: "ai", label: "AI Solutions", service: AI_SERVICES },
+      { id: "web", label: "Web Development", service: WEB_DEVELOPMENT }
+    ]
+  },
+  {
+    slug: "erp-enterprise-applications",
+    name: "ERP & Enterprise Applications",
+    short: "ERP & Enterprise Applications",
+    icon: "layers",
+    nav: "SAP & Oracle integration and IBM TRIRIGA",
+    h1: [
+      "ERP & Enterprise Applications,",
+      "Connected and Running as One"
     ],
-    overviewBody: "When maintenance, finance and operations run in silos, teams waste time re-entering data and chasing updates. We connect IBM Maximo to SAP, Oracle, GIS, identity providers and field devices so information flows automatically.",
-    highlights: [
-      "Two-way sync for purchasing, inventory and GL",
-      "Single sign-on via Azure AD / Entra ID, LDAP or SAML",
-      "Real-time sensor and IoT data into Maximo",
-      "Built on standard APIs, not fragile point-to-point code"
-    ],
-    worksWith: [
-      "SAP",
-      "Oracle EBS & Cloud",
-      "Azure AD / Entra ID",
-      "Esri ArcGIS",
-      "IBM App Connect",
-      "Apache Kafka",
-      "REST APIs",
-      "Maximo Integration Framework"
-    ],
-    engagements: [
-      "New ERP integration",
-      "SSO rollout",
-      "Integration modernisation"
-    ],
-    capabilities: [
-      {
-        icon: "link",
-        title: "ERP integration",
-        text: "Two-way sync of purchase orders, receipts, inventory and costs between Maximo and SAP or Oracle.",
-        photoAlt: "Network cabling in a server rack"
-      },
-      {
-        icon: "lock",
-        title: "Single sign-on & identity",
-        text: "SAML and OpenID Connect with Azure AD, Entra ID or Okta for secure, audited access.",
-        photoAlt: "Server rack in a data center"
-      },
-      {
-        icon: "pin",
-        title: "GIS & spatial",
-        text: "Bi-directional sync with Esri ArcGIS: assets and work orders plotted on maps.",
-        photoAlt: "Digital map on a tablet"
-      },
-      {
-        icon: "pulse",
-        title: "IoT & sensor feeds",
-        text: "Condition monitoring, meter readings and alarms fed straight from assets into Maximo.",
-        photoAlt: "Circuit board with sensors"
-      },
-      {
-        icon: "layers",
-        title: "Middleware & APIs",
-        text: "REST APIs, Kafka topics and MIF messaging designed to scale without breaking.",
-        photoAlt: "Abstract data flow"
-      },
-      {
-        icon: "shield",
-        title: "Monitoring & runbooks",
-        text: "Every integration delivered with alerts, retry queues, health dashboards and runbooks.",
-        photoAlt: "Control room with monitoring screens"
-      }
-    ],
-    gallery: [
-      "Server room with blue lighting",
-      "Network engineer at work",
-      "Data cables connected to switches"
-    ],
-    steps: [
-      {
-        title: "Discover",
-        text: "We map source and target fields, error scenarios and transaction volumes."
-      },
-      {
-        title: "Design",
-        text: "We design message flows, authentication, retry logic and monitoring."
-      },
-      {
-        title: "Build & test",
-        text: "We build integrations and test with mock and real data through edge cases."
-      },
-      {
-        title: "Deploy",
-        text: "We hand over with monitoring, alerts and clear runbooks."
-      }
-    ],
-    related: [
-      "ibm-maximo-mas",
-      "cloud-infrastructure",
-      "mobile-development"
+    sub: "Connect IBM Maximo with SAP, Oracle and the rest of your enterprise systems, and run your real estate and facilities on IBM TRIRIGA, delivered by one team.",
+    tabs: [
+      { id: "integration", label: "Enterprise Integration", service: ENTERPRISE_INTEGRATION },
+      { id: "tririga", label: "TRIRIGA Services", service: TRIRIGA }
     ]
   },
   {
@@ -338,7 +689,7 @@ export const SERVICES: Service[] = [
     related: [
       "ibm-maximo-mas",
       "managed-support",
-      "enterprise-integration"
+      "erp-enterprise-applications"
     ]
   },
   {
@@ -445,109 +796,6 @@ export const SERVICES: Service[] = [
     ]
   },
   {
-    slug: "tririga",
-    name: "TRIRIGA Services",
-    short: "TRIRIGA",
-    icon: "building",
-    nav: "Space, lease and facility management",
-    h1: [
-      "Run your real estate",
-      "and facilities with TRIRIGA"
-    ],
-    sub: "Implementation, lease accounting (IFRS 16 / ASC 842), space management and facilities maintenance for IBM TRIRIGA and IBM Maximo Real Estate and Facilities.",
-    overviewTitle: [
-      "Every building, lease",
-      "and workspace in one view"
-    ],
-    overviewBody: "IBM TRIRIGA is an integrated workplace management system (IWMS) for real estate and facilities. We set it up so you can see how space is used, stay compliant on leases and keep buildings maintained.",
-    highlights: [
-      "Lease accounting compliant with IFRS 16 and ASC 842",
-      "Space management from CAD and BIM floor plans",
-      "Work orders and preventive maintenance for facilities",
-      "Integrations with ERP, HR and building systems"
-    ],
-    worksWith: [
-      "IBM TRIRIGA",
-      "TRIRIGA Application Platform",
-      "AutoCAD & Revit",
-      "SAP",
-      "Oracle",
-      "Db2 & Oracle DB",
-      "REST APIs"
-    ],
-    engagements: [
-      "New TRIRIGA rollout",
-      "Lease accounting upgrade",
-      "Space management overhaul"
-    ],
-    capabilities: [
-      {
-        icon: "floor",
-        title: "Space & occupancy",
-        text: "CAD and BIM floor plans loaded so you can track departments, desks and utilisation.",
-        photoAlt: "Architect reviewing plans"
-      },
-      {
-        icon: "doc",
-        title: "Lease administration & accounting",
-        text: "Leases abstracted, payments scheduled, and accounting handled for IFRS 16 and ASC 842.",
-        photoAlt: "Reviewing lease contracts"
-      },
-      {
-        icon: "wrench",
-        title: "Facility maintenance",
-        text: "Work orders, preventive maintenance and service requests for every building.",
-        photoAlt: "Technician inspecting HVAC unit"
-      },
-      {
-        icon: "chart",
-        title: "Capital projects",
-        text: "Budgets, schedules and costs tracked for building and refurbishment projects.",
-        photoAlt: "Construction worker on a building frame"
-      },
-      {
-        icon: "refresh",
-        title: "Upgrades & platform migrations",
-        text: "Upgrades to the latest TRIRIGA platform and migration to containerised MAS environments.",
-        photoAlt: "Spiral staircase in a glass building"
-      },
-      {
-        icon: "link",
-        title: "Integrations",
-        text: "Two-way links with SAP, Oracle, identity systems and IoT environmental sensors.",
-        photoAlt: "Networking hardware"
-      }
-    ],
-    gallery: [
-      "Modern office building",
-      "Open-plan office with desks",
-      "Architectural blueprint on a desk"
-    ],
-    steps: [
-      {
-        title: "Discover",
-        text: "We review your portfolio, leases, CAD drawings and reporting requirements."
-      },
-      {
-        title: "Configure",
-        text: "We set up portfolios, workflows, accounting rules and security roles."
-      },
-      {
-        title: "Migrate",
-        text: "We abstract leases and load buildings, floors and people."
-      },
-      {
-        title: "Launch",
-        text: "We train users, go live and support adoption."
-      }
-    ],
-    related: [
-      "ibm-maximo-mas",
-      "enterprise-integration",
-      "managed-support"
-    ]
-  },
-  {
     slug: "mobile-development",
     name: "Enterprise Mobile Solutions",
     short: "Mobile Solutions",
@@ -646,7 +894,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       "ibm-maximo-mas",
-      "enterprise-integration",
+      "erp-enterprise-applications",
       "managed-support"
     ]
   },
@@ -748,7 +996,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       "ibm-maximo-mas",
-      "tririga",
+      "erp-enterprise-applications",
       "managed-support"
     ]
   }

@@ -69,6 +69,37 @@ export function initSite({ navigate, prefetch }: Options): () => void {
     disposers.push(() => cancelAnimationFrame(raf));
   }
   lastPath = path;
+  $$("[data-tabs]").forEach((list) => {
+    const tabs = Array.from(list.querySelectorAll<HTMLButtonElement>("[data-tab]"));
+    const select = (id: string, focus = false) => {
+      const tab = tabs.find((t) => t.dataset.tab === id);
+      if (!tab) return;
+      tabs.forEach((t) => {
+        const active = t === tab;
+        t.setAttribute("aria-selected", String(active));
+        t.tabIndex = active ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute("aria-controls") || "");
+        if (panel) panel.hidden = !active;
+      });
+      if (focus) tab.focus();
+      history.replaceState(history.state, "", "#" + id);
+    };
+    tabs.forEach((t, k) => {
+      on(t, "click", () => select(t.dataset.tab || ""));
+      on(t, "keydown", (e) => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        e.preventDefault();
+        const next = tabs[(k + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+        select(next.dataset.tab || "", true);
+      });
+    });
+    const initial = decodeURIComponent(location.hash.slice(1));
+    if (initial && tabs.some((t) => t.dataset.tab === initial)) select(initial);
+  });
+  if (location.hash.length > 1) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) later(() => target.scrollIntoView({ block: "start", behavior: "instant" }), 80);
+  }
   on(window, "pageshow", (e) => { if (e.persisted) { root.classList.remove("is-leaving"); root.classList.add("is-loaded"); } });
 
   const internalUrl = (a: HTMLAnchorElement | null) => {
@@ -84,7 +115,14 @@ export function initSite({ navigate, prefetch }: Options): () => void {
     if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     const url = internalUrl(a);
     if (!url) return;
-    if (url.pathname === location.pathname && url.hash) return;
+    if (url.pathname === location.pathname && url.hash) {
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!target) return;
+      e.preventDefault();
+      if (location.hash !== url.hash) history.replaceState(history.state, "", url.hash);
+      target.scrollIntoView({ block: "start", behavior: reduceMotion ? "instant" : "smooth" });
+      return;
+    }
     e.preventDefault();
     const targetPath = BASE_PATH && url.pathname.startsWith(BASE_PATH) ? url.pathname.slice(BASE_PATH.length) || "/" : url.pathname;
     const go = () => (url.pathname === location.pathname ? location.assign(url.href) : navigate(targetPath + url.search + url.hash));
@@ -520,13 +558,15 @@ function initContactForm(form: HTMLFormElement, on: On) {
       partner: "Hi Go2Ways team, I'm interested in partnering with you.",
     };
     const services: Record<string, string> = {
-      "ibm-maximo-mas": "IBM Maximo & MAS Services",
-      "ibm-maximo": "IBM Maximo & MAS Services",
-      "mas-migration": "IBM Maximo & MAS Services",
+      "ibm-maximo-mas": "IBM Maximo Application Suite (MAS)",
+      "ibm-maximo": "IBM Maximo Application Suite (MAS)",
+      "mas-migration": "IBM Maximo Application Suite (MAS)",
+      "ai-solutions": "AI & Web Solutions",
       "enterprise-integration": "Enterprise Integration",
       "cloud-infrastructure": "Cloud & Infrastructure",
       "managed-support": "Managed Support",
       tririga: "TRIRIGA Services",
+      "erp-enterprise-applications": "ERP & Enterprise Applications",
       "mobile-development": "Enterprise Mobile Solutions",
       "consulting-advisory": "Enterprise Technology Consulting & Architecture",
     };
