@@ -4,10 +4,8 @@
 Go2Ways is an enterprise technology partner for asset-driven businesses, based in Gurugram, Haryana, India. It helps organisations run their operations better through enterprise asset management (IBM Maximo), Maximo Application Suite migration, enterprise integration, cloud and infrastructure, managed support, IBM TRIRIGA, mobile apps and consulting. Go2Ways also builds its own products.
 
 ## Services (each has its own page on this website)
-- **IBM Maximo Services** — /service-ibm-maximo
-  Implementation and configuration (asset hierarchies, locations, work management, inventory, purchasing), version upgrades, automation scripting (instead of custom Java), workflows and Application Designer screens, BIRT reports and KPIs, data migration and loading. Works with Maximo Manage, Health, Monitor, Predict, Spatial, BIRT, Db2, Oracle, SQL Server.
-- **MAS Migration** — /service-mas-migration
-  Moving from Maximo 7.6 to IBM Maximo Application Suite (MAS). IBM base support for Maximo 7.6.1 ended in September 2025. Includes a readiness assessment of customisations, integrations, reports and licences; AppPoints licensing planning; Red Hat OpenShift setup on-premises or on AWS, Azure or IBM Cloud; rewriting Java customisations as automation scripts; moving integrations to REST APIs and Kafka with API keys/OAuth; a full rehearsal in a test environment; a planned cutover with rollback plan and hypercare. Also MAS 8.x to 9.x upgrades.
+- **IBM Maximo & MAS Services** — /service-ibm-maximo-mas
+  Implementation, configuration and version upgrades for IBM Maximo, plus planned migration to IBM Maximo Application Suite (MAS). Covers asset hierarchies, work management, inventory, purchasing, Red Hat OpenShift deployment on AWS, Azure or on-premises, AppPoints licensing planning, rewriting Java customisations as automation scripts, REST API integrations, data migration, rehearsals and hypercare.
 - **Enterprise Integration** — /service-enterprise-integration
   Connecting Maximo with SAP and Oracle (purchase orders, receipts, inventory, GL and cost data), REST APIs on the Maximo Integration Framework, middleware and messaging (Kafka, JMS, IBM App Connect), master-data sync, single sign-on with Azure AD / Entra ID, LDAP and SAML, and GIS (Esri) and IoT/sensor feeds. Integrations come with monitoring, alerts and runbooks.
 - **Cloud & Infrastructure** — /service-cloud-infrastructure
@@ -16,10 +14,10 @@ Go2Ways is an enterprise technology partner for asset-driven businesses, based i
   L2/L3 application support, application management services (AMS) including small enhancements and releases, 24/7 monitoring, incident and problem management with root-cause analysis, performance tuning and health checks, patches and minor upgrades, monthly reporting. Covers Maximo, MAS, TRIRIGA, integrations and infrastructure.
 - **TRIRIGA Services** — /service-tririga
   IBM TRIRIGA (now IBM Maximo Real Estate and Facilities): space management from CAD/BIM floor plans, lease administration and lease accounting (IFRS 16, ASC 842), facility maintenance and work orders, capital projects, room/desk reservations, upgrades and integration with Maximo, ERP and HR systems, lease data abstraction.
-- **Mobile Development & Enablement** — /service-mobile-development
-  Maximo Mobile rollouts, custom iOS and Android apps for field teams, offline-first work, inspections with photos, readings and signatures, maps and location, barcode and RFID scanning.
-- **Consulting & Architectural Advisory** — /service-consulting-advisory
-  EAM strategy and roadmaps, solution and integration architecture, Maximo health checks and audits, process design (work management, inventory, reliability), licensing and AppPoints advice, dedicated remote teams.
+- **Enterprise Mobile Solutions** — /service-mobile-development
+  Connected enterprise mobile applications and Maximo Mobile rollouts for field teams: offline-first work, inspections with photos and signatures, digital forms, maps and location, barcode and RFID scanning.
+- **Enterprise Technology Consulting & Architecture** — /service-consulting-advisory
+  Technology consulting, solution architecture, modernisation roadmaps, system assessments, architecture reviews and enterprise integration planning aligned with business objectives.
 
 Every engagement follows clear stages with regular demos and a named lead. Overview of how Go2Ways works: /services
 

@@ -6,6 +6,7 @@ export type Service = {
   name: string;
   short: string;
   icon: IconName;
+  imageFolder?: string;
   nav: string;
   h1: string[];
   sub: string;
@@ -24,79 +25,83 @@ export type Product = { name: string; href: string | null; icon: IconName; desc:
 
 export const SERVICES: Service[] = [
   {
-    slug: "ibm-maximo",
-    name: "IBM Maximo Services",
-    short: "IBM Maximo",
+    slug: "ibm-maximo-mas",
+    name: "IBM Maximo & MAS Services",
+    short: "IBM Maximo & MAS",
     icon: "wrench",
-    nav: "Implementation, upgrades, scripting and support",
+    imageFolder: "ibm-maximo",
+    nav: "Implementation, MAS migration, scripting and support",
     h1: [
-      "IBM Maximo,",
-      "set up to run your assets"
+      "IBM Maximo & MAS,",
+      "Built to Run Your Enterprise Assets"
     ],
-    sub: "Implementation, configuration, upgrades, automation scripting and integrations for IBM Maximo, delivered by certified consultants.",
+    sub: "End-to-end implementation, version upgrades, automation scripting, and planned migrations to IBM Maximo Application Suite (MAS).",
     overviewTitle: [
-      "One system of record",
-      "for every asset"
+      "Modernise, migrate and manage",
+      "every critical asset"
     ],
-    overviewBody: "IBM Maximo holds your assets, work orders, inventory and maintenance history in one place. We configure it around how your teams already work, then keep it fast and dependable as you grow.",
+    overviewBody: "From established Maximo deployments to modern Maximo Application Suite (MAS) environments, Go2Ways helps organisations manage asset lifecycles, maintenance operations, and enterprise workflows. We deliver structured implementations, configuration, automation scripting, and planned MAS migrations on Red Hat OpenShift across hybrid and cloud platforms.",
     highlights: [
-      "New implementations and re-implementations",
-      "Upgrades without losing your customisations",
-      "Automation scripts instead of fragile Java code",
-      "Reports and KPIs your managers actually use"
+      "New Maximo implementations, configurations and re-platforming",
+      "Planned, rehearsed migrations from Maximo 7.6 to MAS (Manage, Health, Monitor, Predict)",
+      "Automation scripts and modern REST/Kafka integrations replacing fragile Java code",
+      "AppPoints licensing advisory, OpenShift deployment and post-migration hypercare"
     ],
     worksWith: [
       "Maximo Manage",
       "Maximo Health",
       "Maximo Monitor",
       "Maximo Predict",
-      "Maximo Spatial",
-      "BIRT",
+      "MAS 9",
+      "Red Hat OpenShift",
+      "AWS",
+      "Azure",
       "Db2",
       "Oracle",
-      "SQL Server"
+      "BIRT",
+      "Kafka"
     ],
     engagements: [
-      "New Maximo rollout",
-      "Upgrade or re-platform",
-      "Ongoing enhancements"
+      "Maximo implementation or rollout",
+      "Maximo 7.6 to MAS migration",
+      "MAS upgrades & enhancement support"
     ],
     capabilities: [
       {
         icon: "wrench",
         title: "Implementation & configuration",
-        text: "Asset hierarchies, locations, work management, inventory and purchasing set up for your operation.",
+        text: "Asset hierarchies, work management, inventory, purchasing, and Application Designer screens tailored to your operations.",
         photoAlt: "Operator running industrial machinery"
       },
       {
-        icon: "refresh",
-        title: "Upgrades",
-        text: "Version upgrades planned and rehearsed, with customisations reviewed and carried forward.",
+        icon: "migrate",
+        title: "MAS migration & upgrades",
+        text: "Structured, rehearsed migration from Maximo 7.6 to MAS on Red Hat OpenShift, with version upgrades planned to protect customisations.",
         photoAlt: "Person working on a laptop"
       },
       {
         icon: "code",
         title: "Automation scripting",
-        text: "Business rules written as Maximo automation scripts, easier to maintain than custom Java.",
+        text: "Business rules and logic written as Maximo automation scripts, retiring outdated Java modifications for easier maintenance.",
         photoAlt: "Code on a monitor"
       },
       {
-        icon: "flow",
-        title: "Workflows & applications",
-        text: "Approval workflows, escalations, Application Designer screens and Start Centers.",
-        photoAlt: "Two people mapping a workflow on a whiteboard"
+        icon: "link",
+        title: "Integration modernisation",
+        text: "Modernise interfaces using REST APIs, Maximo Integration Framework (MIF), Kafka, and secure API keys/OAuth.",
+        photoAlt: "Network cabling in a data center"
       },
       {
         icon: "chart",
-        title: "Reporting & KPIs",
-        text: "BIRT reports, KPIs and dashboards for maintenance, cost and reliability.",
+        title: "AppPoints & licence advisory",
+        text: "User and module mapping to the AppPoints model, alongside BIRT reporting, KPIs and dashboards.",
         photoAlt: "Reports and charts on a laptop"
       },
       {
         icon: "database",
-        title: "Data migration & loading",
-        text: "Clean, validated loads of assets, locations, PMs and history from legacy systems.",
-        photoAlt: "Network cabling in a data center"
+        title: "Data migration & validation",
+        text: "Clean data extraction, validation, and timed cutover execution backed by rehearsed rollback procedures and hypercare.",
+        photoAlt: "Server room aisle"
       }
     ],
     gallery: [
@@ -106,130 +111,26 @@ export const SERVICES: Service[] = [
     ],
     steps: [
       {
-        title: "Assess",
-        text: "We review your processes, data and current setup to agree scope and priorities."
+        title: "Assess & Plan",
+        text: "We audit your Maximo estate, review customisations, and define scope, licensing, and timelines."
       },
       {
-        title: "Design",
-        text: "We map requirements to Maximo applications, workflows and integrations."
+        title: "Design & Prepare",
+        text: "We map workflows, configure MAS on OpenShift, and modernise automation scripts and integrations."
       },
       {
-        title: "Build & test",
-        text: "We configure, script and load data in sprints, with your users testing as we go."
+        title: "Build & Rehearse",
+        text: "We migrate data in sprints and run full end-to-end rehearsal cycles in non-production environments."
       },
       {
-        title: "Go live & support",
-        text: "We train your teams, run cutover and stay on for hypercare."
+        title: "Cutover & Support",
+        text: "We execute cutover within a planned window, train teams, and provide dedicated hypercare."
       }
     ],
     related: [
-      "mas-migration",
       "enterprise-integration",
-      "managed-support"
-    ]
-  },
-  {
-    slug: "mas-migration",
-    name: "MAS Migration",
-    short: "MAS Migration",
-    icon: "migrate",
-    nav: "Move from Maximo 7.6 to Maximo Application Suite",
-    h1: [
-      "Move to Maximo",
-      "Application Suite with confidence"
-    ],
-    sub: "A planned, rehearsed migration from Maximo 7.6 to IBM Maximo Application Suite (MAS), on the cloud or platform you choose.",
-    overviewTitle: [
-      "Maximo 7.6 is behind you.",
-      "MAS is next."
-    ],
-    overviewBody: "IBM base support for Maximo 7.6.1 ended in September 2025. MAS brings Maximo Manage together with Health, Monitor, Predict and Mobile on Red Hat OpenShift, licensed with AppPoints. We plan the move so your operations keep running throughout.",
-    highlights: [
-      "Readiness assessment of customisations and integrations",
-      "AppPoints licensing planned up front",
-      "Full rehearsal in a non-production environment",
-      "Cutover plan with rollback and hypercare"
-    ],
-    worksWith: [
-      "MAS 9",
-      "Maximo Manage",
-      "Red Hat OpenShift",
-      "AWS",
-      "Azure",
-      "IBM Cloud",
-      "Db2",
-      "Kafka"
-    ],
-    engagements: [
-      "Migration readiness assessment",
-      "End-to-end MAS migration",
-      "MAS upgrade (8.x to 9.x)"
-    ],
-    capabilities: [
-      {
-        icon: "search",
-        title: "Readiness assessment",
-        text: "An inventory of customisations, integrations, reports and licences, with effort and risk for each.",
-        photoAlt: "Checking items off a list"
-      },
-      {
-        icon: "calendar",
-        title: "AppPoints planning",
-        text: "Map your current users and modules to the AppPoints model, so there are no licensing surprises.",
-        photoAlt: "Open planner on a desk"
-      },
-      {
-        icon: "layers",
-        title: "OpenShift platform setup",
-        text: "Install and configure MAS on OpenShift, on-premises or on AWS, Azure or IBM Cloud.",
-        photoAlt: "Rack of servers"
-      },
-      {
-        icon: "code",
-        title: "Customisation rework",
-        text: "Java customisations rewritten as automation scripts, and outdated changes retired.",
-        photoAlt: "Code on a laptop screen"
-      },
-      {
-        icon: "link",
-        title: "Integration modernisation",
-        text: "Move legacy interfaces to REST APIs and Kafka, and update security to API keys and OAuth.",
-        photoAlt: "Network cables"
-      },
-      {
-        icon: "database",
-        title: "Data migration & cutover",
-        text: "Database upgrade, validation and a timed cutover with a tested rollback plan.",
-        photoAlt: "Server room aisle"
-      }
-    ],
-    gallery: [
-      "Modern data center with rows of server cabinets",
-      "Cloud computing concept",
-      "Team planning around laptops"
-    ],
-    steps: [
-      {
-        title: "Assess",
-        text: "We audit your Maximo 7.6 estate and produce a migration plan with timelines and costs."
-      },
-      {
-        title: "Prepare",
-        text: "We stand up OpenShift and MAS, and rework customisations and integrations."
-      },
-      {
-        title: "Rehearse",
-        text: "We run the full migration in a test environment and fix what we find."
-      },
-      {
-        title: "Cut over",
-        text: "We migrate production in a planned window, then support users through hypercare."
-      }
-    ],
-    related: [
-      "ibm-maximo",
       "cloud-infrastructure",
-      "consulting-advisory"
+      "managed-support"
     ]
   },
   {
@@ -239,99 +140,99 @@ export const SERVICES: Service[] = [
     icon: "link",
     nav: "Connect Maximo with SAP, Oracle and more",
     h1: [
-      "Connect Maximo to",
+      "Connect Maximo with",
       "the rest of your business"
     ],
-    sub: "Reliable integrations between Maximo and your ERP, finance, identity, GIS and IoT systems, so data is entered once and stays in sync.",
+    sub: "Robust integrations between IBM Maximo, ERP, identity, GIS and IoT systems, built with standard APIs and monitored around the clock.",
     overviewTitle: [
-      "Enter data once.",
-      "Trust it everywhere."
+      "No more double entry.",
+      "No more blind spots."
     ],
-    overviewBody: "When maintenance, purchasing and finance run in separate systems, teams re-key data and lose time reconciling it. We build integrations on the Maximo Integration Framework and modern APIs that are monitored, documented and easy to change.",
+    overviewBody: "When maintenance, finance and operations run in silos, teams waste time re-entering data and chasing updates. We connect IBM Maximo to SAP, Oracle, GIS, identity providers and field devices so information flows automatically.",
     highlights: [
-      "ERP integration for purchasing, inventory and finance",
-      "REST APIs and event-driven messaging",
-      "Single sign-on with Azure AD / Entra ID",
-      "Error handling and monitoring built in"
+      "Two-way sync for purchasing, inventory and GL",
+      "Single sign-on via Azure AD / Entra ID, LDAP or SAML",
+      "Real-time sensor and IoT data into Maximo",
+      "Built on standard APIs, not fragile point-to-point code"
     ],
     worksWith: [
       "SAP",
-      "Oracle",
-      "REST / JSON",
-      "Maximo Integration Framework",
-      "Kafka",
+      "Oracle EBS & Cloud",
+      "Azure AD / Entra ID",
+      "Esri ArcGIS",
       "IBM App Connect",
-      "Azure AD",
-      "Esri ArcGIS"
+      "Apache Kafka",
+      "REST APIs",
+      "Maximo Integration Framework"
     ],
     engagements: [
-      "Single interface build",
-      "Integration programme",
-      "Integration health check"
+      "New ERP integration",
+      "SSO rollout",
+      "Integration modernisation"
     ],
     capabilities: [
       {
-        icon: "box",
+        icon: "link",
         title: "ERP integration",
-        text: "Purchase orders, receipts, inventory, GL and cost data exchanged with SAP or Oracle.",
-        photoAlt: "Reviewing purchasing documents with a calculator and laptop"
-      },
-      {
-        icon: "code",
-        title: "REST & API development",
-        text: "Object structures, publish channels and REST APIs built on the Maximo Integration Framework.",
-        photoAlt: "Code on a computer screen"
-      },
-      {
-        icon: "flow",
-        title: "Middleware & messaging",
-        text: "Event-driven flows with Kafka, JMS or your existing middleware.",
-        photoAlt: "Fibre optic cables in a network switch"
-      },
-      {
-        icon: "refresh",
-        title: "Data sync & master data",
-        text: "Assets, locations, vendors and employees kept consistent across systems.",
-        photoAlt: "Data on a computer screen"
+        text: "Two-way sync of purchase orders, receipts, inventory and costs between Maximo and SAP or Oracle.",
+        photoAlt: "Network cabling in a server rack"
       },
       {
         icon: "lock",
-        title: "Identity & single sign-on",
-        text: "Azure AD / Entra ID, LDAP and SAML sign-on, with role-based access.",
-        photoAlt: "Padlock on a keyboard"
+        title: "Single sign-on & identity",
+        text: "SAML and OpenID Connect with Azure AD, Entra ID or Okta for secure, audited access.",
+        photoAlt: "Server rack in a data center"
       },
       {
         icon: "pin",
-        title: "GIS & IoT feeds",
-        text: "Esri maps, sensor readings and telematics brought into Maximo.",
-        photoAlt: "Aerial view of a city's streets at night"
+        title: "GIS & spatial",
+        text: "Bi-directional sync with Esri ArcGIS: assets and work orders plotted on maps.",
+        photoAlt: "Digital map on a tablet"
+      },
+      {
+        icon: "pulse",
+        title: "IoT & sensor feeds",
+        text: "Condition monitoring, meter readings and alarms fed straight from assets into Maximo.",
+        photoAlt: "Circuit board with sensors"
+      },
+      {
+        icon: "layers",
+        title: "Middleware & APIs",
+        text: "REST APIs, Kafka topics and MIF messaging designed to scale without breaking.",
+        photoAlt: "Abstract data flow"
+      },
+      {
+        icon: "shield",
+        title: "Monitoring & runbooks",
+        text: "Every integration delivered with alerts, retry queues, health dashboards and runbooks.",
+        photoAlt: "Control room with monitoring screens"
       }
     ],
     gallery: [
-      "Abstract network of connected points",
-      "Logistics warehouse with stacked crates",
-      "Team working together on laptops"
+      "Server room with blue lighting",
+      "Network engineer at work",
+      "Data cables connected to switches"
     ],
     steps: [
       {
-        title: "Map",
-        text: "We document each system, data object and business event that needs to flow."
+        title: "Discover",
+        text: "We map source and target fields, error scenarios and transaction volumes."
       },
       {
         title: "Design",
-        text: "We choose the pattern (API, messaging or batch) and define error handling."
+        text: "We design message flows, authentication, retry logic and monitoring."
       },
       {
         title: "Build & test",
-        text: "We build, then test with real data volumes and failure scenarios."
+        text: "We build integrations and test with mock and real data through edge cases."
       },
       {
-        title: "Monitor",
+        title: "Deploy",
         text: "We hand over with monitoring, alerts and clear runbooks."
       }
     ],
     related: [
-      "ibm-maximo",
+      "ibm-maximo-mas",
       "cloud-infrastructure",
       "mobile-development"
     ]
@@ -343,90 +244,90 @@ export const SERVICES: Service[] = [
     icon: "cloud",
     nav: "AWS, Azure, OpenShift, backup and monitoring",
     h1: [
-      "Cloud and infrastructure",
-      "that stays up"
+      "Cloud infrastructure,",
+      "sized and run for reliability"
     ],
-    sub: "Deployment, administration, backup and monitoring for your enterprise applications on AWS, Azure and Red Hat OpenShift.",
+    sub: "Secure, monitored hosting for IBM Maximo, MAS, TRIRIGA and your wider estate on AWS, Microsoft Azure or Red Hat OpenShift.",
     overviewTitle: [
-      "The platform under",
-      "your operations"
+      "The foundation",
+      "your operations depend on"
     ],
-    overviewBody: "Asset management systems are only as reliable as the infrastructure they run on. We design, deploy and run that infrastructure, and keep it patched, backed up and watched around the clock.",
+    overviewBody: "A slow or brittle infrastructure slows down every technician, dispatcher and manager who relies on it. We design, build and run cloud and hybrid environments sized for performance, hardened against threats, and backed by 24/7 monitoring.",
     highlights: [
-      "AWS and Azure deployments built to best practice",
-      "Red Hat OpenShift for MAS and containers",
-      "Tested backup and disaster recovery",
-      "24/7 monitoring and alerting"
+      "Architectures designed around real user and asset volumes",
+      "Red Hat OpenShift deployments for Maximo Application Suite",
+      "Tested backup, disaster recovery and RPO / RTO targets",
+      "Cost visibility so you don't overpay for idle capacity"
     ],
     worksWith: [
       "AWS",
       "Microsoft Azure",
       "Red Hat OpenShift",
-      "VMware",
+      "IBM Cloud",
       "Linux",
       "Windows Server",
       "Terraform",
-      "Prometheus / Grafana"
+      "Docker / Containers"
     ],
     engagements: [
       "Cloud migration",
-      "Managed infrastructure",
-      "Backup & DR setup"
+      "OpenShift for MAS",
+      "Disaster recovery review"
     ],
     capabilities: [
       {
         icon: "cloud",
-        title: "AWS & Azure deployment",
-        text: "Landing zones, networking and environments designed for security and cost.",
-        photoAlt: "Cloud icon with floating data charts"
+        title: "Cloud migration & hosting",
+        text: "Lift-and-shift or re-platform to AWS or Azure, with landing zones and networking set up right.",
+        photoAlt: "Data center server aisle"
       },
       {
         icon: "layers",
-        title: "OpenShift & containers",
-        text: "Red Hat OpenShift clusters sized and configured for MAS and other workloads.",
-        photoAlt: "Stacked shipping containers"
-      },
-      {
-        icon: "database",
-        title: "Backup & disaster recovery",
-        text: "Automated backups, restore testing and documented recovery targets.",
-        photoAlt: "Internal hard drive"
-      },
-      {
-        icon: "pulse",
-        title: "Monitoring & alerting",
-        text: "Health, performance and capacity tracked, with alerts routed to the right people.",
-        photoAlt: "Wall of monitoring screens"
-      },
-      {
-        icon: "server",
-        title: "Virtualisation & servers",
-        text: "VMware and on-premises servers administered, patched and right-sized.",
-        photoAlt: "Cables connected to a server"
+        title: "OpenShift for MAS",
+        text: "OpenShift clusters designed and deployed specifically for Maximo Application Suite workloads.",
+        photoAlt: "Network hardware closeup"
       },
       {
         icon: "shield",
-        title: "Security & compliance",
-        text: "Patching, access control, network hardening and audit-ready configuration.",
-        photoAlt: "Glowing security panel"
+        title: "Backup & disaster recovery",
+        text: "Automated backups, replication and rehearsed recovery so an outage doesn't stop operations.",
+        photoAlt: "Server room with green indicators"
+      },
+      {
+        icon: "pulse",
+        title: "24/7 monitoring & alerting",
+        text: "Infrastructure, container and application monitoring with alerts that reach on-call engineers fast.",
+        photoAlt: "Monitoring dashboard on a monitor"
+      },
+      {
+        icon: "lock",
+        title: "Security hardening & patching",
+        text: "OS, database and container patching routines that keep systems secure without surprise downtime.",
+        photoAlt: "Cyber security padlock graphic"
+      },
+      {
+        icon: "chart",
+        title: "Performance & cost tuning",
+        text: "Right-sizing, reserved instances and database tuning so you only pay for what you use.",
+        photoAlt: "Laptop with performance graphs"
       }
     ],
     gallery: [
-      "Server rack with status lights",
-      "Data center corridor with glass doors",
-      "Cabled server rack"
+      "Rows of high-density server racks",
+      "Cloud infrastructure visualization",
+      "Engineer checking server hardware"
     ],
     steps: [
       {
         title: "Assess",
-        text: "We review your current environment, costs and risks."
+        text: "We review your current workloads, licensing, compliance needs and DR goals."
       },
       {
         title: "Design",
-        text: "We plan the target architecture, security model and migration path."
+        text: "We produce an architecture with networking, security and cost models."
       },
       {
-        title: "Deploy",
+        title: "Build",
         text: "We build environments as code and migrate workloads with minimal downtime."
       },
       {
@@ -435,7 +336,7 @@ export const SERVICES: Service[] = [
       }
     ],
     related: [
-      "mas-migration",
+      "ibm-maximo-mas",
       "managed-support",
       "enterprise-integration"
     ]
@@ -445,93 +346,92 @@ export const SERVICES: Service[] = [
     name: "Managed Support",
     short: "Managed Support",
     icon: "headset",
-    nav: "L2/L3 support, AMS and 24/7 monitoring",
+    nav: "SLA-backed support, AMS and proactive maintenance",
     h1: [
       "Support that keeps",
-      "your systems running"
+      "your operations running"
     ],
-    sub: "L2/L3 application support, application management services (AMS), 24/7 monitoring and incident management for Maximo and the systems around it.",
+    sub: "SLA-backed application support, AMS, continuous improvements and proactive health checks for IBM Maximo, MAS, TRIRIGA and connected systems.",
     overviewTitle: [
-      "One team that knows",
-      "your setup"
+      "A dependable team",
+      "behind your systems"
     ],
-    overviewBody: "Instead of chasing different vendors when something breaks, you get one team that knows your configuration, integrations and infrastructure. We fix issues quickly, then work on the root causes so they stop coming back.",
+    overviewBody: "When an asset system goes down, work stops and revenue slips. Our managed support gives you named, certified specialists who know your configuration, resolve incidents fast, and steadily improve the system so fewer things break.",
     highlights: [
-      "L2/L3 support with agreed response times",
-      "Small enhancements and releases included",
-      "24/7 monitoring of applications and integrations",
-      "Monthly reporting on tickets, trends and fixes"
+      "L2 and L3 support with agreed response and resolution SLAs",
+      "Named technical lead who knows your setup inside out",
+      "Application Management Services (AMS) for ongoing changes",
+      "Monthly service reviews with transparent metrics"
     ],
     worksWith: [
       "IBM Maximo",
       "MAS",
       "IBM TRIRIGA",
-      "Integrations",
-      "AWS",
-      "Azure",
-      "ServiceNow",
-      "Jira"
+      "Red Hat OpenShift",
+      "Db2 & Oracle",
+      "Jira & ServiceNow",
+      "AWS & Azure"
     ],
     engagements: [
-      "Support retainer",
-      "Full AMS contract",
-      "Out-of-hours cover"
+      "24/7 application support",
+      "Business-hours AMS",
+      "Hybrid tier-2 / tier-3 cover"
     ],
     capabilities: [
       {
         icon: "headset",
-        title: "L2/L3 application support",
-        text: "Functional and technical issues diagnosed and resolved by consultants who know Maximo.",
-        photoAlt: "Support engineer wearing a headset"
-      },
-      {
-        icon: "wrench",
-        title: "Application management (AMS)",
-        text: "Ongoing enhancements, configuration changes and release management.",
-        photoAlt: "Developer working on a laptop"
-      },
-      {
-        icon: "pulse",
-        title: "24/7 monitoring",
-        text: "Applications, integrations and infrastructure watched around the clock.",
-        photoAlt: "Monitor and laptop showing live data"
-      },
-      {
-        icon: "search",
-        title: "Incident & problem management",
-        text: "Fast restore of service, followed by root-cause analysis to prevent repeats.",
-        photoAlt: "Technician fixing wiring"
-      },
-      {
-        icon: "gauge",
-        title: "Performance & health checks",
-        text: "Regular tuning of queries, crons, escalations and database performance.",
-        photoAlt: "Performance gauge"
+        title: "L2 & L3 application support",
+        text: "Fast, SLA-backed resolution of user issues, errors and data problems from experienced specialists.",
+        photoAlt: "Support engineer on a headset"
       },
       {
         icon: "refresh",
-        title: "Patches & upgrades",
-        text: "Fix packs and minor upgrades planned, tested and applied for you.",
-        photoAlt: "Laptop installing an update"
+        title: "Application management (AMS)",
+        text: "Ongoing configuration, screen changes, report updates and small enhancements delivered in sprints.",
+        photoAlt: "Team in a stand-up meeting"
+      },
+      {
+        icon: "pulse",
+        title: "Proactive health checks",
+        text: "Regular reviews of logs, queues, database indexes and memory to catch issues before users notice.",
+        photoAlt: "Diagnostic dashboard"
+      },
+      {
+        icon: "shield",
+        title: "Patching & minor upgrades",
+        text: "Security fixes, fix packs and minor versions applied in non-prod first, then deployed cleanly.",
+        photoAlt: "Hand typing on a laptop keyboard"
+      },
+      {
+        icon: "users",
+        title: "Root-cause analysis",
+        text: "Every major incident investigated to the root cause, with fixes to stop it happening again.",
+        photoAlt: "Two engineers reviewing data"
+      },
+      {
+        icon: "chart",
+        title: "Service reporting",
+        text: "Monthly reviews covering ticket volumes, SLA performance, recurring themes and recommendations.",
+        photoAlt: "Reports and charts on a desk"
       }
     ],
     gallery: [
-      "Support headset beside a laptop",
-      "Support team working at computers",
-      "Engineer working at an operations desk"
+      "Operations centre with live monitors",
+      "Support consultant on a client call",
+      "Engineers working in an office"
     ],
     steps: [
       {
-        title: "Onboard",
-        text: "We document your environment, access and escalation paths."
+        title: "Transition",
+        text: "We review your systems, document customisations and shadow your team."
+      },
+      {
+        title: "Baseline",
+        text: "We set up ticketing, agree SLAs, and take over day-to-day support."
       },
       {
         title: "Stabilise",
-        text: "We clear the backlog and fix recurring issues first."
-      },
-      {
-        title: "Run",
-        text: "We handle tickets within agreed service levels and report monthly."
+        text: "We clear backlogs, tune alert thresholds and patch known issues."
       },
       {
         title: "Improve",
@@ -539,7 +439,7 @@ export const SERVICES: Service[] = [
       }
     ],
     related: [
-      "ibm-maximo",
+      "ibm-maximo-mas",
       "cloud-infrastructure",
       "consulting-advisory"
     ]
@@ -554,51 +454,50 @@ export const SERVICES: Service[] = [
       "Run your real estate",
       "and facilities with TRIRIGA"
     ],
-    sub: "Implementation, upgrades and support for IBM TRIRIGA (now IBM Maximo Real Estate and Facilities): space, leases, maintenance and capital projects in one platform.",
+    sub: "Implementation, lease accounting (IFRS 16 / ASC 842), space management and facilities maintenance for IBM TRIRIGA and IBM Maximo Real Estate and Facilities.",
     overviewTitle: [
       "Every building, lease",
-      "and floor in one view"
+      "and workspace in one view"
     ],
     overviewBody: "IBM TRIRIGA is an integrated workplace management system (IWMS) for real estate and facilities. We set it up so you can see how space is used, stay compliant on leases and keep buildings maintained.",
     highlights: [
-      "Space planning from CAD and BIM floor plans",
-      "Lease administration and accounting compliance",
-      "Facility maintenance and work orders",
-      "Integration with Maximo and your ERP"
+      "Lease accounting compliant with IFRS 16 and ASC 842",
+      "Space management from CAD and BIM floor plans",
+      "Work orders and preventive maintenance for facilities",
+      "Integrations with ERP, HR and building systems"
     ],
     worksWith: [
       "IBM TRIRIGA",
-      "Maximo Real Estate and Facilities",
-      "AutoCAD",
-      "BIM",
-      "IFRS 16",
-      "ASC 842",
+      "TRIRIGA Application Platform",
+      "AutoCAD & Revit",
       "SAP",
-      "Oracle"
+      "Oracle",
+      "Db2 & Oracle DB",
+      "REST APIs"
     ],
     engagements: [
       "New TRIRIGA rollout",
-      "Upgrade or migration",
-      "Lease data abstraction"
+      "Lease accounting upgrade",
+      "Space management overhaul"
     ],
     capabilities: [
       {
         icon: "floor",
-        title: "Space management",
-        text: "Floor plans, occupancy and allocation tracked so you can plan moves and reduce empty space.",
-        photoAlt: "Open-plan office with rows of desks"
+        title: "Space & occupancy",
+        text: "CAD and BIM floor plans loaded so you can track departments, desks and utilisation.",
+        photoAlt: "Architect reviewing plans"
       },
       {
         icon: "doc",
-        title: "Lease administration",
-        text: "Lease terms, critical dates and payments in one register, with accounting to IFRS 16 and ASC 842.",
-        photoAlt: "Signing a lease document"
+        title: "Lease administration & accounting",
+        text: "Leases abstracted, payments scheduled, and accounting handled for IFRS 16 and ASC 842.",
+        photoAlt: "Reviewing lease contracts"
       },
       {
         icon: "wrench",
         title: "Facility maintenance",
         text: "Work orders, preventive maintenance and service requests for every building.",
-        photoAlt: "Worker installing ceiling components"
+        photoAlt: "Technician inspecting HVAC unit"
       },
       {
         icon: "chart",
@@ -607,34 +506,34 @@ export const SERVICES: Service[] = [
         photoAlt: "Construction worker on a building frame"
       },
       {
-        icon: "calendar",
-        title: "Workplace services",
-        text: "Room and desk reservations, visitor management and service requests.",
-        photoAlt: "Glass-walled meeting rooms"
+        icon: "refresh",
+        title: "Upgrades & platform migrations",
+        text: "Upgrades to the latest TRIRIGA platform and migration to containerised MAS environments.",
+        photoAlt: "Spiral staircase in a glass building"
       },
       {
         icon: "link",
-        title: "Upgrades & integration",
-        text: "Platform upgrades and integrations with Maximo, ERP and HR systems.",
-        photoAlt: "Spiral staircase in a glass building"
+        title: "Integrations",
+        text: "Two-way links with SAP, Oracle, identity systems and IoT environmental sensors.",
+        photoAlt: "Networking hardware"
       }
     ],
     gallery: [
-      "Modern office lobby with a reception desk",
       "Modern office building",
-      "People reviewing architectural plans"
+      "Open-plan office with desks",
+      "Architectural blueprint on a desk"
     ],
     steps: [
       {
         title: "Discover",
-        text: "We map your portfolio, leases, floor plans and processes."
+        text: "We review your portfolio, leases, CAD drawings and reporting requirements."
       },
       {
         title: "Configure",
-        text: "We set up TRIRIGA modules, workflows and reports around them."
+        text: "We set up portfolios, workflows, accounting rules and security roles."
       },
       {
-        title: "Load data",
+        title: "Migrate",
         text: "We abstract leases and load buildings, floors and people."
       },
       {
@@ -643,82 +542,82 @@ export const SERVICES: Service[] = [
       }
     ],
     related: [
-      "ibm-maximo",
+      "ibm-maximo-mas",
       "enterprise-integration",
       "managed-support"
     ]
   },
   {
     slug: "mobile-development",
-    name: "Mobile Development & Enablement",
-    short: "Mobile",
+    name: "Enterprise Mobile Solutions",
+    short: "Mobile Solutions",
     icon: "mobile",
-    nav: "Maximo Mobile and custom field apps",
+    nav: "Connected field apps and enterprise mobile solutions",
     h1: [
-      "Put the right information",
-      "in technicians' hands"
+      "Connect Your People,",
+      "Systems and Operations"
     ],
-    sub: "Maximo Mobile rollouts and custom mobile apps that let field teams see, update and close work, even without a signal.",
+    sub: "Enterprise mobile solutions that connect field teams with business systems, operational data and workflows, helping employees access information and complete tasks wherever work happens.",
     overviewTitle: [
-      "Close work where",
-      "it happens"
+      "Empower your workforce",
+      "wherever work happens"
     ],
-    overviewBody: "When technicians write notes on paper and enter them later, data arrives late and incomplete. We roll out Maximo Mobile and build custom apps so work orders, inspections and asset details are on the device, online or offline.",
+    overviewBody: "Paper processes and delayed data entry slow down operations and lead to incomplete records. Go2Ways develops connected enterprise mobile applications and deploys field platforms like Maximo Mobile, giving teams instant access to work orders, assets, digital forms, and operational insights whether online or offline.",
     highlights: [
-      "Maximo Mobile configured for your workflows",
-      "Offline-first work for remote sites",
-      "Inspections, photos and signatures in the field",
-      "Custom iOS and Android apps where needed"
+      "Mobile workforce enablement across field and facility operations",
+      "Offline-first architectures with reliable bidirectional data sync",
+      "Digital inspections, work orders, photos, and electronic signatures",
+      "Integration with enterprise platforms including IBM Maximo, ERP, and GIS"
     ],
     worksWith: [
-      "Maximo Mobile",
       "iOS",
       "Android",
       "React Native",
+      "Maximo Mobile",
+      "REST APIs",
       "Esri ArcGIS",
-      "Barcode / RFID",
-      "REST APIs"
+      "Barcode / RFID"
     ],
     engagements: [
-      "Maximo Mobile rollout",
-      "Custom field app",
-      "Mobile UX review"
+      "Enterprise mobile solution rollout",
+      "Custom field operations app",
+      "Mobile experience & workflow review"
     ],
     capabilities: [
       {
         icon: "mobile",
-        title: "Maximo Mobile rollout",
-        text: "Maximo Mobile apps for technicians, inspectors and storeroom staff, configured and deployed.",
+        title: "Enterprise mobile enablement",
+        text: "Role-based mobile applications for technicians, inspectors, and operational staff, configured for fast adoption.",
         photoAlt: "Technician recording work on a tablet"
       },
       {
         icon: "code",
         title: "Custom app development",
-        text: "Native and cross-platform apps built for workflows that standard apps do not cover.",
+        text: "Native and cross-platform enterprise mobile applications tailored to specific business processes and workflows.",
         photoAlt: "Phone app beside a laptop"
       },
       {
         icon: "offline",
         title: "Offline-first field work",
-        text: "Work that keeps going without a connection and syncs when the signal returns.",
+        text: "Robust offline capabilities that allow field teams to complete tasks in remote locations and sync automatically when connected.",
         photoAlt: "Field engineer on site"
       },
       {
         icon: "clipboard",
-        title: "Inspections & forms",
-        text: "Digital checklists with photos, readings and signatures.",
+        title: "Digital inspections & forms",
+        text: "Standardised mobile forms, guided inspection checklists, photo capture, and digital signatures for compliance.",
         photoAlt: "Filling in an inspection checklist"
       },
       {
         icon: "pin",
-        title: "Maps & location",
-        text: "Assets and work shown on maps, with directions to the job.",
+        title: "Spatial & location awareness",
+        text: "Map-based asset visualisation, route guidance, and work order dispatch integrated with GIS systems.",
         photoAlt: "Phone showing a navigation map"
       },
       {
         icon: "scan",
-        title: "Barcode & RFID",
-        text: "Scan assets, parts and locations to find records and record usage quickly.",
+        title: "Barcode, QR & RFID capture",
+        text: "Rapid asset identification, parts scanning, and inventory tracking directly from mobile device cameras or scanners.",
         photoAlt: "Phone scanning a code"
       }
     ],
@@ -730,98 +629,97 @@ export const SERVICES: Service[] = [
     steps: [
       {
         title: "Observe",
-        text: "We ride along with field teams to see how work really happens."
+        text: "We review operational processes with field teams to understand practical workflows."
       },
       {
         title: "Prototype",
-        text: "We design screens and test them with technicians early."
+        text: "We design intuitive mobile interfaces and validate them with end users early."
       },
       {
         title: "Build",
-        text: "We configure Maximo Mobile or build the app, and integrate it."
+        text: "We configure enterprise mobile platforms or engineer custom applications with robust sync."
       },
       {
         title: "Roll out",
-        text: "We deploy to devices, train crews and support adoption."
+        text: "We deploy to devices, support team onboarding, and ensure operational readiness."
       }
     ],
     related: [
-      "ibm-maximo",
+      "ibm-maximo-mas",
       "enterprise-integration",
       "managed-support"
     ]
   },
   {
     slug: "consulting-advisory",
-    name: "Consulting & Architectural Advisory",
-    short: "Consulting",
+    name: "Enterprise Technology Consulting & Architecture",
+    short: "Consulting & Architecture",
     icon: "bulb",
-    nav: "EAM strategy, architecture and health checks",
+    nav: "Technology consulting, solution architecture and roadmaps",
     h1: [
-      "Make the right calls",
-      "before you build"
+      "Turn Technology Decisions",
+      "Into a Clear Direction"
     ],
-    sub: "Independent advice on asset management strategy, solution architecture and roadmaps, from consultants who have delivered Maximo and TRIRIGA projects.",
+    sub: "Technology consulting and solution architecture that help organisations assess their technology landscape, plan modernisation and design scalable solutions aligned with business objectives.",
     overviewTitle: [
-      "A clear plan",
-      "for your asset systems"
+      "Architecting scalable systems",
+      "for modern business"
     ],
-    overviewBody: "Big decisions like migrating to MAS, replacing a system or integrating new tools are hard to undo. We help you weigh the options, design an architecture that fits, and set a realistic roadmap your teams can deliver.",
+    overviewBody: "Complex technology decisions require clear architectural direction. Go2Ways partners with business and technology leaders to assess current systems, evaluate platforms, and design practical solution architectures. We build actionable technology roadmaps that align digital investments with strategic business outcomes.",
     highlights: [
-      "EAM strategy and multi-year roadmaps",
-      "Solution and integration architecture",
-      "Maximo health checks and audits",
-      "Dedicated remote teams when you need capacity"
+      "Enterprise technology consulting and digital modernisation roadmaps",
+      "End-to-end solution and system architecture design",
+      "Technology landscape assessments and architecture reviews",
+      "Enterprise integration, cloud architecture and technical governance"
     ],
     worksWith: [
+      "Enterprise Systems",
+      "Cloud Platforms (AWS, Azure, OpenShift)",
+      "Integration Frameworks",
+      "Modern APIs",
       "IBM Maximo",
-      "MAS",
-      "IBM TRIRIGA",
-      "AWS",
-      "Azure",
-      "Red Hat OpenShift",
-      "ISO 55000"
+      "IBM TRIRIGA"
     ],
     engagements: [
-      "Health check",
-      "Strategy & roadmap",
-      "Architecture review"
+      "Technology assessment & review",
+      "Solution architecture design",
+      "Modernisation roadmap & strategy"
     ],
     capabilities: [
       {
         icon: "target",
-        title: "EAM strategy & roadmap",
-        text: "A prioritised roadmap tied to your business goals and budget.",
+        title: "Technology strategy & roadmaps",
+        text: "Comprehensive modernisation strategies aligned with business goals, operational priorities, and investment plans.",
         photoAlt: "Two people building a project roadmap"
       },
       {
         icon: "layers",
-        title: "Solution architecture",
-        text: "Target architectures for applications, data, integrations and infrastructure.",
+        title: "Solution & system architecture",
+        text: "Scalable target architectures spanning enterprise applications, data flows, integration frameworks, and infrastructure.",
         photoAlt: "Architectural blueprints"
       },
       {
         icon: "search",
-        title: "Health checks & audits",
-        text: "A review of configuration, performance, data quality and security, with clear fixes.",
+        title: "Technology assessments & reviews",
+        text: "Detailed reviews of system architecture, performance, configuration, and data integrity with actionable recommendations.",
         photoAlt: "Reviewing a report over a laptop"
       },
       {
         icon: "flow",
-        title: "Process design",
-        text: "Work management, inventory and reliability processes aligned with good practice.",
+        title: "Integration & workflow architecture",
+        text: "Connected enterprise workflows, API strategies, and data exchange patterns that eliminate operational silos.",
         photoAlt: "Mapping a process flowchart on a whiteboard"
       },
       {
         icon: "doc",
-        title: "Licensing advisory",
-        text: "Guidance on Maximo licensing and AppPoints, so you pay for what you use.",
+        title: "Platform evaluation & planning",
+        text: "Objective evaluation of technology platforms, cloud readiness, and migration feasibility tailored to operational needs.",
         photoAlt: "Reviewing licence paperwork"
       },
       {
         icon: "users",
-        title: "Dedicated remote teams",
-        text: "Experienced consultants and developers who work as part of your team.",
+        title: "Technical leadership & advisory",
+        text: "Advisory support and technical leadership to guide internal teams through complex implementation cycles.",
         photoAlt: "Remote team member on a video call"
       }
     ],
@@ -832,26 +730,26 @@ export const SERVICES: Service[] = [
     ],
     steps: [
       {
-        title: "Listen",
-        text: "We interview stakeholders and review your systems and data."
+        title: "Assess",
+        text: "We review your technology landscape, stakeholder requirements, and architectural baseline."
       },
       {
         title: "Analyse",
-        text: "We find the gaps, risks and quick wins."
+        text: "We evaluate system dependencies, technical debt, risks, and modernisation opportunities."
       },
       {
-        title: "Recommend",
-        text: "We present options with costs, trade-offs and a recommendation."
+        title: "Architect",
+        text: "We formulate scalable target architectures, technical patterns, and platform recommendations."
       },
       {
-        title: "Plan",
-        text: "We turn the recommendation into a delivery roadmap."
+        title: "Roadmap",
+        text: "We deliver an actionable, phased implementation roadmap with clear milestones."
       }
     ],
     related: [
-      "mas-migration",
-      "ibm-maximo",
-      "tririga"
+      "ibm-maximo-mas",
+      "tririga",
+      "managed-support"
     ]
   }
 ];

@@ -15,8 +15,8 @@ function Lines({ lines }: { lines: string[] }) {
   ));
 }
 
-function Photo({ slug, slot, alt, w, h, lazy = true }: { slug: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
-  return <img src={asset(`/assets/img/services/${slug}/${slot}.jpg`)} alt={alt} width={w} height={h} loading={lazy ? "lazy" : undefined} />;
+function Photo({ folder, slot, alt, w, h, lazy = true }: { folder: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
+  return <img src={asset(`/assets/img/services/${folder}/${slot}.jpg`)} alt={alt} width={w} height={h} loading={lazy ? "lazy" : undefined} />;
 }
 
 export default function ServicePage({ s }: { s: Service }) {
@@ -51,7 +51,7 @@ export default function ServicePage({ s }: { s: Service }) {
             <div className="slides-viewport">
               <div className="slides">
                 {s.gallery.map((alt, i) => (
-                  <figure className="slide" key={i}><Photo slug={s.slug} slot={`g${i + 1}`} alt={alt} w={1200} h={900} lazy={i > 0} /></figure>
+                  <figure className="slide" key={i}><Photo folder={s.imageFolder ?? s.slug} slot={`g${i + 1}`} alt={alt} w={1200} h={900} lazy={i > 0} /></figure>
                 ))}
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function ServicePage({ s }: { s: Service }) {
         <div className="card-grid" data-stagger-children="">
           {s.capabilities.map((c, i) => (
             <article className="cap-card reveal" key={c.title}>
-              <div className="cap-photo"><Photo slug={s.slug} slot={`c${i + 1}`} alt={c.photoAlt} w={800} h={520} /></div>
+              <div className="cap-photo"><Photo folder={s.imageFolder ?? s.slug} slot={`c${i + 1}`} alt={c.photoAlt} w={800} h={520} /></div>
               <div className="cap-text">
                 <h3 className="heading-s">{c.title}</h3>
                 <p className="body-m">{c.text}</p>

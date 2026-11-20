@@ -16,12 +16,9 @@ const CONTACT = {
 
 type Svc = { slug: string; name: string; text: string; keys: [RegExp, number][] };
 const SERVICES: Svc[] = [
-  { slug: "ibm-maximo", name: "IBM Maximo Services",
-    text: "We implement, configure, upgrade and support IBM Maximo: asset hierarchies, work management, inventory, automation scripts, workflows, BIRT reports and data loading.",
-    keys: [[/\bmaximo\b/, 2], [/\beam\b/, 2], [/asset management/, 2], [/work ?orders?/, 2], [/automation script/, 3], [/\bbirt\b/, 3], [/implement/, 1]] },
-  { slug: "mas-migration", name: "MAS Migration",
-    text: "We move you from Maximo 7.6 to IBM Maximo Application Suite (MAS): a readiness assessment, AppPoints licensing plan, OpenShift setup, customisation rework, a full rehearsal and a planned cutover with hypercare.",
-    keys: [[/\bmas\b/, 4], [/application suite/, 4], [/7\.6/, 4], [/migrat/, 3], [/upgrad/, 1], [/apppoints?/, 4], [/end of support/, 3]] },
+  { slug: "ibm-maximo-mas", name: "IBM Maximo & MAS Services",
+    text: "We implement, configure, upgrade and support IBM Maximo and deliver planned migrations to IBM Maximo Application Suite (MAS), including Red Hat OpenShift deployment, AppPoints licensing, automation scripting and BIRT reports.",
+    keys: [[/\bmaximo\b/, 2], [/\beam\b/, 2], [/asset management/, 2], [/\bmas\b/, 4], [/application suite/, 4], [/7\.6/, 4], [/migrat/, 3], [/automation script/, 3], [/\bbirt\b/, 3], [/apppoints?/, 4], [/implement/, 1]] },
   { slug: "enterprise-integration", name: "Enterprise Integration",
     text: "We connect Maximo with SAP, Oracle, identity (Azure AD / Entra ID), GIS and IoT systems using REST APIs, the Maximo Integration Framework and messaging such as Kafka.",
     keys: [[/integrat/, 3], [/\bsap\b/, 3], [/oracle/, 2], [/\bapis?\b/, 2], [/middleware/, 3], [/kafka/, 3], [/single sign|\bsso\b|azure ad|entra/, 3], [/\bgis\b|esri/, 2], [/\biot\b|sensor/, 2]] },
@@ -34,12 +31,12 @@ const SERVICES: Svc[] = [
   { slug: "tririga", name: "TRIRIGA Services",
     text: "We implement and support IBM TRIRIGA (now IBM Maximo Real Estate and Facilities) for space management, lease administration and accounting (IFRS 16 / ASC 842), facility maintenance and capital projects.",
     keys: [[/tririga|triga/, 4], [/lease/, 3], [/space (management|planning)|floor plan|occupan/, 3], [/facilit/, 2], [/iwms/, 4], [/workplace/, 2]] },
-  { slug: "mobile-development", name: "Mobile Development & Enablement",
-    text: "We roll out Maximo Mobile and build custom iOS and Android apps for field teams: offline work, inspections with photos and signatures, maps and barcode/RFID scanning.",
+  { slug: "mobile-development", name: "Enterprise Mobile Solutions",
+    text: "We develop connected enterprise mobile solutions and deploy Maximo Mobile for field teams: offline-first access, digital inspections, forms with photos/signatures, GPS maps and barcode/RFID scanning.",
     keys: [[/mobile/, 3], [/\bapps?\b/, 2], [/field (team|work|staff|service)|technician/, 3], [/offline/, 3], [/android|\bios\b|iphone/, 3], [/barcode|rfid|scan/, 2], [/inspection/, 2]] },
-  { slug: "consulting-advisory", name: "Consulting & Architectural Advisory",
-    text: "We advise on asset management strategy, solution architecture and roadmaps, run Maximo health checks and audits, help with licensing, and provide dedicated remote teams.",
-    keys: [[/consult/, 3], [/advis/, 3], [/architect/, 3], [/roadmap|strategy/, 3], [/health ?check|audit/, 3], [/licen[cs]/, 2], [/dedicated team|remote team|staff aug/, 3]] },
+  { slug: "consulting-advisory", name: "Enterprise Technology Consulting & Architecture",
+    text: "We provide enterprise technology consulting and solution architecture: modernisation roadmaps, system assessments, architecture reviews, integration planning and technical advisory.",
+    keys: [[/consult/, 3], [/advis/, 3], [/architect/, 4], [/roadmap|strategy/, 3], [/assessment|audit|review/, 3]] },
 ];
 
 const link = (href: string, label: string) => '<a href="' + toLink(href) + '">' + label + "</a>";
