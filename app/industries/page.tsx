@@ -40,7 +40,7 @@ export default function IndustriesPage() {
       </section>
       <section className="clients container-wide center" id="clients">
         <div className="bg-lines" data-ribbon="" data-faint="" aria-hidden="true" />
-        <h2 className="display-xl reveal" style={{ fontSize: "clamp(34px,3.9vw,56px)" }}>Services Provided To</h2>
+        <h2 className="display-xl reveal">Services Provided To</h2>
         <ul className="logo-grid" data-stagger-children="">
           <li className="logo-tile reveal-scale">
             <img src={asset("/assets/img/logos/lti.png")} alt="LTI, a Larsen & Toubro Group company" style={{ "--logo-h": "62px" }} loading="lazy" />
@@ -74,7 +74,7 @@ export default function IndustriesPage() {
         </ul>
       </section>
       <section className="section container" id="sectors">
-        <h2 className="display-xl center reveal" style={{ fontSize: "clamp(34px,3.9vw,56px)", marginBottom: "56px" }}>Sectors We Work In</h2>
+        <h2 className="display-xl center reveal" style={{ marginBottom: "56px" }}>Sectors We Work In</h2>
         <div className="sector-grid last-two" data-stagger-children="">
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">

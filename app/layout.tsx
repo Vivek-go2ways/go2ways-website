@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SiteEffects from "@/components/SiteEffects";
 import ChatWidget from "@/components/ChatWidget";
 import { asset } from "@/lib/paths";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
   title: "Go2Ways",
@@ -14,12 +22,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" />
-      </head>
+    <html lang="en" className={manrope.variable} suppressHydrationWarning>
+      <head />
       <body>
         <div className="page-veil" aria-hidden="true" />
         <div className="scroll-progress" aria-hidden="true" />
