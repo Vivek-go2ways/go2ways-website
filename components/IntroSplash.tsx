@@ -62,7 +62,7 @@ type Satellite = { name: string; note: string; href: string; img?: string; exter
 const SATELLITES: Satellite[] = [
   { name: "Ordova", note: "Transport platform", href: "https://ordova.go2ways.com/", external: true, featured: true },
   { name: "IBM Maximo & MAS", note: "Maintain", href: "/service-ibm-maximo-mas", img: "/assets/img/services/ibm-maximo/g1.jpg" },
-  { name: "ERP & Enterprise Apps", note: "Connect", href: "/service-erp-enterprise-applications", img: "/assets/img/services/enterprise-integration/g1.jpg" },
+  { name: "Enterprise Solutions", note: "Connect", href: "/service-erp-enterprise-applications", img: "/assets/img/services/enterprise-integration/g1.jpg" },
   { name: "AI & Web Solutions", note: "Innovate", href: "/service-ai-solutions", img: "/assets/img/services/ai-services/g1.jpg" },
 ];
 

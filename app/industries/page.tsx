@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import CtaSection from "@/components/CtaSection";
 import SplitWords from "@/components/SplitWords";
 import { asset, link } from "@/lib/paths";
@@ -7,6 +8,19 @@ export const metadata: Metadata = {
   title: "Industries — Go2Ways",
   description: "Go2Ways transforms physical assets across 8 mission-critical sectors.",
 };
+
+const ROW_1 = [
+  { img: "/assets/img/logos/lti.png", alt: "LTI, a Larsen & Toubro Group company", h: "62px" },
+  { img: "/assets/img/logos/briwo.png", alt: "BRIWO", h: "52px" },
+  { img: "/assets/img/logos/asahi-kasei.png", alt: "Asahi Kasei", h: "42px" },
+  { img: "/assets/img/logos/saudi-electricity.png", alt: "Saudi Electricity Company", h: "46px" },
+];
+
+const ROW_2 = [
+  { img: "/assets/img/logos/mitsubishi-heavy-industries.png", alt: "Mitsubishi Heavy Industries", h: "34px" },
+  { img: "/assets/img/logos/connixt.png", alt: "CONNIXT", h: "30px" },
+  { img: "/assets/img/logos/quantum-strides.png", alt: "Quantum Strides", h: "48px" },
+];
 
 export default function IndustriesPage() {
   return (
@@ -41,34 +55,46 @@ export default function IndustriesPage() {
       <section className="clients container-wide center" id="clients">
         <div className="bg-lines" data-ribbon="" data-faint="" aria-hidden="true" />
         <h2 className="display-xl reveal">Services Provided To</h2>
-        <ul className="logo-grid" data-stagger-children="">
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/lti.png")} alt="LTI, a Larsen & Toubro Group company" style={{ "--logo-h": "62px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/briwo.png")} alt="BRIWO" style={{ "--logo-h": "52px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/asahi-kasei.png")} alt="Asahi Kasei" style={{ "--logo-h": "42px" }} loading="lazy" />
-          </li>
-        </ul>
-        <ul className="logo-grid logo-row-2" data-stagger-children="">
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/saudi-electricity.png")} alt="Saudi Electricity Company" style={{ "--logo-h": "46px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/connixt.png")} alt="CONNIXT" style={{ "--logo-h": "30px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/mitsubishi-heavy-industries.png")} alt="Mitsubishi Heavy Industries" style={{ "--logo-h": "34px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/quantum-strides.png")} alt="Quantum Strides" style={{ "--logo-h": "48px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <span className="wm more">&amp; more....</span>
-          </li>
-        </ul>
+
+        {/* Row 1: Rolling Right to Left */}
+        <div className="logo-marquee" aria-label="Clients row 1">
+          <div className="logo-marquee-track marquee-left">
+            <ul className="logo-marquee-group">
+              {[...ROW_1, ...ROW_1].map((c, i) => (
+                <li className="logo-tile" key={i}>
+                  <img src={asset(c.img)} alt={c.alt} style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
+                </li>
+              ))}
+            </ul>
+            <ul className="logo-marquee-group" aria-hidden="true">
+              {[...ROW_1, ...ROW_1].map((c, i) => (
+                <li className="logo-tile" key={`dup-${i}`}>
+                  <img src={asset(c.img)} alt="" style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Row 2: Rolling Left to Right */}
+        <div className="logo-marquee logo-row-2" aria-label="Clients row 2">
+          <div className="logo-marquee-track marquee-right">
+            <ul className="logo-marquee-group">
+              {[...ROW_2, ...ROW_2, ...ROW_2].map((c, i) => (
+                <li className="logo-tile" key={i}>
+                  <img src={asset(c.img)} alt={c.alt} style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
+                </li>
+              ))}
+            </ul>
+            <ul className="logo-marquee-group" aria-hidden="true">
+              {[...ROW_2, ...ROW_2, ...ROW_2].map((c, i) => (
+                <li className="logo-tile" key={`dup-${i}`}>
+                  <img src={asset(c.img)} alt="" style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
       <section className="section container" id="sectors">
         <h2 className="display-xl center reveal" style={{ marginBottom: "56px" }}>Sectors We Work In</h2>

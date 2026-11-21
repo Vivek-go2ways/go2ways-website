@@ -574,12 +574,12 @@ export const SERVICES: ServiceEntry[] = [
   },
   {
     slug: "erp-enterprise-applications",
-    name: "ERP & Enterprise Applications",
-    short: "ERP & Enterprise Applications",
+    name: "Enterprise Solutions",
+    short: "Enterprise Solutions",
     icon: "layers",
     nav: "SAP & Oracle integration and IBM TRIRIGA",
     h1: [
-      "ERP & Enterprise Applications,",
+      "Enterprise Solutions,",
       "Connected and Running as One"
     ],
     sub: "Connect IBM Maximo with SAP, Oracle and the rest of your enterprise systems, and run your real estate and facilities on IBM TRIRIGA, delivered by one team.",

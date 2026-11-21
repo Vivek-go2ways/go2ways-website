@@ -566,7 +566,7 @@ function initContactForm(form: HTMLFormElement, on: On) {
       "cloud-infrastructure": "Cloud & Infrastructure",
       "managed-support": "Managed Support",
       tririga: "TRIRIGA Services",
-      "erp-enterprise-applications": "ERP & Enterprise Applications",
+      "erp-enterprise-applications": "Enterprise Solutions",
       "mobile-development": "Enterprise Mobile Solutions",
       "consulting-advisory": "Enterprise Technology Consulting & Architecture",
     };
