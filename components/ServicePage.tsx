@@ -138,9 +138,9 @@ function Cta({ short, topic }: { short: string; topic: string }) {
         <h2 className="heading-l">Let’s talk about<br />{short}</h2>
         <p className="body-l">Tell us where you are today and we’ll suggest a practical next step.</p>
         <div className="cta-actions">
-          <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+          <a className="btn btn-primary" href={topic}>Talk to Our Team</a>
           {" "}
-          <a className="btn btn-secondary" href="tel:+918826949739">Call +91 88269 49739</a>
+          <a className="btn btn-secondary" href="tel:+918826949739">Explore Our Services</a>
         </div>
       </div>
     </section>
@@ -172,7 +172,7 @@ export default function ServicePage({ s }: { s: ServiceEntry }) {
             ))}
           </div>
           <div className="hero-actions hero-sub">
-            <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+            <a className="btn btn-primary" href={topic}>Talk to Our Team</a>
           </div>
         </Hero>
         {s.tabs.map((t, i) => (
@@ -189,9 +189,9 @@ export default function ServicePage({ s }: { s: ServiceEntry }) {
     <main>
       <Hero s={s}>
         <div className="hero-actions hero-sub">
-          <a className="btn btn-primary" href={topic}>Talk to an expert</a>
+          <a className="btn btn-primary" href={topic}>Talk to Our Team</a>
           {" "}
-          <a className="btn btn-secondary" href="#included">What’s included</a>
+          <a className="btn btn-secondary" href="#included">Explore Our Services</a>
         </div>
       </Hero>
       <Body s={s} />

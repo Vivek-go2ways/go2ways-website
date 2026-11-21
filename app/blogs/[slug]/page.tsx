@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           {post.body.map((block, i) => <Block key={i} block={block} />)}
         </div>
         <div className="post-foot reveal">
-          <a className="btn btn-secondary" href={link("/blogs")}>← Back to all blogs</a>
+          <a className="btn btn-secondary" href={link("/blogs")}>Explore Our Services</a>
           <a className="btn btn-primary" href={link("/contact")}>Talk to Our Team</a>
         </div>
       </article>

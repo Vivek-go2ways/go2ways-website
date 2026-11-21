@@ -18,8 +18,8 @@ export default function HomePage() {
           <SplitWords as="h1" className="display-xl split-words" lines={["Technology That Moves", "Businesses Forward."]} />
           <p className="body-l hero-sub">Go2Ways helps organisations modernise operations through enterprise technology services, AI solutions and innovative software products.</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={link("/#features")}>Explore Our Solutions</a>
-            <a className="btn btn-secondary" href={link("/contact")}>Contact Us</a>
+            <a className="btn btn-primary" href={link("/#features")}>Explore Our Services</a>
+            <a className="btn btn-secondary" href={link("/contact")}>Talk to Our Team</a>
           </div>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function HomePage() {
           <p className="body-l reveal" style={{ "--stagger": 2 }}><strong>Smarter Transport. Better Operations.</strong></p>
           <p className="body-l reveal" style={{ "--stagger": 3 }}>Ordova is an intelligent transport management platform designed to help transport operators and authorities manage planning, fleet operations and performance through connected technology.</p>
           <div className="reveal" style={{ "--stagger": 4 }}>
-            <a className="btn btn-primary" href="https://ordova.go2ways.com/" target="_blank" rel="noopener noreferrer">Discover Ordova</a>
+            <a className="btn btn-primary" href="https://ordova.go2ways.com/" target="_blank" rel="noopener noreferrer">Explore Our Services</a>
           </div>
         </div>
         <div className="card-grid" data-stagger-children="">

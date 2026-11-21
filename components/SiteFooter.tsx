@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <a href={link("/")} aria-label="Go2Ways home" className="footer-logo">
           <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" />
         </a>
-        <p className="footer-brand-motto">Our Mission · Our Vision · Our Philosophy · Our Strategy.</p>
+        <p className="footer-brand-motto">Who We Are · Our Mission · Our Vision · Our Philosophy · Our Strategy.</p>
       </div>
 
       {/* 3. Multi-Column Information Architecture */}
@@ -83,7 +83,7 @@ export default function SiteFooter() {
           <h4>Support</h4>
           <ul>
             <li>
-              <a href={link("/contact")}>Get In Touch</a>
+              <a href={link("/contact")}>Get in Touch</a>
             </li>
             <li>
               <a href={link("/contact#faq")}>FAQs</a>
@@ -111,7 +111,7 @@ export default function SiteFooter() {
             </p>
             <p className="footer-contact-line">
               <span className="footer-contact-label">Phone:</span>{" "}
-              <a href="tel:+918826949739">+91 8826949739</a>
+              <a href="tel:+918826949739">+91 88269 49739</a>
             </p>
             <p className="footer-hours-line">
               <span className="footer-contact-label">Hours:</span> Mon – Sat, 9:00 AM – 6:00 PM

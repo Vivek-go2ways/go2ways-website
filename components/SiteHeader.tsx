@@ -98,12 +98,12 @@ export default function SiteHeader() {
             <li><a href={link("/contact#faq")}>FAQ</a></li>
 
             {/* 6. Get In Touch (mobile CTA) */}
-            <li className="mobile-cta"><a href={link("/contact")}>Get In Touch</a></li>
+            <li className="mobile-cta"><a href={link("/contact")}>Talk to Our Team</a></li>
           </ul>
         </nav>
 
         {/* 6. Get In Touch (primary header CTA) */}
-        <a className="btn btn-primary header-cta" href={link("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Get In Touch</a>
+        <a className="btn btn-primary header-cta" href={link("/contact")} aria-current={path === "/contact" ? "page" : undefined}>Talk to Our Team</a>
         <button className="nav-toggle" aria-label="Menu" aria-expanded="false"><span /><span /><span /></button>
       </div>
     </header>

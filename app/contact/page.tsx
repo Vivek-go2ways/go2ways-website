@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
               </svg>
               <h2>Call Us</h2>
-              <p>+91 8826949739</p>
+              <p>+91 88269 49739</p>
             </a>
             {" "}
             <a className="info-card reveal" href="https://www.google.com/maps/search/?api=1&query=314a+Sector+102+Gurugram+Haryana" target="_blank" rel="noopener">
@@ -168,7 +168,7 @@ export default function ContactPage() {
               <button className="faq-q" aria-expanded="false" aria-controls="faq-4">Can I speak to someone directly?<span className="plus" aria-hidden="true" /></button>
               <div className="faq-a" id="faq-4">
                 <div>
-                  <p>Of course. Call us on +91 8826949739, Monday to Saturday, 9:00 AM – 6:00 PM, or email support@go2ways.com.</p>
+                  <p>Of course. Call us on +91 88269 49739, Monday to Saturday, 9:00 AM – 6:00 PM, or email support@go2ways.com.</p>
                 </div>
               </div>
             </div>

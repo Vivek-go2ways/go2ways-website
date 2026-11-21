@@ -26,7 +26,7 @@ export default function IndustriesPage() {
           </div>
           <div className="stat reveal">
             <b><span data-count="50">50</span>+</b>
-            <span className="label">Projects Done</span>
+            <span className="label">Projects Delivered</span>
           </div>
           <div className="stat reveal">
             <b><span data-count="25">25</span>+</b>
@@ -34,7 +34,7 @@ export default function IndustriesPage() {
           </div>
           <div className="stat reveal">
             <b><span data-count="5">5</span>+</b>
-            <span className="label">Glorious Years</span>
+            <span className="label">Years of Excellence</span>
           </div>
         </div>
       </section>
@@ -47,9 +47,6 @@ export default function IndustriesPage() {
           </li>
           <li className="logo-tile reveal-scale">
             <img src={asset("/assets/img/logos/briwo.png")} alt="BRIWO" style={{ "--logo-h": "52px" }} loading="lazy" />
-          </li>
-          <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/ibm-maximo.png")} alt="IBM Maximo" style={{ "--logo-h": "60px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
             <img src={asset("/assets/img/logos/asahi-kasei.png")} alt="Asahi Kasei" style={{ "--logo-h": "42px" }} loading="lazy" />
@@ -66,7 +63,7 @@ export default function IndustriesPage() {
             <img src={asset("/assets/img/logos/mitsubishi-heavy-industries.png")} alt="Mitsubishi Heavy Industries" style={{ "--logo-h": "34px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
-            <img src={asset("/assets/img/logos/quantum-strides.png")} alt="Quantum Strides LLC" style={{ "--logo-h": "48px" }} loading="lazy" />
+            <img src={asset("/assets/img/logos/quantum-strides.png")} alt="Quantum Strides" style={{ "--logo-h": "48px" }} loading="lazy" />
           </li>
           <li className="logo-tile reveal-scale">
             <span className="wm more">&amp; more....</span>

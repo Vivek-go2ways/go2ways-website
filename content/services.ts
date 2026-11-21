@@ -79,7 +79,7 @@ const ENTERPRISE_INTEGRATION: Service = {
       icon: "lock",
       title: "Single sign-on & identity",
       text: "SAML and OpenID Connect with Azure AD, Entra ID or Okta for secure, audited access.",
-      photoAlt: "Server rack in a data center"
+      photoAlt: "Server rack in a data centre"
     },
     {
       icon: "pin",
@@ -255,7 +255,7 @@ const AI_SERVICES: Service = {
     "From AI idea",
     "to production value"
   ],
-  overviewBody: "Go2Ways builds practical AI that pays for itself. We create Generative AI assistants and RAG knowledge systems grounded in your own documents, AI agents that take on multi-step work, intelligent document processing, and custom machine learning models for forecasting, anomaly detection, vision and language. We start with a focused use case, prove the value quickly, then deploy, monitor and improve it securely in production.",
+  overviewBody: "At Go2Ways, we turn AI innovation into measurable business value. We develop Generative AI solutions, intelligent AI agents, Retrieval-Augmented Generation (RAG) systems, document intelligence solutions, and custom machine learning models tailored to your business needs. From predictive analytics and anomaly detection to computer vision, natural language processing, and workflow automation, we build scalable, secure, and production-ready AI solutions that solve real-world challenges, improve efficiency, and accelerate business growth.",
   highlights: [
     "Generative AI assistants and RAG knowledge systems grounded in your own data",
     "AI agents and automation built into the workflows your teams already use",
@@ -347,22 +347,22 @@ const WEB_DEVELOPMENT: Service = {
   name: "Web Development",
   short: "Web Development",
   icon: "globe",
-  nav: "Websites, web apps, SaaS platforms and e-commerce",
+  nav: "Websites, web apps, SaaS platforms and portals",
   h1: [
-    "Websites and web apps",
-    "built to perform"
+    "Enterprise Web Applications",
+    "Built to Perform"
   ],
-  sub: "Responsive websites, custom web applications, SaaS platforms and online stores on the technology that fits you best.",
+  sub: "Responsive enterprise websites, custom web applications, operations portals and SaaS platforms on the technology that fits you best.",
   overviewTitle: [
-    "Websites and web apps",
+    "Enterprise web applications",
     "built to perform"
   ],
-  overviewBody: "From corporate websites to complex SaaS platforms, Go2Ways designs and builds fast, secure and responsive web experiences. Our full-stack team works with the technology you already use or recommends the right one, integrates with your existing systems and APIs, and keeps everything running smoothly long after launch.",
+  overviewBody: "From corporate digital experiences to complex operations portals and SaaS platforms, Go2Ways designs and builds fast, secure and scalable web applications. Our full-stack engineering team works with your existing technology stack or recommends the right architecture, integrates seamlessly with enterprise systems and APIs, and provides reliable ongoing support.",
   highlights: [
-    "Responsive websites and landing pages that reflect your brand on every device",
-    "Custom web applications, SaaS platforms, dashboards and portals",
-    "Full-stack engineering on React, Angular, Node.js, Python, Java, .NET and more",
-    "E-commerce stores with secure payments and order management",
+    "Responsive corporate websites and portals that reflect your brand on every device",
+    "Custom enterprise web applications, operations dashboards and employee portals",
+    "Full-stack engineering on React, Next.js, Node.js, Python, Java, .NET and more",
+    "Secure transactional workflows, role-based access control and system integrations",
     "Maintenance, performance tuning and security updates after go-live"
   ],
   worksWith: [
@@ -372,47 +372,47 @@ const WEB_DEVELOPMENT: Service = {
     "Java & .NET",
     "REST & GraphQL APIs",
     "SQL & NoSQL Databases",
-    "SaaS & E-commerce Platforms",
-    "Payment Gateways",
+    "Enterprise SaaS Platforms",
+    "Identity & SSO",
     "AWS, Azure & Google Cloud",
     "Docker, Kubernetes & CI/CD",
     "Your Existing Stack"
   ],
   engagements: [
-    "New business website or website redesign",
-    "Custom web application, portal or SaaS platform",
-    "E-commerce store build or replatforming",
+    "Corporate website or digital platform modernisation",
+    "Custom enterprise web application, portal or dashboard",
+    "Operations software build or replatforming",
     "Ongoing maintenance and technical support"
   ],
   capabilities: [
     {
       icon: "globe",
-      title: "Website development",
-      text: "Professional, responsive business and corporate websites, landing pages and website redesigns that represent your brand and work seamlessly on every device.",
+      title: "Corporate digital platforms",
+      text: "Professional, responsive corporate websites, customer portals and platform redesigns that represent your brand and deliver seamless performance across devices.",
       photoAlt: "Laptop, tablet and smartphone side by side on a wooden desk"
     },
     {
       icon: "layers",
-      title: "Web & SaaS applications",
-      text: "Custom web applications, SaaS platforms, admin panels and dashboards, customer and employee portals and business management apps, with AI built in where it adds value.",
+      title: "Operations & SaaS applications",
+      text: "Custom web applications, SaaS platforms, administrative command centres, operational dashboards and employee portals, with AI built in where it adds value.",
       photoAlt: "Performance analytics dashboard on a laptop screen"
     },
     {
       icon: "code",
       title: "Full-stack & API engineering",
-      text: "Interactive front ends, secure back ends, database design and API development and integration, using React, Angular, Python, Node.js, Java, .NET or the stack you already run.",
+      text: "Interactive front ends, secure back ends, database design and API development and integration, using React, Next.js, Python, Node.js, Java, .NET or the stack you already run.",
       photoAlt: "Code editor on a laptop screen"
     },
     {
-      icon: "cart",
-      title: "E-commerce development",
-      text: "Online stores with product and inventory management, shopping cart and payment gateway integration, and order management that scales with your business.",
-      photoAlt: "Person holding a credit card at a laptop checkout page"
+      icon: "shield",
+      title: "Secure transaction & billing portals",
+      text: "Enterprise transaction workflows, self-service portals, customer billing interfaces and automated finance integrations built with rigorous security and compliance.",
+      photoAlt: "Person managing secure digital transactions on a laptop"
     },
     {
       icon: "wrench",
       title: "Maintenance & support",
-      text: "Website and application maintenance, performance optimisation, security updates, hosting support and a technical help desk, so everything stays fast and secure.",
+      text: "Application maintenance, performance optimisation, security patching, cloud hosting support and a dedicated technical help desk to ensure continuous uptime.",
       photoAlt: "Laptop on a white desk"
     }
   ],
@@ -458,12 +458,12 @@ export const SERVICES: ServiceEntry[] = [
       "Manage, Maintain & Optimise",
       "Your Enterprise Assets"
     ],
-    sub: "End-to-end IBM Maximo implementation, configuration, upgrades, automation scripting, system integration, and migration to IBM Maximo Application Suite (MAS).",
+    sub: "End-to-end IBM Maximo implementation, configuration, upgrades, automation scripting, system integration, and migration to MAS.",
     overviewTitle: [
       "Modernise, migrate and manage",
       "every critical asset"
     ],
-    overviewBody: "From established Maximo deployments to modern Maximo Application Suite (MAS) environments, Go2Ways helps organisations manage asset lifecycles, maintenance operations, and enterprise workflows. We deliver structured implementations, configuration, automation scripting, and planned MAS migrations on Red Hat OpenShift across hybrid and cloud platforms.",
+    overviewBody: "From established Maximo deployments to modern MAS environments, Go2Ways helps organisations manage asset lifecycles, maintenance operations, and enterprise workflows. We deliver structured implementations, configuration, automation scripting, and planned MAS migrations on Red Hat OpenShift across hybrid and cloud platforms.",
     highlights: [
       "New Maximo implementations, configurations and re-platforming",
       "Planned, rehearsed migrations from Maximo 7.6 to MAS (Manage, Health, Monitor, Predict)",
@@ -506,7 +506,7 @@ export const SERVICES: ServiceEntry[] = [
         icon: "migrate",
         title: "MAS Migration & Upgrades",
         text: "Structured and rehearsed migration from Maximo 7.6 to MAS on Red Hat OpenShift, with compatibility assessments and upgrade planning to protect existing customisations.",
-        photoAlt: "Network cabling in a data center"
+        photoAlt: "Network cabling in a data centre"
       },
       {
         icon: "database",
@@ -561,15 +561,15 @@ export const SERVICES: ServiceEntry[] = [
     name: "AI & Web Solutions",
     short: "AI & Web Solutions",
     icon: "sparkle",
-    nav: "AI, machine learning, web apps and e-commerce on any stack",
+    nav: "AI, machine learning, enterprise web apps and portals on any stack",
     h1: [
       "Intelligent Web & AI Solutions,",
       "Built on Any Stack"
     ],
-    sub: "We design, build and run AI solutions, websites and web applications around your business goals: from Generative AI, AI agents and custom ML models to SaaS platforms, portals and e-commerce, on the technology that fits you best.",
+    sub: "We design, build and run AI solutions, enterprise portals and web applications around your business goals: from Generative AI, AI agents and custom ML models to SaaS platforms, operations portals and dashboards, on the technology that fits you best.",
     tabs: [
       { id: "ai", label: "AI Solutions", service: AI_SERVICES },
-      { id: "web", label: "Web Development", service: WEB_DEVELOPMENT }
+      { id: "web", label: "Web Applications", service: WEB_DEVELOPMENT }
     ]
   },
   {
@@ -591,7 +591,7 @@ export const SERVICES: ServiceEntry[] = [
   {
     slug: "cloud-infrastructure",
     name: "Cloud & Infrastructure",
-    short: "Cloud & Infra",
+    short: "Cloud & Infrastructure",
     icon: "cloud",
     nav: "AWS, Azure, OpenShift, backup and monitoring",
     h1: [
@@ -606,7 +606,7 @@ export const SERVICES: ServiceEntry[] = [
     overviewBody: "A slow or brittle infrastructure slows down every technician, dispatcher and manager who relies on it. We design, build and run cloud and hybrid environments sized for performance, hardened against threats, and backed by 24/7 monitoring.",
     highlights: [
       "Architectures designed around real user and asset volumes",
-      "Red Hat OpenShift deployments for Maximo Application Suite",
+      "Red Hat OpenShift deployments for Maximo Application Suite (MAS)",
       "Tested backup, disaster recovery and RPO / RTO targets",
       "Cost visibility so you don't overpay for idle capacity"
     ],
@@ -630,12 +630,12 @@ export const SERVICES: ServiceEntry[] = [
         icon: "cloud",
         title: "Cloud migration & hosting",
         text: "Lift-and-shift or re-platform to AWS or Azure, with landing zones and networking set up right.",
-        photoAlt: "Data center server aisle"
+        photoAlt: "Data centre server aisle"
       },
       {
         icon: "layers",
         title: "OpenShift for MAS",
-        text: "OpenShift clusters designed and deployed specifically for Maximo Application Suite workloads.",
+        text: "OpenShift clusters designed and deployed specifically for MAS workloads.",
         photoAlt: "Network hardware closeup"
       },
       {

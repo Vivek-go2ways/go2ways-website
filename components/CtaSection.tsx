@@ -6,13 +6,13 @@ export default function CtaSection({ formAnchor = false }: { formAnchor?: boolea
     <section className="cta container">
       <div className="cta-card reveal-scale">
         <div className="silk-wave" data-wave="cta" data-speed="0.8" aria-hidden="true" />
-        <h2 className="heading-l">Ready to put your support<br />on autopilot?</h2>
-        <p className="body-l">Join 2,000+ businesses using Go2Ways to answer faster and scale smarter.</p>
-        <div className="cta-actions">
-          <a className="btn btn-primary" href={link(`/contact?topic=trial${hash}`)}>Start free trial</a>
-          {" "}
-          <a className="btn btn-secondary" href={link(`/contact?topic=demo${hash}`)}>Book a demo</a>
-        </div>
+<h2 className="heading-l">Planning Your Next Enterprise<br />Modernisation or MAS Migration?</h2>
+<p className="body-l">Speak with our certified architects to assess your systems, roadmap your upgrade, or discuss your technology goals.</p>
+<div className="cta-actions">
+  <a className="btn btn-primary" href={link(`/contact?topic=demo${hash}`)}>Talk to Our Team</a>
+  {" "}
+  <a className="btn btn-secondary" href={link(`/contact${hash}`)}>Explore Our Services</a>
+</div>
       </div>
     </section>
   );

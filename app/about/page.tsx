@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const STATS = [
   { value: 30, label: "Active Clients" },
-  { value: 50, label: "Projects Done" },
-  { value: 10, label: "Team Advisors" },
-  { value: 5, label: "Glorious Years" },
+  { value: 50, label: "Projects Delivered" },
+  { value: 25, label: "Team Advisors" },
+  { value: 5, label: "Years of Excellence" },
 ];
 
 const AI_POINTS = [
@@ -22,7 +22,7 @@ const AI_POINTS = [
   },
   {
     title: "AI-Ready Asset Management",
-    text: "Helping clients move to IBM Maximo Application Suite and make use of its AI-driven capabilities for asset management.",
+    text: "Helping clients move to IBM Maximo Application Suite (MAS) and make use of its AI-driven capabilities for asset management.",
     icon: <path d="M4 20h16M6 16V9M10 16V5M14 16v-6M18 16V8" />,
   },
   {

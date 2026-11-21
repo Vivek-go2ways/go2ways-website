@@ -343,11 +343,11 @@ export default function IntroSplash() {
                 <span className="g2w-intro-btn-arrow" aria-hidden="true">→</span>
               </button>
               <a className="g2w-intro-btn g2w-intro-btn-ghost" href={link(DEMO_HREF)} onClick={leaveVia}>
-                Request a Demo
+                Talk to Our Team
               </a>
             </div>
             <button type="button" className="g2w-intro-textlink" onClick={finish}>
-              Visit Our Site <span aria-hidden="true">→</span>
+              Explore Our Services <span aria-hidden="true">→</span>
             </button>
           </section>
 
@@ -437,10 +437,10 @@ export default function IntroSplash() {
             </div>
             <div className="g2w-intro-actions g2w-worlds-actions">
               <a className="g2w-intro-btn g2w-intro-btn-primary" href={link(DEMO_HREF)} onClick={leaveVia}>
-                Request a Demo
+                Talk to Our Team
               </a>
               <button type="button" className="g2w-intro-btn g2w-intro-btn-ghost" onClick={finish}>
-                Visit Our Site <span aria-hidden="true">→</span>
+                Explore Our Services
               </button>
             </div>
           </section>
