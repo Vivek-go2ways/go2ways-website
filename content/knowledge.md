@@ -14,8 +14,8 @@ Go2Ways is an enterprise technology partner for asset-driven businesses, based i
   AWS and Azure deployment, Red Hat OpenShift and containers, backup and disaster recovery, 24/7 monitoring and alerting, VMware and server administration, security hardening and patching.
 - **Managed Support** — /service-managed-support
   L2/L3 application support, application management services (AMS) including small enhancements and releases, 24/7 monitoring, incident and problem management with root-cause analysis, performance tuning and health checks, patches and minor upgrades, monthly reporting. Covers Maximo, MAS, TRIRIGA, integrations and infrastructure.
-- **Enterprise Mobile Solutions** — /service-mobile-development
-  Connected enterprise mobile applications and Maximo Mobile rollouts for field teams: offline-first work, inspections with photos and signatures, digital forms, maps and location, barcode and RFID scanning.
+- **Mobile Solutions** — /service-mobile-development
+  Connected mobile applications and Maximo Mobile rollouts for field teams: offline-first work, inspections with photos and signatures, digital forms, maps and location, barcode and RFID scanning.
 - **Enterprise Technology Consulting & Architecture** — /service-consulting-advisory
   Technology consulting, solution architecture, modernisation roadmaps, system assessments, architecture reviews and enterprise integration planning aligned with business objectives.
 

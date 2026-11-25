@@ -105,7 +105,7 @@ function Body({ s, prefix = "" }: { s: Service; prefix?: string }) {
       </section>
 
       <section className="section container" id={`${prefix}related`}>
-        <div className="section-header" style={{ marginBottom: "32px" }}>
+        <div className="section-header" style={{ marginBottom: "24px" }}>
           <span className="pill-tag reveal">Related services</span>
         </div>
         <div className="related-grid" data-stagger-children="">

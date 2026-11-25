@@ -97,7 +97,7 @@ export default function IndustriesPage() {
         </div>
       </section>
       <section className="section container" id="sectors">
-        <h2 className="display-xl center reveal" style={{ marginBottom: "56px" }}>Sectors We Work In</h2>
+        <h2 className="display-xl center reveal" style={{ marginBottom: "40px" }}>Sectors We Work In</h2>
         <div className="sector-grid last-two" data-stagger-children="">
           <article className="feature-card sector reveal">
             <div className="media" data-tilt="">
