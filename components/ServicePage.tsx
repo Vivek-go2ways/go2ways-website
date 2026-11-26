@@ -13,7 +13,7 @@ function Lines({ lines }: { lines: string[] }) {
       {l}
     </Fragment>
   ));
-  
+
 }
 
 function Photo({ folder, slot, alt, w, h, lazy = true }: { folder: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
@@ -69,6 +69,7 @@ function Body({ s, prefix = "" }: { s: Service; prefix?: string }) {
           </div>
         </div>
       </section>
+
 
       <section className="section container" id={`${prefix}included`}>
         <div className="section-header">
