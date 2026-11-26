@@ -14,12 +14,16 @@ const ROW_1 = [
   { img: "/assets/img/logos/briwo.png", alt: "BRIWO", h: "52px" },
   { img: "/assets/img/logos/asahi-kasei.png", alt: "Asahi Kasei", h: "42px" },
   { img: "/assets/img/logos/saudi-electricity.png", alt: "Saudi Electricity Company", h: "46px" },
+  { img: "/assets/img/logos/coned.svg", alt: "Coned, USA", h: "40px" },
+  { img: "/assets/img/logos/highstep.svg", alt: "Highstep Technologies, Canada", h: "46px" },
 ];
 
 const ROW_2 = [
   { img: "/assets/img/logos/mitsubishi-heavy-industries.png", alt: "Mitsubishi Heavy Industries", h: "34px" },
   { img: "/assets/img/logos/connixt.png", alt: "CONNIXT", h: "30px" },
   { img: "/assets/img/logos/quantum-strides.png", alt: "Quantum Strides", h: "48px" },
+  { img: "/assets/img/logos/skills-alliance.svg", alt: "Skills Alliance, South Africa", h: "34px" },
+  { img: "/assets/img/logos/beauma-services.png", alt: "Beauma Services Inc, Canada", h: "46px" },
 ];
 
 export default function IndustriesPage() {
@@ -80,14 +84,14 @@ export default function IndustriesPage() {
         <div className="logo-marquee logo-row-2" aria-label="Clients row 2">
           <div className="logo-marquee-track marquee-right">
             <ul className="logo-marquee-group">
-              {[...ROW_2, ...ROW_2, ...ROW_2].map((c, i) => (
+              {[...ROW_2, ...ROW_2].map((c, i) => (
                 <li className="logo-tile" key={i}>
                   <img src={asset(c.img)} alt={c.alt} style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
                 </li>
               ))}
             </ul>
             <ul className="logo-marquee-group" aria-hidden="true">
-              {[...ROW_2, ...ROW_2, ...ROW_2].map((c, i) => (
+              {[...ROW_2, ...ROW_2].map((c, i) => (
                 <li className="logo-tile" key={`dup-${i}`}>
                   <img src={asset(c.img)} alt="" style={{ "--logo-h": c.h } as CSSProperties} loading="lazy" />
                 </li>

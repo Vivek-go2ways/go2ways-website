@@ -31,108 +31,215 @@ export const isGroup = (s: ServiceEntry): s is ServiceGroup => "tabs" in s;
 
 export type Product = { name: string; href: string | null; icon: IconName; desc: string };
 
-const ENTERPRISE_INTEGRATION: Service = {
-  slug: "enterprise-integration",
-  name: "Enterprise Integration",
-  short: "Integration",
-  icon: "link",
-  nav: "Connect Maximo with SAP, Oracle and more",
+const SAP_SOLUTIONS: Service = {
+  slug: "sap",
+  name: "SAP Solutions",
+  short: "SAP",
+  icon: "layers",
+  imageFolder: "enterprise-integration",
+  nav: "SAP S/4HANA, ECC, BTP and enterprise integration",
   h1: [
-    "Connect Maximo with",
-    "the rest of your business"
+    "Transform Enterprise",
+    "Operations with SAP"
   ],
-  sub: "Robust integrations between IBM Maximo, ERP, identity, GIS and IoT systems, built with standard APIs and monitored around the clock.",
+  sub: "End-to-end SAP S/4HANA implementation, ECC migration, SAP BTP integration and enterprise workflow automation tailored to your business.",
   overviewTitle: [
-    "No more double entry.",
-    "No more blind spots."
+    "Connected finance, supply chain",
+    "and asset operations on SAP"
   ],
-  overviewBody: "When maintenance, finance and operations run in silos, teams waste time re-entering data and chasing updates. We connect IBM Maximo to SAP, Oracle, GIS, identity providers and field devices so information flows automatically.",
+  overviewBody: "Go2Ways delivers full-lifecycle SAP services across S/4HANA, ECC, and SAP Business Technology Platform (BTP). Whether you are modernising legacy ERP landscapes, integrating SAP PM, MM and FI with operational platforms like IBM Maximo, or building clean-core Fiori apps and ABAP extensions, our team delivers reliable, scalable SAP solutions.",
   highlights: [
-    "Two-way sync for purchasing, inventory and GL",
-    "Single sign-on via Azure AD / Entra ID, LDAP or SAML",
-    "Real-time sensor and IoT data into Maximo",
-    "Built on standard APIs, not fragile point-to-point code"
+    "SAP S/4HANA greenfield implementations, brownfield conversions and upgrades",
+    "End-to-end integration across SAP MM, PM, FI/CO, SD and external EAM/CRM systems",
+    "SAP BTP, SAP Integration Suite (CPI), OData & REST APIs for seamless connectivity",
+    "Custom SAP Fiori/UI5 applications, ABAP development and clean-core extensions"
   ],
   worksWith: [
-    "SAP",
-    "Oracle EBS & Cloud",
-    "Azure AD / Entra ID",
-    "Esri ArcGIS",
-    "IBM App Connect",
-    "Apache Kafka",
-    "REST APIs",
-    "Maximo Integration Framework"
+    "SAP S/4HANA",
+    "SAP ECC",
+    "SAP BTP",
+    "SAP Integration Suite (CPI)",
+    "SAP Fiori / UI5",
+    "SAP PM & MM",
+    "SAP FI / CO",
+    "OData & RFC / BAPI"
   ],
   engagements: [
-    "New ERP integration",
-    "SSO rollout",
-    "Integration modernisation"
+    "SAP S/4HANA migration & rollout",
+    "SAP to EAM / enterprise integration",
+    "Custom Fiori apps & BTP extensions"
   ],
   capabilities: [
     {
-      icon: "link",
-      title: "ERP integration",
-      text: "Two-way sync of purchase orders, receipts, inventory and costs between Maximo and SAP or Oracle.",
+      icon: "layers",
+      title: "S/4HANA & ECC implementation",
+      text: "Structured implementations, core module configurations (FI/CO, MM, SD, PM), and planned migrations to SAP S/4HANA.",
       photoAlt: "Network cabling in a server rack"
     },
     {
-      icon: "lock",
-      title: "Single sign-on & identity",
-      text: "SAML and OpenID Connect with Azure AD, Entra ID or Okta for secure, audited access.",
+      icon: "link",
+      title: "SAP Integration Suite & APIs",
+      text: "Real-time bidirectional sync using SAP CPI, OData, IDocs, RFC/BAPI and REST APIs across ERP, EAM and cloud platforms.",
       photoAlt: "Server rack in a data centre"
     },
     {
-      icon: "pin",
-      title: "GIS & spatial",
-      text: "Bi-directional sync with Esri ArcGIS: assets and work orders plotted on maps.",
+      icon: "code",
+      title: "ABAP & SAP Fiori development",
+      text: "Custom Fiori/UI5 user interfaces, clean-core ABAP extensions, approval workflows and tailored enterprise reporting.",
       photoAlt: "Digital map on a tablet"
     },
     {
-      icon: "pulse",
-      title: "IoT & sensor feeds",
-      text: "Condition monitoring, meter readings and alarms fed straight from assets into Maximo.",
+      icon: "database",
+      title: "Master data & procurement sync",
+      text: "Unified vendors, materials, purchase orders, goods receipts, invoices and GL cost centres without duplicate entry.",
       photoAlt: "Circuit board with sensors"
     },
     {
-      icon: "layers",
-      title: "Middleware & APIs",
-      text: "REST APIs, Kafka topics and MIF messaging designed to scale without breaking.",
+      icon: "shield",
+      title: "Security, roles & GRC compliance",
+      text: "Role-based access controls, SSO via Azure AD / IAS, audit trails and segregation-of-duties governance.",
       photoAlt: "Abstract data flow"
     },
     {
-      icon: "shield",
-      title: "Monitoring & runbooks",
-      text: "Every integration delivered with alerts, retry queues, health dashboards and runbooks.",
+      icon: "pulse",
+      title: "Managed AMS & performance tuning",
+      text: "Proactive monitoring, IDoc/queue error resolution, transport management, upgrades and L2/L3 functional & technical support.",
       photoAlt: "Control room with monitoring screens"
     }
   ],
   gallery: [
-    "Server room with blue lighting",
-    "Network engineer at work",
-    "Data cables connected to switches"
+    "SAP enterprise server infrastructure",
+    "SAP integration engineer at workstation",
+    "Enterprise network switches and connectivity"
   ],
   steps: [
     {
       title: "Discover",
-      text: "We map source and target fields, error scenarios and transaction volumes."
+      text: "We assess your SAP landscape, business processes, custom code and integration touchpoints."
     },
     {
-      title: "Design",
-      text: "We design message flows, authentication, retry logic and monitoring."
+      title: "Architect",
+      text: "We design S/4HANA blueprints, clean-core extensions, API mappings and security models."
     },
     {
       title: "Build & test",
-      text: "We build integrations and test with mock and real data through edge cases."
+      text: "We configure modules, build Fiori/CPI flows and execute thorough integration and UAT cycles."
     },
     {
       title: "Deploy",
-      text: "We hand over with monitoring, alerts and clear runbooks."
+      text: "We manage cutover, hypercare and ongoing SAP Application Management Services (AMS)."
     }
   ],
   related: [
     "ibm-maximo-mas",
     "cloud-infrastructure",
-    "mobile-development"
+    "managed-support"
+  ]
+};
+
+const ORACLE_SOLUTIONS: Service = {
+  slug: "oracle",
+  name: "Oracle Solutions",
+  short: "Oracle",
+  icon: "database",
+  imageFolder: "consulting-advisory",
+  nav: "Oracle Fusion Cloud, EBS, OCI and database solutions",
+  h1: [
+    "Modernise Enterprise",
+    "Systems with Oracle"
+  ],
+  sub: "Comprehensive Oracle Fusion Cloud ERP, Oracle E-Business Suite (EBS), OCI cloud engineering and seamless cross-platform integrations.",
+  overviewTitle: [
+    "Unified financials, supply chain",
+    "and cloud data on Oracle"
+  ],
+  overviewBody: "From Oracle Fusion Cloud ERP and Supply Chain Management to long-running Oracle E-Business Suite and Oracle Database workloads, Go2Ways helps organisations modernise, integrate and manage their Oracle ecosystem. We connect Oracle Financials, Procurement and Inventory with operational platforms using Oracle Integration Cloud (OIC) and REST APIs.",
+  highlights: [
+    "Oracle Fusion Cloud ERP/SCM implementations, rollouts and quarterly update management",
+    "Oracle E-Business Suite (EBS R12) modernisation, integrations and managed support",
+    "Oracle Integration Cloud (OIC), ORDS REST APIs and real-time enterprise data sync",
+    "Oracle Database tuning, high availability, backup/DR and OCI cloud migrations"
+  ],
+  worksWith: [
+    "Oracle Fusion Cloud",
+    "Oracle EBS R12",
+    "Oracle Integration Cloud (OIC)",
+    "Oracle Cloud (OCI)",
+    "Oracle Database",
+    "PL/SQL & APEX",
+    "ORDS / REST APIs",
+    "BI Publisher & OTBI"
+  ],
+  engagements: [
+    "Oracle Cloud / EBS integration",
+    "Oracle Database & OCI modernisation",
+    "Oracle ERP & reporting rollout"
+  ],
+  capabilities: [
+    {
+      icon: "cloud",
+      title: "Oracle Fusion Cloud & EBS",
+      text: "End-to-end configuration, workflows, financials, procurement and supply chain processes across Fusion Cloud and EBS.",
+      photoAlt: "Architecture diagram on a whiteboard"
+    },
+    {
+      icon: "link",
+      title: "Oracle Integration Cloud (OIC)",
+      text: "Resilient API-driven connectors linking Oracle ERP with IBM Maximo, CRM, HR and third-party operational systems.",
+      photoAlt: "Technical review meeting"
+    },
+    {
+      icon: "database",
+      title: "Oracle Database & performance",
+      text: "Schema design, PL/SQL optimisation, Data Guard high availability, patching and enterprise database administration.",
+      photoAlt: "Server infrastructure dashboard"
+    },
+    {
+      icon: "chart",
+      title: "OTBI, BI Publisher & analytics",
+      text: "Custom operational dashboards, financial statements, automated data extracts and executive reporting.",
+      photoAlt: "Business analytics presentation"
+    },
+    {
+      icon: "code",
+      title: "Oracle APEX & extensions",
+      text: "Rapid low-code enterprise applications, custom portals and SaaS extensions built natively on Oracle technology.",
+      photoAlt: "Software developer coding"
+    },
+    {
+      icon: "shield",
+      title: "OCI hosting & managed support",
+      text: "Oracle Cloud Infrastructure architecture, security hardening, automated backups and SLA-backed L2/L3 support.",
+      photoAlt: "Cloud security operations"
+    }
+  ],
+  gallery: [
+    "Enterprise architecture planning session",
+    "Database and cloud infrastructure review",
+    "Technology consulting and roadmap design"
+  ],
+  steps: [
+    {
+      title: "Assess",
+      text: "We audit your Oracle EBS or Fusion Cloud footprint, database health and integration bottlenecks."
+    },
+    {
+      title: "Design",
+      text: "We architect OIC/REST data flows, security policies and scalable OCI or hybrid topologies."
+    },
+    {
+      title: "Implement",
+      text: "We configure modules, develop extensions, migrate data and validate end-to-end transactions."
+    },
+    {
+      title: "Operate",
+      text: "We deliver smooth go-live cutover, performance tuning and ongoing Oracle managed services."
+    }
+  ],
+  related: [
+    "cloud-infrastructure",
+    "managed-support",
+    "consulting-advisory"
   ]
 };
 
@@ -577,15 +684,16 @@ export const SERVICES: ServiceEntry[] = [
     name: "Enterprise Solutions",
     short: "Enterprise Solutions",
     icon: "layers",
-    nav: "SAP & Oracle integration and IBM TRIRIGA",
+    nav: "SAP, Oracle and IBM TRIRIGA enterprise solutions",
     h1: [
       "Enterprise Solutions,",
       "Connected and Running as One"
     ],
-    sub: "Connect IBM Maximo with SAP, Oracle and the rest of your enterprise systems, and run your real estate and facilities on IBM TRIRIGA, delivered by one team.",
+    sub: "End-to-end SAP, Oracle and IBM TRIRIGA implementations, enterprise integrations and lifecycle support, delivered by one team.",
     tabs: [
-      { id: "integration", label: "Enterprise Integration", service: ENTERPRISE_INTEGRATION },
-      { id: "tririga", label: "TRIRIGA Services", service: TRIRIGA }
+      { id: "sap", label: "SAP", service: SAP_SOLUTIONS },
+      { id: "oracle", label: "Oracle", service: ORACLE_SOLUTIONS },
+      { id: "tririga", label: "TRIRIGA", service: TRIRIGA }
     ]
   },
   {
