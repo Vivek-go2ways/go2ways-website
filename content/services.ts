@@ -797,15 +797,15 @@ export const SERVICES: ServiceEntry[] = [
   },
   {
     slug: "mobile-development",
-    name: "Enterprise Mobile Solutions",
+    name: "Mobile Solutions",
     short: "Mobile Solutions",
     icon: "mobile",
-    nav: "Connected field apps and enterprise mobile solutions",
+    nav: "Connected field apps and mobile solutions",
     h1: [
       "Connect Your People,",
       "Systems and Operations"
     ],
-    sub: "Enterprise mobile solutions that connect field teams with business systems, operational data and workflows, helping employees access information and complete tasks wherever work happens.",
+    sub: "Mobile solutions that connect field teams with business systems, operational data and workflows, helping employees access information and complete tasks wherever work happens.",
     overviewTitle: [
       "Empower your workforce",
       "wherever work happens"
@@ -827,7 +827,7 @@ export const SERVICES: ServiceEntry[] = [
       "Barcode / RFID"
     ],
     engagements: [
-      "Enterprise mobile solution rollout",
+      "Mobile solution rollout",
       "Custom field operations app",
       "Mobile experience & workflow review"
     ],

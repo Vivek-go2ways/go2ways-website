@@ -567,7 +567,7 @@ function initContactForm(form: HTMLFormElement, on: On) {
       "managed-support": "Managed Support",
       tririga: "TRIRIGA Services",
       "erp-enterprise-applications": "Enterprise Solutions",
-      "mobile-development": "Enterprise Mobile Solutions",
+      "mobile-development": "Mobile Solutions",
       "consulting-advisory": "Enterprise Technology Consulting & Architecture",
     };
     if (services[topic]) presets[topic] = "Hi Go2Ways team, I'd like to talk about " + services[topic] + ".";

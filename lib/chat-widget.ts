@@ -1,4 +1,4 @@
-import { link as toLink } from "./paths";
+import { asset, link as toLink } from "./paths";
 
 type Intent = { id: string; keys: [RegExp, number][]; reply: () => string; chips: string[] };
 type Msg = { from: "user" | "bot"; text?: string; html?: string; chips?: string[] };
@@ -31,8 +31,8 @@ const SERVICES: Svc[] = [
   { slug: "managed-support", name: "Managed Support",
     text: "Our managed support covers L2/L3 application support, application management services (AMS), 24/7 monitoring, incident and problem management, health checks and patching.",
     keys: [[/support/, 2], [/\bams\b/, 3], [/24 ?[x\/] ?7|round the clock|around the clock/, 3], [/incident/, 3], [/\bl2\b|\bl3\b/, 3], [/help ?desk|ticket/, 2], [/\bsla\b/, 2]] },
-  { slug: "mobile-development", name: "Enterprise Mobile Solutions",
-    text: "We develop connected enterprise mobile solutions and deploy Maximo Mobile for field teams: offline-first access, digital inspections, forms with photos/signatures, GPS maps and barcode/RFID scanning.",
+  { slug: "mobile-development", name: "Mobile Solutions",
+    text: "We develop connected mobile solutions and deploy Maximo Mobile for field teams: offline-first access, digital inspections, forms with photos/signatures, GPS maps and barcode/RFID scanning.",
     keys: [[/mobile/, 3], [/\bapps?\b/, 2], [/field (team|work|staff|service)|technician/, 3], [/offline/, 3], [/android|\bios\b|iphone/, 3], [/barcode|rfid|scan/, 2], [/inspection/, 2]] },
   { slug: "consulting-advisory", name: "Enterprise Technology Consulting & Architecture",
     text: "We provide enterprise technology consulting and solution architecture: modernisation roadmaps, system assessments, architecture reviews, integration planning and technical advisory.",
@@ -165,7 +165,7 @@ function renderMd(text: string) {
 const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
 const ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
 const ICON_RESET = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5"/></svg>';
-const ICON_SPARK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>';
+const ICON_ASK = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true"><path fill="#90CAF9" fill-rule="evenodd" d="M283,96 346,101 367,113 408,158 431,211 436,269 429,307 403,360 362,402 359,413 363,422 373,428 382,427 415,398 443,359 460,320 469,276 469,235 460,191 447,160 484,215 500,270 500,327 483,384 459,423 429,454 395,477 359,492 319,500 280,500 233,490 198,475 104,501 95,490 103,462 157,446 193,461 234,469 261,469 271,460 271,446 261,437 210,431 164,412 114,424 121,396 100,341 96,283 111,220 147,163 170,141 211,115 243,103 283,96Z M255,137 231,142 207,159 195,178 191,206 202,218 217,216 231,182 250,171 268,173 282,185 287,199 284,217 250,254 240,277 240,300 256,310 269,303 278,272 312,235 320,212 320,193 312,170 299,154 278,141 255,137Z M255,329 238,338 233,352 243,370 256,374 274,364 278,351 268,333 255,329Z"/><path fill="#18193F" fill-rule="evenodd" d="M255,42 291,45 320,52 359,69 381,83 428,130 444,156 459,193 467,231 468,269 456,327 443,356 421,389 381,426 367,424 362,418 361,407 404,361 428,315 438,263 436,228 430,202 415,167 394,137 364,109 329,89 304,80 270,74 226,76 185,88 175,86 168,78 168,66 175,58 206,48 255,42Z M96,122 109,128 112,142 89,182 75,232 77,291 98,347 76,434 162,413 204,431 264,440 271,454 262,467 241,468 207,463 159,445 73,469 58,467 44,453 42,438 66,354 46,296 42,256 44,227 60,170 82,131 96,122Z M248,139 273,141 296,153 314,177 319,200 311,234 277,271 270,298 259,308 249,307 243,302 241,280 251,255 286,216 288,195 285,187 273,174 252,169 231,180 223,195 222,208 216,215 203,217 192,204 197,177 207,161 224,147 248,139Z M252,331 267,334 276,348 273,363 259,372 244,369 235,355 238,340 252,331Z"/></svg>';
 
 export function initChat({ endpoint }: { endpoint?: string }): () => void {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -193,7 +193,7 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
     '<div class="chat-teaser" hidden><p>Questions about Go2Ways? Ask me.</p><button type="button" class="chat-teaser-x" aria-label="Dismiss">' + ICON_CLOSE + "</button></div>" +
     '<section class="chat-panel" id="g2w-chat-panel" role="dialog" aria-label="Go2Ways assistant" hidden>' +
       '<header class="chat-head">' +
-        '<span class="chat-avatar">' + ICON_SPARK + "</span>" +
+        '<span class="chat-avatar">' + ICON_ASK + "</span>" +
         '<div class="chat-title"><p class="chat-name">Go2Ways assistant</p><p class="chat-status"><span class="dot" aria-hidden="true"></span>Answers instantly</p></div>' +
         '<button type="button" class="chat-icon-btn chat-reset" aria-label="Start a new conversation" title="New conversation">' + ICON_RESET + "</button>" +
         '<button type="button" class="chat-icon-btn chat-close" aria-label="Close chat">' + ICON_CLOSE + "</button>" +
@@ -208,7 +208,7 @@ export function initChat({ endpoint }: { endpoint?: string }): () => void {
       '<p class="chat-note">AI assistant. It can make mistakes, so for anything important <a href="/contact">contact our team</a>.</p>' +
     "</section>" +
     '<button type="button" class="chat-launcher" aria-label="Open chat with the Go2Ways assistant" aria-expanded="false" aria-controls="g2w-chat-panel">' +
-      '<span class="chat-launcher-avatar"><span class="ic ic-open">' + ICON_SPARK + '</span><span class="ic ic-close">' + ICON_CLOSE + "</span></span>" +
+      '<span class="chat-launcher-avatar"><span class="ic ic-open">' + ICON_ASK + '</span><span class="ic ic-close">' + ICON_CLOSE + "</span></span>" +
       '<span class="chat-launcher-label" aria-hidden="true">Ask Go2Ways</span>' +
     "</button>";
   document.body.appendChild(root);
