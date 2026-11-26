@@ -15,7 +15,7 @@ Go2Ways is an enterprise technology partner for asset-driven businesses, based i
 - **Managed Support** — /service-managed-support
   L2/L3 application support, application management services (AMS) including small enhancements and releases, 24/7 monitoring, incident and problem management with root-cause analysis, performance tuning and health checks, patches and minor upgrades, monthly reporting. Covers Maximo, MAS, TRIRIGA, integrations and infrastructure.
 - **Mobile Solutions** — /service-mobile-development
-  Connected mobile applications and Maximo Mobile rollouts for field teams: offline-first work, inspections with photos and signatures, digital forms, maps and location, barcode and RFID scanning.
+  Full-lifecycle mobile application development across iOS (Swift), Android (Kotlin), React Native, Flutter and PWAs: custom consumer and B2B apps, enterprise mobile enablement, offline-first architectures with bidirectional data sync, hardware and sensor integration (barcode, QR, NFC, GPS), secure cloud backend APIs and App Store / Google Play deployment.
 - **Enterprise Technology Consulting & Architecture** — /service-consulting-advisory
   Technology consulting, solution architecture, modernisation roadmaps, system assessments, architecture reviews and enterprise integration planning aligned with business objectives.
 

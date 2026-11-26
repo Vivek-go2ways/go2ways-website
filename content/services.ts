@@ -800,101 +800,106 @@ export const SERVICES: ServiceEntry[] = [
     name: "Mobile Solutions",
     short: "Mobile Solutions",
     icon: "mobile",
-    nav: "Connected field apps and mobile solutions",
+    nav: "Custom iOS, Android & cross-platform mobile apps",
     h1: [
-      "Connect Your People,",
-      "Systems and Operations"
+      "Custom Mobile Apps,",
+      "iOS, Android & Beyond"
     ],
-    sub: "Mobile solutions that connect field teams with business systems, operational data and workflows, helping employees access information and complete tasks wherever work happens.",
+    sub: "Full-lifecycle mobile app development across iOS, Android and cross-platform frameworks. We design and engineer scalable consumer apps, enterprise business solutions and high-performance field platforms.",
     overviewTitle: [
-      "Empower your workforce",
-      "wherever work happens"
+      "Mobile experiences built for",
+      "performance, scale and usability"
     ],
-    overviewBody: "Paper processes and delayed data entry slow down operations and lead to incomplete records. Go2Ways develops connected enterprise mobile applications and deploys field platforms like Maximo Mobile, giving teams instant access to work orders, assets, digital forms, and operational insights whether online or offline.",
+    overviewBody: "From consumer products and customer portals to complex enterprise mobility platforms, Go2Ways designs, engineers and delivers robust mobile applications across any tech stack. Whether you need a native iOS app in Swift, a native Android app in Kotlin, or a unified cross-platform application with React Native or Flutter, our engineering team handles the complete mobile lifecycle: intuitive UI/UX design, offline-first architectures, secure cloud backend APIs, enterprise system integrations, automated CI/CD pipelines and app store deployment.",
     highlights: [
-      "Mobile workforce enablement across field and facility operations",
-      "Offline-first architectures with reliable bidirectional data sync",
-      "Digital inspections, work orders, photos, and electronic signatures",
-      "Integration with enterprise platforms including IBM Maximo, ERP, and GIS"
+      "Native iOS (Swift) and Android (Kotlin) mobile app engineering",
+      "Cross-platform development with React Native and Flutter for faster delivery",
+      "Offline-first architectures with intelligent local data sync and caching",
+      "Secure cloud backends, REST & GraphQL APIs, authentication and push notifications",
+      "End-to-end App Store and Google Play release management, compliance and maintenance"
     ],
     worksWith: [
-      "iOS",
-      "Android",
+      "iOS (Swift)",
+      "Android (Kotlin)",
       "React Native",
-      "Maximo Mobile",
-      "REST APIs",
-      "Esri ArcGIS",
-      "Barcode / RFID"
+      "Flutter",
+      "TypeScript",
+      "REST & GraphQL",
+      "Firebase / AWS",
+      "SQLite / Realm",
+      "Barcode & NFC",
+      "Enterprise APIs"
     ],
     engagements: [
-      "Mobile solution rollout",
-      "Custom field operations app",
-      "Mobile experience & workflow review"
+      "New mobile app from concept to app store release",
+      "Cross-platform mobile migration & modernization",
+      "Enterprise mobile tool & workflow enablement",
+      "Mobile app performance, security & feature expansion"
     ],
     capabilities: [
       {
         icon: "mobile",
-        title: "Enterprise mobile enablement",
-        text: "Role-based mobile applications for technicians, inspectors, and operational staff, configured for fast adoption.",
-        photoAlt: "Technician recording work on a tablet"
+        title: "Native iOS & Android development",
+        text: "High-performance native applications engineered with Swift and Kotlin, leveraging device hardware, sensors and platform design guidelines.",
+        photoAlt: "Mobile app developer on phone and workstation"
       },
       {
         icon: "code",
-        title: "Custom app development",
-        text: "Native and cross-platform enterprise mobile applications tailored to specific business processes and workflows.",
+        title: "Cross-platform apps (React Native & Flutter)",
+        text: "Single-codebase mobile applications that deliver native speed, smooth animations, unified UI and rapid multi-platform release cycles.",
         photoAlt: "Phone app beside a laptop"
       },
       {
         icon: "offline",
-        title: "Offline-first field work",
-        text: "Robust offline capabilities that allow field teams to complete tasks in remote locations and sync automatically when connected.",
-        photoAlt: "Field engineer on site"
+        title: "Offline-first architecture & sync",
+        text: "Resilient local storage with conflict resolution, background data synchronization and uninterrupted performance online or offline.",
+        photoAlt: "Field engineer using mobile device on site"
       },
       {
         icon: "clipboard",
-        title: "Digital inspections & forms",
-        text: "Standardised mobile forms, guided inspection checklists, photo capture, and digital signatures for compliance.",
-        photoAlt: "Filling in an inspection checklist"
+        title: "Enterprise workflows & digital forms",
+        text: "Dynamic form builders, guided inspection checklists, photo annotation, digital signatures and automated compliance reporting.",
+        photoAlt: "Filling in a mobile inspection checklist"
       },
       {
         icon: "pin",
-        title: "Spatial & location awareness",
-        text: "Map-based asset visualisation, route guidance, and work order dispatch integrated with GIS systems.",
+        title: "Location services & real-time tracking",
+        text: "Interactive mapping, geolocation tracking, geofencing, route guidance and spatial data integration tailored to operational teams.",
         photoAlt: "Phone showing a navigation map"
       },
       {
         icon: "scan",
-        title: "Barcode, QR & RFID capture",
-        text: "Rapid asset identification, parts scanning, and inventory tracking directly from mobile device cameras or scanners.",
-        photoAlt: "Phone scanning a code"
+        title: "Hardware integration & smart capture",
+        text: "Camera-based barcode and QR scanning, RFID/NFC communication, Bluetooth peripherals and biometric authentication.",
+        photoAlt: "Phone scanning a barcode"
       }
     ],
     gallery: [
-      "Field worker in a safety helmet",
-      "Phone showing a dashboard app",
-      "Engineer in a hard hat on site"
+      "Mobile application dashboard on modern smartphone",
+      "Cross-platform mobile user interface and analytics",
+      "Engineer using enterprise mobile app on site"
     ],
     steps: [
       {
-        title: "Observe",
-        text: "We review operational processes with field teams to understand practical workflows."
+        title: "Discover & Design",
+        text: "We analyze business requirements, map user journeys, and create clickable UI/UX prototypes validated with end users."
       },
       {
-        title: "Prototype",
-        text: "We design intuitive mobile interfaces and validate them with end users early."
+        title: "Architect & Build",
+        text: "We develop secure native or cross-platform codebases with robust offline caching, clean state management, and scalable APIs."
       },
       {
-        title: "Build",
-        text: "We configure enterprise mobile platforms or engineer custom applications with robust sync."
+        title: "Test & Integrate",
+        text: "We execute end-to-end device testing, performance profiling, and seamless integration with your backends and ERP systems."
       },
       {
-        title: "Roll out",
-        text: "We deploy to devices, support team onboarding, and ensure operational readiness."
+        title: "Deploy & Support",
+        text: "We manage App Store and Google Play store submissions, MDM enterprise deployment, automated CI/CD, and ongoing releases."
       }
     ],
     related: [
-      "ibm-maximo-mas",
-      "erp-enterprise-applications",
+      "ai-solutions",
+      "cloud-infrastructure",
       "managed-support"
     ]
   },

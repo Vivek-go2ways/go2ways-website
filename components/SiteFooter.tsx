@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <a href={link("/")} aria-label="Go2Ways home" className="footer-logo">
           <img src={asset("/assets/img/footer-logo.png")} alt="Go2Ways" width="144" height="30" />
         </a>
-        <p className="footer-brand-motto">Who We Are · Our Mission · Our Vision · Our Philosophy · Our Strategy.</p>
+        <p className="footer-brand-motto">Our Mission · Our Vision · Our Philosophy · Our Strategy.</p>
       </div>
 
       {/* 3. Multi-Column Information Architecture */}

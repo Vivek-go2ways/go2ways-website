@@ -69,7 +69,6 @@ export default function AboutPage() {
             <img className="photo" src={asset("/assets/img/about/who-we-are.jpg")} alt="Team planning a project around a table" />
           </div>
           <div className="split-copy">
-            <span className="pill-tag reveal">Who We Are</span>
             <h2 className="heading-l reveal" style={{ "--stagger": 1 }}>Hi, We&apos;re Go2Ways</h2>
             <p className="body-l reveal" style={{ "--stagger": 2 }}>Go2Ways delivers enterprise-grade technology services and AI solutions focused on IBM Maximo, SAP and Oracle integrations, cloud infrastructure and intelligent automation. Our team helps organisations improve efficiency, reduce operational risk and accelerate digital transformation.</p>
             <p className="body-l reveal" style={{ "--stagger": 3 }}>From implementation and integration to AI-driven automation, long-term support and infrastructure modernisation, we help businesses build scalable, reliable and intelligent technology ecosystems.</p>
