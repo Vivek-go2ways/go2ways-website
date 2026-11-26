@@ -13,6 +13,7 @@ function Lines({ lines }: { lines: string[] }) {
       {l}
     </Fragment>
   ));
+  
 }
 
 function Photo({ folder, slot, alt, w, h, lazy = true }: { folder: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
