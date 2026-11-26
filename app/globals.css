@@ -427,6 +427,8 @@ a.menu-item:hover, a.menu-item:focus-visible { background: var(--surface-subtle)
 .feature-card .text { display: flex; flex-direction: column; gap: 6px; padding-inline: 12px; }
 .feature-card .text p + p { margin-top: 0; }
 
+.blog-hero { min-height: 0; padding-bottom: 0; }
+@media (max-width: 900px) { .blog-hero { padding-bottom: 0; } }
 .blog-card .media { aspect-ratio: 4 / 3; }
 .blog-featured-media { border-radius: var(--radius-panel); overflow: hidden; aspect-ratio: 4 / 3; background: var(--surface-media); }
 .blog-featured-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s var(--ease-out); }

@@ -48,8 +48,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   if (!post) notFound();
   return (
     <main>
-      <section className="hero svc-hero">
-        <div className="silk-wave" data-wave="hero" aria-hidden="true" />
+      <section className="hero svc-hero blog-hero">
         <div className="hero-copy">
           <a className="pill-tag hero-sub" href={link("/blogs")}><span aria-hidden="true">←</span> All Blogs</a>
           <SplitWords as="h1" className="display-xl split-words" lines={post.titleLines} />

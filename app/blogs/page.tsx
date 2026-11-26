@@ -12,8 +12,7 @@ export default function BlogsPage() {
   const [featured, ...rest] = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
   return (
     <main>
-      <section className="hero svc-hero">
-        <div className="silk-wave" data-wave="hero" data-parallax="" aria-hidden="true" />
+      <section className="hero svc-hero blog-hero">
         <div className="hero-copy">
           <SplitWords as="h1" className="display-xl split-words" lines={["Insights & Blogs"]} />
           <p className="body-l hero-sub">Ideas, updates and practical guidance from the Go2Ways team on enterprise technology, AI and software.</p>
