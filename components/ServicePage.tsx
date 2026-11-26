@@ -13,7 +13,7 @@ function Lines({ lines }: { lines: string[] }) {
       {l}
     </Fragment>
   ));
-
+  
 }
 
 function Photo({ folder, slot, alt, w, h, lazy = true }: { folder: string; slot: string; alt: string; w: number; h: number; lazy?: boolean }) {
@@ -29,6 +29,12 @@ function Hero({ s, children }: { s: ServiceEntry; children?: ReactNode }) {
         <SplitWords as="h1" className="display-xl split-words" lines={s.h1} />
         <p className="body-l hero-sub">{s.sub}</p>
         {children}
+      </div>
+      <div className="panel">
+        <div className="panel-intro">
+          <h2 className="heading-l reveal">How We Work</h2>
+          <p className="body-l reveal" style={{ "--stagger": 1 }}>We combine operational context with technology so teams can move faster without losing visibility or control.</p>
+        </div>
       </div>
     </section>
   );
@@ -69,7 +75,6 @@ function Body({ s, prefix = "" }: { s: Service; prefix?: string }) {
           </div>
         </div>
       </section>
-
 
       <section className="section container" id={`${prefix}included`}>
         <div className="section-header">

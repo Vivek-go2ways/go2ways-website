@@ -345,6 +345,40 @@ a.menu-item:hover, a.menu-item:focus-visible { background: var(--surface-subtle)
   .silk-wave { top: auto; bottom: -120px; }
 }
 
+/* Heroes with the wave as a direct child (home, services, blogs, 404): the wave
+   follows the copy in the page flow, so it always starts below the buttons
+   instead of running behind the text, whatever the title length or screen size. */
+.hero:has(> .silk-wave) {
+  --wave-h: clamp(320px, 41.67vw, 600px);
+  display: flex; flex-direction: column;
+  min-height: 0; padding-bottom: 0; overflow-x: clip;
+}
+.hero > .silk-wave {
+  position: relative; order: 1; inset: auto; flex: none;
+  width: 110.556%; margin-left: -5.278%; height: var(--wave-h);
+  margin-top: clamp(8px, 1.2vw, 18px);
+  /* Nothing sits on the wave: fade it out and end the hero inside the fade. */
+  margin-bottom: calc(var(--wave-h) * -0.35);
+  -webkit-mask-image: linear-gradient(#000 40%, transparent 65%);
+  mask-image: linear-gradient(#000 40%, transparent 65%);
+}
+/* A frosted panel sits on the wave (home page, service pages). */
+.hero:has(+ .panel) > .silk-wave,
+.hero:has(> .panel) > .silk-wave { margin-bottom: calc(var(--wave-h) * -0.62); }
+/* Home: the long features panel covers the rest of the wave. */
+.hero:has(+ .panel) > .silk-wave { -webkit-mask-image: none; mask-image: none; }
+/* Service pages: a short panel, so the wave fades out beside it by the panel's bottom edge. */
+.hero:has(> .panel) > .silk-wave {
+  -webkit-mask-image: linear-gradient(#000 48%, transparent 78%);
+  mask-image: linear-gradient(#000 48%, transparent 78%);
+}
+.hero > .panel {
+  order: 2; min-height: calc(var(--wave-h) * 0.4);
+  padding-top: clamp(32px, 3.4vw, 48px);
+}
+.hero > .panel .panel-intro { margin-bottom: 0; }
+.hero > .panel .panel-intro .body-l { max-width: 560px; }
+
 .split-words .word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .split-words .word > span { display: inline-block; transform: translateY(105%); opacity: 0; }
 .is-loaded .split-words .word > span {
@@ -827,13 +861,8 @@ a.menu-item:hover, a.menu-item:focus-visible { background: var(--surface-subtle)
   .dash-bottom { grid-template-columns: 1fr; }
 }
 
-@media (min-width: 901px) {
-  .svc-hero { padding-top: 155px; min-height: 0; padding-bottom: clamp(280px, 28vw, 420px); }
-  .svc-hero .silk-wave { top: auto; bottom: 0; }
-}
+@media (min-width: 901px) { .svc-hero { padding-top: 155px; } }
 .svc-hero { overflow: clip; }
-.svc-hero .silk-wave { bottom: 0; }
-@media (max-width: 900px) { .svc-hero { padding-bottom: 300px; } }
 .crumb { gap: 8px; }
 .crumb .ico { width: 18px; height: 18px; color: var(--pill-border); }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -942,16 +971,19 @@ a.menu-item:hover, a.menu-item:focus-visible { background: var(--surface-subtle)
 @media (hover: hover) { .stat:hover { transform: translateY(-6px); background: rgba(255,255,255,0.28); } }
 @media (max-width: 760px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
 
-.industries-hero { padding-bottom: 0; min-height: 0; }
-.industries-hero .silk-wave { top: 400px; height: clamp(300px, 32.7vw, 471px); }
-.industries-hero .stat-row { margin-top: 200px; }
-.industries-hero .wave-bottom-clip { position: absolute; left: 0; right: 0; top: 400px; bottom: 0; overflow: hidden; z-index: 0; }
-.industries-hero .wave-bottom-clip .silk-wave { top: 0; height: clamp(380px, 41.67vw, 600px); }
+/* Industries and About: the wave band shares a grid row with the stat cards, so it
+   always starts below the copy instead of at a fixed offset that long titles overrun. */
+.industries-hero { display: grid; grid-template-columns: minmax(0, 1fr); padding-bottom: 0; min-height: 0; }
+.industries-hero > .hero-copy { grid-row: 1; grid-column: 1; }
+.industries-hero .wave-bottom-clip {
+  position: relative; grid-row: 2; grid-column: 1; z-index: 0;
+  margin-top: clamp(20px, 2.8vw, 40px); overflow: hidden;
+}
+.industries-hero .wave-bottom-clip .silk-wave { top: 0; bottom: auto; height: clamp(380px, 41.67vw, 600px); }
+.industries-hero .stat-row { grid-row: 2; grid-column: 1; align-self: end; margin-top: clamp(150px, 14vw, 210px); }
 @media (max-width: 900px) {
-  .industries-hero { padding-bottom: 40px; }
-  .industries-hero .stat-row { margin-top: 80px; }
-  .industries-hero .wave-bottom-clip { top: auto; height: 380px; }
-  .industries-hero .wave-bottom-clip .silk-wave { bottom: auto; height: 100%; min-height: 380px; }
+  .industries-hero .stat-row { margin-top: 120px; margin-bottom: 40px; }
+  .industries-hero .wave-bottom-clip .silk-wave { height: 100%; min-height: 380px; }
 }
 
 .clients { position: relative; padding-top: 52px; padding-bottom: 24px; overflow: hidden; }
